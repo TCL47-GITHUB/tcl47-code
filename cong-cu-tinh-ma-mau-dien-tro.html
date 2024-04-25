@@ -14,19 +14,10 @@
 
 <link rel="stylesheet" hreflang="ko" type="text/css" media="screen" href="/themes/default/css/ConversionCalculators.css?t=1681978247">
 
-
 <body> 
 	<div id="pnl-Calculate" style="background: #fff;"class="calculator-panel hidden-for-nojs pnl-Calculate-Resistor">
-		<div style="
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-">
-			<div class="col-left" style="
-    width: -webkit-fill-available;
-    min-width: 400px;
-">
+		<div style="display: flex;justify-content: space-evenly;flex-wrap: wrap; gap: 1.5rem;">
+			<div class="col-left" style="width: -webkit-fill-available;">
 				<div id="select-bands" class="resistor-calc-parameter">
 					<h3 style="margin:0"><label for="dropdown-bands" class="resistor-calc-labels" title="Số dải">Số dải</label></h3>
 					<select id="dropdown-bands" class="resistor-calc-input" onchange="resistorBandSelect();" data-bind="value: bandCount, event: { change: resetValues }">
@@ -64,9 +55,7 @@
 					<input id="resistor-calc-input" type="text" disabled="disabled" class="resistor-calc-input calculator-results" data-bind="value: calculateResistance">
 				</div>
 			</div>
-			<div class="col-right" style="
-    width: -webkit-fill-available;
-">
+			<div class="col-right" style="width: -webkit-fill-available;">
 				<div class="resistor-container">
 				<div id="resistor-icon" class="resistor">
 					<div class="resistor-stick left"></div>
