@@ -1,0 +1,29 @@
+.plotContainer path {
+  stroke-width: 1;
+  fill: none;
+  stroke: #8d8d8d;
+}
+.plotContainer path.curve-DeadTime-0,
+.plotContainer path.curve-DeadTime-1 {
+  stroke: rgba(0, 0, 0, 0.2);
+  fill: rgba(0, 0, 0, 0.1);
+}
+.plotContainer path.curve-TCNT2 {
+  stroke-width: 10px;
+  stroke: rgba(255, 0, 0, 0.2);
+}
+.plotContainer path.curve-TCNT {
+  stroke: steelblue;
+}
+
+.plotContainer path.curve-0 {
+  stroke: darkred;
+}
+
+.plotContainer path.curve-1 {
+  stroke: darkgreen;
+}
+
+.plotContainer path.curve-2 {
+  stroke: darkblue;
+}
