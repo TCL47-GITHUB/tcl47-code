@@ -527,7 +527,7 @@ background-color: #F2F1F6; */
 #smd1-table1,
 #smd2-table1,
 #smd3-table1 {
-    margin-left: 5px;
+    /*margin-left: 5px;*/
 }
 
 
@@ -636,7 +636,10 @@ button.button {
 .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box .tab-content .tab-calc-content .calc-input .smd-section .smd-section-input,
 .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box .tab-content .tab-calc-content .calc-input .smd-section .smd-section-input .table-section {
     display: flex;
-	justify-content: space-around;
+justify-content: space-around;
+	width: -webkit-fill-available;
+	gap: 1rem;
+	padding: 0 1rem;
     display: -ms-flexbox;
     -ms-grid-row: 1
 }
