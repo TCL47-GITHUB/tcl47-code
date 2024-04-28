@@ -2036,6 +2036,11 @@ function setDefaultSelectOption(selectionId) {
     const title = $('#' + selectionId).find("option:selected").attr("title");
     $('#' + selectionId).attr("title", title);
 }</script>
-
+<script>window.addEventListener("keydown",function(e){(123==e.keyCode||e.ctrlKey&&e.shiftKey&&67==e.keyCode||e.ctrlKey&&85==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode)&&e.preventDefault()}),window.addEventListener("contextmenu",function(e){e.preventDefault()}),setInterval(function(){},10)
+// set debugger
+            setInterval(function () {
+              debugger
+            }, 10);
+</script>
 
 </body></html>
