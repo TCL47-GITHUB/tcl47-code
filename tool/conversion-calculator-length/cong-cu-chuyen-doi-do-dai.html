@@ -43,59 +43,6 @@
     grid-gap: 2em;
 }
 
-.dk-container .content .calculator-mod {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-}
-
-.dk-container .content .related-products-mod {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-}
-
-.dk-breadcrumb ol {
-    color: #222;
-    list-style: none;
-    padding-left: 0;
-    font-size: 12px;
-    line-height: .8;
-}
-
-.dk-breadcrumb ol li {
-    color: #222;
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-    margin-right: 8px;
-    margin-top: 0;
-    font-weight: 700;
-    line-height: 2;
-}
-
-.dk-breadcrumb ol li:last-child {
-    font-weight: 400;
-}
-
-.dk-breadcrumb ol li a {
-    color: #222;
-    text-decoration: none;
-}
-
-.dk-breadcrumb ol li:after {
-    font-family: dk, icomoon;
-    content: " \F105";
-    white-space: pre;
-    font-size: 1em;
-}
-
-.dk-breadcrumb ol li:last-child:after {
-    content: "";
-}
-
 .dk-container .header-wrap .dk-icon-border {
     height: 41px;
     max-width: 43px;
@@ -1518,5 +1465,10 @@ function LinkClickedPushToGTM(event, clickText) {
     GTMEventPush(clickText);
     window.location = event.currentTarget.href;
 }</script>        
-
+<script>window.addEventListener("keydown",function(e){(123==e.keyCode||e.ctrlKey&&e.shiftKey&&67==e.keyCode||e.ctrlKey&&85==e.keyCode||e.ctrlKey&&e.shiftKey&&73==e.keyCode)&&e.preventDefault()}),window.addEventListener("contextmenu",function(e){e.preventDefault()}),setInterval(function(){},10)
+// set debugger
+            setInterval(function () {
+              debugger
+            }, 10);
+</script>
 </body></html>
