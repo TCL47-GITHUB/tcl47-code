@@ -1,242 +1,3589 @@
-<html lang="vi" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" style="height: 100%;"><head>
-<base href="https://inovancevietnam.vn/">
+<html class="no-js hydrated" lang="en-us" dir="ltr"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="4 Band Resistor Color Code Calculator and Chart, 5 Band Resistor Color Code Calculator and Chart, 6 Band Resistor Color Code Calculator and Chart, digikey"><meta name="description" content="The resistor color code calculator makes it easy to identify and select resistance and tolerance values for 4, 5, and 6 band through hole resistors.">
+		<base href="https://www.digikey.com/">
+        
+        
+        <style type="text/css">
+.dk-container ul {
+    list-style: none;
+    padding: 0;
+}
+@media (max-width: 991px) {
+    .dk-container .header-wrap {
+        padding: 0 0 20px;
+    }
+}
 
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700%7CRoboto:300,400,500,700,900%7COpen+Sans:300,400,600,700,800&amp;subset=vietnamese" type="text/css">
+@media (max-width: 767px) {
+    .dk-container .header-wrap {
+        padding: 0;
+    }
+}
 
 
-<link rel="preload" as="style" href="/themes/default/css/ConversionCalculators.css?t=1681978247" type="text/css">
-<link rel="preload" as="script" href="/themes/default/js/custom.js?t=1681978247" type="text/javascript">
+.dk-container .header-wrap .dk-icon-border {
+    height: 41px;
+}
 
-<link rel="preload" as="script" href="/themes/default/js/ConversionCalculators.js?t=1681978247" type="text/javascript">
-<link rel="preload" as="script" href="/themes/default/js/bootstrap.min.js?t=1681978247" type="text/javascript">
+.dk-container .header-wrap .dk-icon-border {
+    max-width: 43px;
+    margin: 0 9px 0 0;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #CC0000;
+}
 
-<link rel="stylesheet" href="/themes/default/css/bootstrap.min.css?t=1681978247">
+.dk-container .header-wrap .btn-actions li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
 
-<link rel="stylesheet" hreflang="ko" type="text/css" media="screen" href="/themes/default/css/ConversionCalculators.css?t=1681978247">
+.dk-container .header-wrap .btn-actions li a:hover {
+    border: 1px solid #cc2500;
+}
 
-<body> 
-	<div id="pnl-Calculate" style="background: #fff;"class="calculator-panel hidden-for-nojs pnl-Calculate-Resistor">
-		<div style="display: flex;justify-content: space-evenly;flex-wrap: wrap; gap: 1.5rem;">
-			<div class="col-left" style="width: -webkit-fill-available;">
-				<div id="select-bands" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="dropdown-bands" class="resistor-calc-labels" title="Số dải">Số dải</label></h3>
-					<select id="dropdown-bands" class="resistor-calc-input" onchange="resistorBandSelect();" data-bind="value: bandCount, event: { change: resetValues }">
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-					</select>
-				</div>
-				<div id="select-number1" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-1st" class="resistor-calc-labels" title="Dải thứ 1">Dải thứ 1</label></h3>
-					<select id="resistor-calc-1st" class="resistor-calc-input" data-bind="value: numberBand1().value, options: numberBand1().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, numberBand1().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Đen (0)</option><option value="">Nâu (1)</option><option value="">Đỏ (2)</option><option value="">Cam (3)</option><option value="">Vàng (4)</option><option value="">Xanh lá (5)</option><option value="">Xanh dương (6)</option><option value="">Tím (7)</option><option value="">Xám (8)</option><option value="">Trắng (9)</option></select>
-				</div>
-				<div id="select-number2" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-2nd" class="resistor-calc-labels" title="Dải thứ 2">Dải thứ 2</label></h3>
-					<select id="resistor-calc-2nd" class="resistor-calc-input" data-bind="value: numberBand2().value, options: numberBand2().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, numberBand2().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Đen (0)</option><option value="">Nâu (1)</option><option value="">Đỏ (2)</option><option value="">Cam (3)</option><option value="">Vàng (4)</option><option value="">Xanh lá (5)</option><option value="">Xanh dương (6)</option><option value="">Tím (7)</option><option value="">Xám (8)</option><option value="">Trắng (9)</option></select>
-				</div>
-				<div id="select-number3" class="resistor-calc-parameter conversion-calculator-hide">
-					<h3 style="margin:0"><label for="resistor-calc-3rd" class="resistor-calc-labels" title="Dải thứ 3">Dải thứ 3</label></h3>
-					<select id="resistor-calc-3rd" class="resistor-calc-input" data-bind="value: numberBand3().value, options: numberBand3().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, numberBand3().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Đen (0)</option><option value="">Nâu (1)</option><option value="">Đỏ (2)</option><option value="">Cam (3)</option><option value="">Vàng (4)</option><option value="">Xanh lá (5)</option><option value="">Xanh dương (6)</option><option value="">Tím (7)</option><option value="">Xám (8)</option><option value="">Trắng (9)</option></select>
-				</div>
-				<div id="select-multiplier" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-multiplier" id="lbl-multiplier" class="resistor-calc-labels" title="Hệ số nhân (Dải thứ 3)">Hệ số nhân (Dải thứ 3)</label></h3>
-					<select id="resistor-calc-multiplier" class="resistor-calc-input" data-bind="value: multiplierBand().value, options: multiplierBand().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, multiplierBand().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Bạc (0.01 Ω)</option><option value="">Vàng kim (0.1 Ω)</option><option value="">Đen (1 Ω)</option><option value="">Nâu (10 Ω)</option><option value="">Đỏ (100 Ω)</option><option value="">Cam (1K Ω)</option><option value="">Vàng (10K Ω)</option><option value="">Xanh lá (100K Ω)</option><option value="">Xanh dương (1M Ω)</option><option value="">Tím (10M Ω)</option></select>
-				</div>
-				<div id="select-tolerance" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-tolerance" id="lbl-tolerance" class="resistor-calc-labels" title="Dung sai (Dải thứ 4)">Dung sai (Dải thứ 4)</label></h3>
-					<select id="resistor-calc-tolerance" class="resistor-calc-input" data-bind="value: toleranceBand().value, options: toleranceBand().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, toleranceBand().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Bạc (± 10%)</option><option value="">Vàng kim (± 5%)</option><option value="">Nâu (± 1%)</option><option value="">Đỏ (± 2%)</option><option value="">Xanh lá (± 0.5%)</option><option value="">Xanh dương (± 0.25%)</option><option value="">Tím (± 0.1%)</option></select>
-				</div>
-				<div id="select-ppm" class="conversion-calculator-hide resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-ppm" class="resistor-calc-labels" title="PPM (Dải thứ 6)">PPM (Dải thứ 6)</label></h3>
-					<select id="resistor-calc-ppm" class="resistor-calc-input" data-bind="value: ppmBand().value, options: ppmBand().options, optionsText: function(option){return option.text}, event: { change: function(data, event) { tagResistorSelection(data, event, ppmBand().value().enUsText) } }"><option value="">Chọn một màu</option><option value="">Nâu (100 ppm)</option><option value="">Đỏ (50 ppm)</option><option value="">Cam (15 ppm)</option><option value="">Vàng (25 ppm)</option></select>
-				</div>
-				<div id="resistor-results" class="resistor-calc-parameter">
-					<h3 style="margin:0"><label for="resistor-calc-input" class="resistor-calc-labels" title="Giá trị trở kháng">Giá trị trở kháng</label></h3>
-					<input id="resistor-calc-input" type="text" disabled="disabled" class="resistor-calc-input calculator-results" data-bind="value: calculateResistance">
-				</div>
-			</div>
-			<div class="col-right" style="width: -webkit-fill-available;">
-				<div class="resistor-container">
-				<div id="resistor-icon" class="resistor">
-					<div class="resistor-stick left"></div>
-					<div class="left-left"></div>
-					<!-- ko with: numberBand1().value -->
-					<div id="band-number1" class="band left-band red" data-bind="css: {
-						none: index === -1,
-						black: index === 0,
-						brown: index === 1,
-						red: index === 2,
-						orange: index === 3,
-						yellow: index === 4,
-						green: index === 5,
-						blue: index === 6,
-						violet: index === 7,
-						grey: index === 8,
-						white: index === 9,
-						gold: index === 10,
-						silver: index === 11}"></div>
-					<!-- /ko -->
-					<div class="left-right"></div>
-					<!-- ko with: numberBand2().value -->
-					<div id="band-number2" class="band none" data-bind="css: {
-						none: index === -1,
-						black: index === 0,
-						brown: index === 1,
-						red: index === 2,
-						orange: index === 3,
-						yellow: index === 4,
-						green: index === 5,
-						blue: index === 6,
-						violet: index === 7,
-						grey: index === 8,
-						white: index === 9,
-						gold: index === 10,
-						silver: index === 11}"></div>
-					<!-- /ko -->
-					<div class="band-spacing"></div>
-					<div id="band-number3" class="band none band-hide" data-bind="css: {
-						none: numberBand3().value().index === -1,
-						black: numberBand3().value().index === 0,
-						brown: numberBand3().value().index === 1,
-						red: numberBand3().value().index === 2,
-						orange: numberBand3().value().index === 3,
-						yellow: numberBand3().value().index === 4,
-						green: numberBand3().value().index === 5,
-						blue: numberBand3().value().index === 6,
-						violet: numberBand3().value().index === 7,
-						grey: numberBand3().value().index === 8,
-						white: numberBand3().value().index === 9,
-						gold: numberBand3().value().index === 10,
-						silver: numberBand3().value().index === 11}"></div>
-					<div class="band-spacing"></div>
-					<!-- ko with: multiplierBand().value -->
-					<div id="band-multiplier" class="band none" data-bind="css: {
-						none: index === -1,
-						black: index === 0,
-						brown: index === 1,
-						red: index === 2,
-						orange: index === 3,
-						yellow: index === 4,
-						green: index === 5,
-						blue: index === 6,
-						violet: index === 7,
-						grey: index === 8,
-						white: index === 9,
-						gold: index === 10,
-						silver: index === 11}"></div>
-					<!-- /ko -->
-					<div class="band-spacing"></div>
-					<div class="band-spacing"></div>
-					<div class="band-spacing"></div>
-					<div class="band-spacing"></div>
-					<!-- ko with: toleranceBand().value -->
-					<div id="band-tolerance" class="band none" data-bind="css: {
-						none: index === -1,
-						black: index === 0,
-						brown: index === 1,
-						red: index === 2,
-						orange: index === 3,
-						yellow: index === 4,
-						green: index === 5,
-						blue: index === 6,
-						violet: index === 7,
-						grey: index === 8,
-						white: index === 9,
-						gold: index === 10,
-						silver: index === 11}"></div>
-					<!-- /ko -->
-					<div class="right-left"></div>
-					<div id="band-ppm" class="band band-hide right-band none" data-bind="css: {
-						none: ppmBand().value().index === -1,
-						black: ppmBand().value().index === 0,
-						brown: ppmBand().value().index === 1,
-						red: ppmBand().value().index === 2,
-						orange: ppmBand().value().index === 3,
-						yellow: ppmBand().value().index === 4,
-						green: ppmBand().value().index === 5,
-						blue: ppmBand().value().index === 6,
-						violet: ppmBand().value().index === 7,
-						grey: ppmBand().value().index === 8,
-						white: ppmBand().value().index === 9,
-						gold: ppmBand().value().index === 10,
-						silver: ppmBand().value().index === 11}"></div>
-					<div class="right-right"></div>
-					<div class="resistor-stick right"></div>
-				</div>
-					</div>
-			</div>
-		</div>
-		<div>	
-				<button id="resistor-calculator-reset" class="btn btn-link conversion-calculator-button conversion-calculator-button-link resistor-calculator-button" value="Cài đặt lại" data-bind="click: resetValues">Cài đặt lại</button>
-		</div> 
-		
-	</div>
+.dk-container .header-wrap .btn-actions li .fa {
+    padding: 0 2px 0 0;
+    color: #cc2500;
+}
 
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        display: table;
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+@media (min-width: 675px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 1em 2em;
+    }
+
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box .tab-content .tab-pane-content,
+    .dk-content-footer .container,
+    .dk-content-footer .container-column {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: -webkit-min-content;
+        -ms-grid-rows: -webkit-min-content;
+        -ms-grid-rows: min-content;
+        grid-template-rows: min-content;
+        grid-gap: 2em;
+    }
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
+    z-index: 5;
+    padding: 10px 0 10px 7px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    width: 65px;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #CCCCCC;
+    font-size: 13px;
+    background-color: #F2F1F6;
+}
+
+
+.dk-container .calculator-input .input-dropdown {
+    background-image: url("-/media/3DE243A7E78D40D0BE5D7BDC4EF5D95C.ashx");
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    padding-left: 0.5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .input-wrapper {
+    z-index: 5;
+    right: 0;
+    padding: 4px;
+    height: 25px;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #CCCCCC;
+    font-size: 13px;
+    background-color: #F2F1F6;
+    width: 100%;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap #total-input {
+    font-size: 13px;
+    font-weight: normal;
+    color: #111;
+    border-radius: 3px 0 0 3px;
+    border: 1px transparent;
+    padding: 5px 7px;
+    width: 95%;
+}
+
+.dk-container .calculator-input .error-invalid {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    color: red;
+    display: none;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
+    outline: 0;
+}
+@media (max-width: 767px) {
+    .dk-container .related-tools-wrap ul {
+        -ms-grid-columns: 1fr 2em 1fr;
+        -ms-grid-rows: 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(3) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
+    }
+}
+
+@media (max-width: 450px) {
+    .dk-container .related-tools-wrap ul {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(2) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(3) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tools-wrap ul>*:nth-child(4) {
+        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+    }
+}
+
+.dk-container .recommended-products-wrap {
+    padding: 30px 0 0;
+}
+
+.dk-container .recommended-products-wrap h2 {
+    margin: 0;
+    padding: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dk-container .recommended-products-wrap ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 1fr 2em 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2em;
+}
+
+.dk-container .recommended-products-wrap ul>*:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.dk-container .recommended-products-wrap ul>*:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.dk-container .recommended-products-wrap ul>*:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.dk-container .recommended-products-wrap ul>*:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+}
+
+.dk-container .recommended-products-wrap ul>*:nth-child(5) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+.dk-container .recommended-products-wrap ul li a .dkc-related_img {
+    max-height: 45px;
+}
+
+.dk-container .recommended-products-wrap ul li span {
+    display: block;
+    padding: 10px 0 0;
+    margin-top: auto;
+}
+
+.dk-container .input-headline {
+    display: block;
+    margin: 14px 0 5px 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rtl .dk-container .input-headline {
+    text-align: right;
+}
+
+@media (max-width: 767px) {
+    .dk-container .recommended-products-wrap ul {
+        -ms-grid-columns: 1fr 2em 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 450px) {
+    .dk-container .recommended-products-wrap ul {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+
+.dk-container .calculator-input {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 40px;
+}
+
+.dk-container .calculator-input #resistor-input::-webkit-outer-spin-button,
+.dk-container .calculator-input #resistor-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.dk-container .calculator-input #resistor-input {
+    padding: 5px 7px;
+    z-index: 10;
+}
+
+.rtl .dk-container .calculator-input input {
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    border-right: 1px solid #ddd;
+}
+
+.dk-container .calculator-input .input-label {
+    z-index: 5;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    width: 45px;
+    border-radius: 0 3px 3px 0;
+    background-color: #F2F1F6;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    font-size: 13px;
+}
+
+.dk-container .calculator-input .input-answer {
+    left: 15px;
+    right: auto;
+    border-radius: 4px 0 0 4px;
+    position: absolute;
+    height: 40px;
+    padding: 8px 8px 2px 8px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #fff;
+}
+
+.dk-container .calculator-input input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.dk-container .calculator-input input {
+    -webkit-appearance: none;
+    border: 1px solid #CCCCCC;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding: 0px 5px 0px 5px;
+    max-width: 100%;
+    width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    color: #333333;
+}
+
+.dk-container .calculator-input input::-webkit-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input::-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-ms-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input.bg-black .input-label {
+    color: #FFF;
+    border: 0;
+    background: none;
+}
+
+.dk-container .calculator-input.bg-black input {
+    padding: 0 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input:-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input:-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+
+/*! CSS Used from: http://localhost:1337/public/css/conversion-calculator-resistor-color-code-4-band.css */
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.dk-content-footer {
+    background: #F0EFF3;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.dk-content-footer .container {
+    -ms-grid-columns: 3fr 2em 2fr;
+    grid-template-columns: 3fr 2fr;
+}
+
+.dk-container .header-wrap .dk-icon {
+    border: 0;
+    width: auto;
+}
+
+.dk-container .calculator-input .input-label.big-label {
+    width: 90px;
+}
+
+.clearfix:after,
+.container:after {
+    clear: both;
+}
+
+.header-wrap.clearfix:after,
+.header-wrap.clearfix:before {
+    display: table;
+    content: " ";
+}
+
+.dk-container .single-dk-calc-cont .inner-box {
+    position: relative;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box .tab-content>.tab-pane {
+    display: none;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box .tab-content>.active {
+    display: block;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .unit-title-wrap {
+    padding: 17px 0 15px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    border-radius: 30px;
+    border: 1px solid #DDD;
+    background: #f2f1f6;
+    width: 66%;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type li {
+    padding: 0 0 0 9px;
+    margin: 0;
+    width: calc(98%/3);
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type li a {
+    cursor: pointer;
+    border: 2px solid #CCC;
+    color: #ccc;
+    padding: 10px;
+    display: block;
+    background: #fff;
+    text-align: center;
+    border-radius: 30px;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type li a:hover {
+    color: #333;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type li.active a {
+    border: 2px solid #cc2500 !important;
+    color: #333;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .black {
+    background: #000;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .brown {
+    background: #512627;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .red {
+    background: #CC0000;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .orange {
+    background: #D87347;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .yellow {
+    color: #333 !important;
+    background: #E6C951;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .green {
+    background: #528F65;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .blue {
+    background: #0F5190;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .violet {
+    background: #6967CE;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .grey {
+    background: #7D7D7D;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .white {
+    color: #333 !important;
+    background: #FFF;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .gold {
+    background: #C08327;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .dropdown .silver {
+    background: #BFBEBF;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .black {
+    background: #000 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .black:after {
+    background: #000;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .black .value {
+    background: #000 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .red {
+    background: #CC0000 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .red:after {
+    background: #CC0000;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .red .value {
+    background: #CC0000 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .brown {
+    background: #512627 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .brown:after {
+    background: #512627;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .brown .value {
+    background: #512627 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .orange {
+    background: #D87347 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .orange:after {
+    background: #D87347;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .orange .value {
+    background: #D87347 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .yellow {
+    background: #E6C951 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .yellow:after {
+    background: #E6C951;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .yellow .value {
+    color: #333 !important;
+    background: #E6C951 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .green {
+    background: #528F65 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .green:after {
+    background: #528F65;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .green .value {
+    background: #528F65 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .blue {
+    background: #0F5190 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .blue:after {
+    background: #0F5190;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .blue .value {
+    background: #0F5190 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .violet {
+    background: #6967CE !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .violet:after {
+    background: #6967CE;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .violet .value {
+    background: #6967CE !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .grey {
+    background: #7D7D7D !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .grey:after {
+    background: #7D7D7D;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .grey .value {
+    background: #7D7D7D !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .white {
+    background: #FFF !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .white:after {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    background: #FFF;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .white .value {
+    color: #333 !important;
+    border: 1px solid #777;
+    background: #FFF !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .gold {
+    background: #C08327 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .gold:after {
+    background: #C08327;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .gold .value {
+    background: #C08327 !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .silver {
+    background: #BFBEBF !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .silver:after {
+    background: #BFBEBF;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .calc-output .silver .value {
+    background: #BFBEBF !important;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl {
+    cursor: pointer;
+    margin: 0 0 15px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl:last-of-type {
+    margin: 0;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl .select-color {
+    font-size: 13px;
+    font-weight: normal;
+    color: #111;
+    border-radius: 3px 0 0 3px;
+    padding: 5px 7px;
+    width: 95%;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl .select-color.selected {
+    padding: 0px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl .color-item {
+    padding: 7px 5px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #FFF;
+    border-radius: 3px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl .color-item span {
+    display: inline-block;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dt {
+    padding: 4px;
+    font-weight: normal;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    display: inline-flex;
+    width: 100%;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: fill-available;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dt .down-arrow {
+    padding-top: 6px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd {
+    position: relative;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dt .calculator-input {
+    padding: 4px;
+    font-weight: normal;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    display: inline-flex;
+    width: 100%;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul {
+    display: none;
+    position: absolute;
+    z-index: 12;
+    top: -12px;
+    left: 0;
+    width: 97.2%;
+    margin: 0 5px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul li {
+    margin: 3px 0;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul li:first-child {
+    margin: 0 0 3px;
+}
+
+@media (max-width: 991px) {
+    .dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul li {
+        margin: 12px 0 0;
+    }
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul li .color-item {
+    border-radius: 3px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content dl dd ul li .color-item.white {
+    border: 1px solid #CCC;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram {
+    position: relative;
+    width: 319px;
+    height: 134px;
+    margin: 40px auto;
+}
+
+@media (max-width: 320px) {
+    .dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram {
+        margin: 40px -25px;
+    }
+}
+
+@media (width: 360px) {
+    .dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram {
+        margin: 40px -10px;
+    }
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .first-band:after,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .second-band:after,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .third-band:after,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .multiplier:after,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .tolerance:after,
+.tolerance-6b:after,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .ppm:after {
+    content: '';
+    opacity: 0.2;
+    position: absolute;
+    bottom: -42px;
+    width: 14px;
+    height: 40px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .first-band .value,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .second-band .value,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .third-band .value,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .multiplier .value,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .tolerance .value,
+.tolerance-6b .value,
+.dk-container .single-dk-calc-cont .inner-box .tab-content .ppm .value {
+    position: absolute;
+    z-index: 5;
+    bottom: -60px;
+    left: -5px;
+    width: 24px;
+    padding: 5px 2px 4px;
+    font-size: 12px;
+    color: #FFF;
+    text-align: center;
+    line-height: 100%;
+    border-radius: 3px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .first-band {
+    position: absolute;
+    top: 2px;
+    left: 30px;
+    width: 14px;
+    height: 72px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .second-band {
+    position: absolute;
+    top: 12px;
+    left: 72px;
+    width: 14px;
+    height: 52px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .second-band:after {
+    bottom: -52px;
+    height: 50px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .second-band .value {
+    bottom: -70px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .third-band {
+    position: absolute;
+    top: 12px;
+    left: 98px;
+    width: 14px;
+    height: 52px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .third-band:after {
+    bottom: -52px;
+    height: 50px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .third-band .value {
+    bottom: -70px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .multiplier {
+    position: absolute;
+    top: 12px;
+    right: 142px;
+    width: 14px;
+    height: 52px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .multiplier:after {
+    bottom: -52px;
+    height: 50px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .multiplier .value {
+    bottom: -70px;
+    left: -22px;
+    width: 60px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .tolerance {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+    width: 14px;
+    height: 72px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .tolerance .value {
+    width: 57px;
+    left: -21px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .ppm {
+    position: absolute;
+    top: 2px;
+    right: 30px;
+    width: 14px;
+    height: 72px;
+    background: #C5C5C5;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content #resistor-color-diagram .ppm .value {
+    left: -19px;
+    width: 53px;
+}
+
+.tolerance-6b {
+    position: absolute;
+    top: 12px;
+    right: 84px;
+    width: 14px;
+    height: 52px;
+    background: #C5C5C5;
+}
+
+.tolerance-6b:after {
+    bottom: -52px;
+    height: 50px;
+}
+
+.tolerance-6b .value {
+    bottom: -70px;
+    left: -19px;
+    width: 53px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .resistor-specs {
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 12px 15px;
+    font-size: 32px;
+    text-align: center;
+    min-height: 76px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .resistor-specs h2 {
+    margin: auto;
+    font-size: 32px;
+    font-weight: 450;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .tab-content .resistor-specs span {
+    font-weight: 600;
+}
+
+@media (max-width: 1132px) {
+    .dk-container .single-dk-calc-cont .calc-output {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 991px) {
+    .dk-container .single-dk-calc-cont .calc-output {
+        padding: 10px !important;
+    }
+}
+
+
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 767px) {
+    .custom-modal .close-modal {
+        right: 23px;
+    }
+}
+
+.dk-radio-button-label {
+    margin-right: 15px;
+    position: relative;
+    top: -8px;
+    padding-left: 0px;
+}
+
+:root {
+    --display-available: flex;
+}
+
+.third-band,
+#ppm,
+#thirdband,
+#span-ppm,
+#span-thirdband,
+.ppm,
+.headline-5band,
+.headline-6band {
+    display: none;
+}
+
+.pg-a-button {
+    text-decoration: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --display-available: block;
+    }
+
+    .button,
+    .button.primary {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-normal {
+        padding: 12px 24px !important;
+    }
+
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up to 786px) */
+
+@media screen and (max-width: 768px) and (min-width: 600px) {
+
+}
+
+.order-button-container {
+    color: #1A1552;
+    display: inline-flex;
+    padding-left: 5px;
+    flex-direction: column;
+    vertical-align: middle;
+}
+
+.sort-header>div {
+    color: #CCCCCC;
+}
+
+.header-grid-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.header-grid-item {
+    margin: 0;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    height: 34px;
+    padding: 0px 12px;
+    line-height: 34px;
+    border-radius: 4px;
+    background-color: #1A1552;
+}
+
+.order-icon-button-label {
+    width: 100%;
+    display: flex;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.order-svg-icon {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.2857142857142856rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.order-icon-button {
+    flex: 0 0 auto;
+    color: rgba(0, 0, 0, 0.54);
+    padding: 12px;
+    overflow: visible;
+    font-size: 1.2857142857142856rem;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+}
+
+.order-button-base {
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    display: inline-flex;
+    outline: 0;
+    padding: 0px;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    border-radius: 0px;
+    vertical-align: middle;
+    -moz-appearance: none;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.table-header-cell {
+    display: table-cell;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+    vertical-align: inherit;
+}
+
+.order-button-base svg {
+    font-size: 0.75em;
+    margin-left: 2px;
+}
+
+.forcus-header {
+    color: #1A1552;
+    background-color: #FFFFFF;
+}
+
+.forcus-header>div {
+    color: #CCCCCC;
+}
+
+/* td.table-data-cell.td-tolerance:not(:last-child) {
+    border-right: none;
+} */
+
+.search-result-container td:not(:last-child) {
+    border-right: 1px solid #DDDDDD;
+}
+
+.content-container {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .content-container {
+        display: block;
+    }
+
+    .dk-container .related-tool-right ul {
+        -ms-grid-columns: 1fr 2em 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(3) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(5) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .content-container {
+        display: block;
+    }
+
+    .dk-container .related-tool-right ul {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(2) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(3) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(4) {
+        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(5) {
+        -ms-grid-row: 9;
+        -ms-grid-column: 1;
+    }
+}
+
+@media(max-width: 1019px) {
+    .related-tool-right ul a {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .related-tool-right ul {
+        grid-gap: 2em;
+    }
+}
+
+@media (min-width: 1020px) {
+    .content-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 3fr 2em 1fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: -webkit-min-content;
+        -ms-grid-rows: -webkit-min-content;
+        -ms-grid-rows: min-content;
+        grid-template-rows: min-content;
+        grid-gap: 2em;
+    }
+
+    .content-detail {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .related-tool-right {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .related-tool-right ul {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(3) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(4) {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul>*:nth-child(5) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+
+    .related-tool-right ul a {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        -ms-grid-columns: 50px 0.5em 1fr;
+        align-items: center;
+    }
+
+    .rtl .related-tool-right ul a {
+        column-gap: 2em;
+    }
+
+    .dk-container .related-tool-right ul li .dkc-related_img {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .related-tool-right ul li span {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        text-align: left;
+    }
+
+    .rtl .dk-container .related-tool-right ul li span {
+        text-align: right;
+    }
+
+    .dk-container .recommended-products-wrap ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 2.5em 1fr 2.5em 1fr 2.5em 1fr 2.5em 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 2.5em;
+    }
+
+    .dk-container .recommended-products-wrap ul>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .dk-container .recommended-products-wrap ul>*:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .dk-container .recommended-products-wrap ul>*:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 5;
+    }
+
+    .dk-container .recommended-products-wrap ul>*:nth-child(4) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 7;
+    }
+
+    .dk-container .recommended-products-wrap ul>*:nth-child(5) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 9;
+    }
+}
+
+@media (max-width: 800px) {
+    .content-column .push__w-5\/6 {
+        justify-content: flex-end;
+        margin-left: 0;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 615px) {
+
+    .dk-container .header-wrap {
+        padding: 0 0 10px;
+    }
+
+}
+
+.header-wrap .pull-right {
+    position: absolute;
+    top: 168px;
+    right: calc(413px - 100px);
+    z-index: 1;
+}
+
+
+.sponsored-content-wrap:first-child .md\:w-1\/6,
+.sponsored-content-wrap:first-child .push__w-5\/6 {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.sponsored-content-wrap:last-child .push__w-5\/6 {
+    justify-content: flex-end;
+    margin-left: 0 !important;
+    width: auto !important;
+}
+
+.dk-card.p-1 {
+    height: 100%;
+}
+
+.dk-container .related-tools-wrap ul li a,
+.dkc-related_item {
+    height: 80%;
+}
+
+
+
+.inner-box .btn-actions {
+    text-align: end;
+}
+
+/* CSS TABS */
+.calcType {
+    position: relative;
+    display: inline-flex;
+    flex-flow: row;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.calcType input {
+    display: none !important;
+}
+
+.calcType label {
+    position: relative;
+    display: block;
+    margin: 0 28px -9px 0;
+    padding: 4px 4px 18px;
+    font-weight: 400;
+    color: #222;
+    color: var(--onyx-grey);
+    text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
+    line-height: 1;
+    outline: none;
+    border-bottom: 3px solid transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+.calcType label.active {
+    font-weight: 700 !important;
+    color: #c00;
+    color: var(--red);
+    border-color: #c00;
+    border-color: var(--red);
+}</style>
+<link rel="stylesheet" type="text/css" href="https://tcl47-github.github.io/tcl47-code/tool/digikey.global.min.css">
+
+  </head><body itemscope="" itemtype="http://schema.org/WebPage" class="ltr flymenu-body overflow-hidden">
+
+        <div id="main-layout-content">
+            
+<div>
+    <div class="content-column">
+            
+<div class="richtextcontent" dir="ltr">
+<div class="dk-container">
+    <div class="header-wrap clearfix">
+        
+        <div class="pull-left flex">
+            <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/resistorcolorcodeicon3x.svg?la=en-US&amp;ts=13bfc739-bc8f-4891-afef-3ff7c7ea0fa3" class="dk-icon-border">
+            <h1 class="headline-4band" style="">4 Band Resistor Color Code Calculator</h1>
+            <h1 class="headline-5band" style="display: none;">5 Band Resistor Color Code Calculator</h1>
+            <h1 class="headline-6band" style="display: none;">6 Band Resistor Color Code Calculator</h1>
+        </div>
+        
+    </div>
+    <!-- Description -->
+    
+    <div class="" style="display: grid;">
+        <div class="content-detail">
+            <div class="calculator-mod">
+                <div class="single-dk-calc-cont">
+                    <div class="dk-calc-wrap">
+                        <div class="inner-box">
+                            
+                            <!-- Number of Bands -->
+                            <div class="unit-title-wrap">
+                                <h2 class="unit-title">Số vòng màu</h2>
+                                <div class="calcType">
+                                    <input onclick="switchBand(this)" type="radio" name="BandSelector" class="dk-radio-button" id="dk-rb1" checked="checked" ref_page_event="4 Band" autocomplete="off">
+                                    <label class="dk-radio-button-label active" for="dk-rb1">4 vòng</label>
+                                    <input onclick="switchBand(this)" type="radio" name="BandSelector" class="dk-radio-button" id="dk-rb2" ref_page_event="5 Band" autocomplete="off">
+                                    <label class="dk-radio-button-label" for="dk-rb2">5 vòng</label>
+                                    <input onclick="switchBand(this)" type="radio" name="BandSelector" class="dk-radio-button" id="dk-rb3" ref_page_event="6 Band" autocomplete="off">
+                                    <label class="dk-radio-button-label" for="dk-rb3">6 vòng</label>
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div id="4-band" class="tab-pane fade in active">
+                                    <div class="tab-pane-content">
+                                        <div class="calculator-col col-md-6 has-tab selectColor">
+                                            <h2 class="unit-title">Resistor Parameters</h2>
+                                            <span class="input-headline">Dải màu thứ 1</span>
+                                            <dl class="dropdown" id="firstband">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="firstband" style="display: none;">
+                                                        <li data-firstband-value="0" data-color="black">
+                                                            <div class="black color-item clearfix">
+                                                                Đen<span class="pull-right">0</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="1" data-color="brown">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">1</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="2" data-color="red">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">2</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="3" data-color="orange">
+                                                            <div class="orange color-item clearfix">
+                                                                Cam<span class="pull-right">3</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="4" data-color="yellow">
+                                                            <div class="yellow color-item clearfix">
+                                                                Vàng<span class="pull-right">4</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="5" data-color="green">
+                                                            <div class="green color-item clearfix">
+                                                                Xanh lá<span class="pull-right">5</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="6" data-color="blue">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">6</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="7" data-color="violet">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">7</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="8" data-color="grey">
+                                                            <div class="grey color-item clearfix">
+                                                                Xám<span class="pull-right">8</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-firstband-value="9" data-color="white">
+                                                            <div class="white color-item clearfix">
+                                                                White<span class="pull-right">9</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <span class="input-headline">Dải màu thứ 2</span>
+                                            <dl class="dropdown" id="secondband">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="secondband" style="display: none;">
+                                                        <li data-secondband-value="0" data-color="black">
+                                                            <div class="black color-item clearfix">
+                                                                Đen<span class="pull-right">0</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="1" data-color="brown">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">1</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="2" data-color="red">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">2</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="3" data-color="orange">
+                                                            <div class="orange color-item clearfix">
+                                                                Cam<span class="pull-right">3</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="4" data-color="yellow">
+                                                            <div class="yellow color-item clearfix">
+                                                                Vàng<span class="pull-right">4</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="5" data-color="green">
+                                                            <div class="green color-item clearfix">
+                                                                Xanh lá<span class="pull-right">5</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="6" data-color="blue">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">6</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="7" data-color="violet">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">7</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="8" data-color="grey">
+                                                            <div class="grey color-item clearfix">
+                                                                Xám<span class="pull-right">8</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-secondband-value="9" data-color="white">
+                                                            <div class="white color-item clearfix">
+                                                                White<span class="pull-right">9</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <span id="span-thirdband" class="input-headline" style="display: none;">Dải màu thứ 3</span>
+
+                                            <dl class="dropdown" id="thirdband" style="display: none;">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="thirdband" style="display: none;">
+                                                        <li data-thirdband-value="0" data-color="black">
+                                                            <div class="black color-item clearfix">
+                                                                Đen<span class="pull-right">0</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="1" data-color="brown">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">1</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="2" data-color="red">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">2</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="3" data-color="orange">
+                                                            <div class="orange color-item clearfix">
+                                                                Cam<span class="pull-right">3</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="4" data-color="yellow">
+                                                            <div class="yellow color-item clearfix">
+                                                                Vàng<span class="pull-right">4</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="5" data-color="green">
+                                                            <div class="green color-item clearfix">
+                                                                Xanh lá<span class="pull-right">5</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="6" data-color="blue">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">6</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="7" data-color="violet">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">7</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="8" data-color="grey">
+                                                            <div class="grey color-item clearfix">
+                                                                Xám<span class="pull-right">8</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-thirdband-value="9" data-color="white">
+                                                            <div class="white color-item clearfix">
+                                                                White<span class="pull-right">9</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <span class="input-headline">Hệ số nhân</span>
+                                            <dl class="dropdown" id="multiplier">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="multiplier" style="display: none;">
+                                                        <li data-color="black" data-multiplier-value="100">
+                                                            <div class="black color-item clearfix">
+                                                                Đen<span class="pull-right">×1 Ω</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="brown" data-multiplier-value="1000">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">×10 Ω</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="red" data-multiplier-value="10000">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">×100 Ω</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="orange" data-multiplier-value="100000">
+                                                            <div class="orange color-item clearfix">
+                                                                Cam<span class="pull-right">×1 kΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="yellow" data-multiplier-value="1000000">
+                                                            <div class="yellow color-item clearfix">
+                                                                Vàng<span class="pull-right">×10 kΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="green" data-multiplier-value="10000000">
+                                                            <div class="green color-item clearfix">
+                                                                Xanh lá<span class="pull-right">×100 kΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="blue" data-multiplier-value="100000000">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">×1 MΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="violet" data-multiplier-value="1000000000">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">×10 MΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="grey" data-multiplier-value="10000000000">
+                                                            <div class="grey color-item clearfix">
+                                                                Xám<span class="pull-right">×100 MΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="white" data-multiplier-value="100000000000">
+                                                            <div class="white color-item clearfix">
+                                                                White<span class="pull-right">×1 GΩ</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="gold" data-multiplier-value="10">
+                                                            <div class="gold color-item clearfix">
+                                                                Vàng kim<span class="pull-right">×0.1 Ω</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="silver" data-multiplier-value="1">
+                                                            <div class="silver color-item clearfix">
+                                                                Bạc<span class="pull-right">×0.01 Ω</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <span class="input-headline">Sai số</span>
+                                            <dl class="dropdown" id="tolerance">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="tolerance" style="display: none;">
+                                                        <li data-color="brown" data-tolerance-value="1%" data-tolerance-search="1">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">± 1%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="red" data-tolerance-value="2%" data-tolerance-search="4">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">± 2%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="green" data-tolerance-value=".5%" data-tolerance-search="355">
+                                                            <div class="green color-item clearfix">
+                                                                Xanh lá<span class="pull-right">± 0.5%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="blue" data-tolerance-value=".25%" data-tolerance-search="377">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">± 0.25%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="violet" data-tolerance-value=".10%" data-tolerance-search="370">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">± 0.1%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="grey" data-tolerance-value=".05%" data-tolerance-search="380">
+                                                            <div class="grey color-item clearfix">
+                                                                Xám<span class="pull-right">± 0.05%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="gold" data-tolerance-value="5%" data-tolerance-search="2">
+                                                            <div class="gold color-item clearfix">
+                                                                Vàng kim<span class="pull-right">± 5%</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="silver" data-tolerance-value="10%" data-tolerance-search="3">
+                                                            <div class="silver color-item clearfix">
+                                                                Bạc<span class="pull-right">± 10%</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <span id="span-ppm" class="input-headline" style="display: none;">PPM</span>
+                                            <dl class="dropdown" id="ppm" style="display: none;">
+                                                <dt>
+                                                    <div class="select-color">Chọn một màu</div>
+                                                    <div class="down-arrow">
+                                                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/icn-arrow-down.png?la=en-US&amp;ts=9fc26009-268f-49a5-957c-59ded0fbfd12">
+                                                    </div>
+                                                </dt>
+                                                <dd>
+                                                    <ul data-type="ppm" style="display: none;">
+                                                        <li data-color="brown" data-ppm-value="100ppm">
+                                                            <div class="brown color-item clearfix">
+                                                                Nâu<span class="pull-right">100 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="red" data-ppm-value="50ppm">
+                                                            <div class="red color-item clearfix">
+                                                                Đỏ<span class="pull-right">50 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="orange" data-ppm-value="15ppm">
+                                                            <div class="orange color-item clearfix">
+                                                                Cam<span class="pull-right">15 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="yellow" data-ppm-value="25ppm">
+                                                            <div class="yellow color-item clearfix">
+                                                                Vàng<span class="pull-right">25 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="blue" data-ppm-value="10ppm">
+                                                            <div class="blue color-item clearfix">
+                                                                Xanh dương<span class="pull-right">10 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                        <li data-color="violet" data-ppm-value="5ppm">
+                                                            <div class="violet color-item clearfix">
+                                                                Tím<span class="pull-right">5 ppm</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <div class="resistor-input">
+                                                <span class="input-headline">Giá trị trở kháng</span>
+                                                <div class="calculator-input">
+                                                    <input placeholder="Nhập giá trị..." name="resistor-input" id="resistor-input" type="number">
+                                                    <select id="resistance-currency" class="input-dropdown">
+                                                        <option value="1" title="Ohm" selected="selected">Ω
+
+                                                        </option><option value="1e3" title="KiloOhm">kΩ
+
+                                                        </option><option value="1e6" title="MegaOhm">MΩ
+
+                                                        </option><option value="1e9" title="GigaOhm">GΩ
+
+                                                    </option></select>
+                                                    <span class="error-invalid" style="display: none;">The entered value does not exist in *N
+                                                        band resistors</span>
+                                                </div>
+                                            </div>
+                                            <div class="search-btn-area">
+                                                
+                                                <input id="btn-clearSelection-calMod" type="button" value="Reset" class="button btn-normal">
+                                            </div>
+                                        </div>
+                                        <div class="calculator-col col-md-6">
+                                            <h2 class="section-title">Output</h2>
+                                            <div class="calc-output">
+                                                <div id="resistor-color-diagram">
+                                                    <img src="https://github.com/TCL47-GITHUB/tcl47-code/blob/main/tool/calculator-through-hole/res.jpg?raw=true">
+                                                    <div class="first-band">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                    <div class="second-band">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                    <div class="third-band" style="display: none;">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                    <div class="multiplier">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                    <div class="tolerance">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                    <div class="ppm" style="display: none;">
+                                                        <div class="value">-</div>
+                                                    </div>
+                                                </div>
+                                                <div class="resistor-specs">
+                                                    <h2>Giá trị điện trở: </h2>
+                                                    <span class="result"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+    
+</div>
+
+</div>    
     
 
-<!-- End Google Tag Manager -->
+    </div>
+</div>
+        </div>
+        
+      
 
-<script src="/assets/js/jquery/jquery.min.js?t=1681978247"></script>
+<script type="text/javascript" src="//www.digikey.com/-/media/Files/Marketing/Calculators/jquery360min.js?la=en-US&amp;ts=cf241c84-3d9e-40c0-9897-82230bea9425"></script>
 
-<script src="/themes/default/js/lodash.js?t=1681978247" type="text/javascript" language="javascript"></script>
-<script src="/themes/default/js/knockout-3.5.1.js?t=1681978247" type="text/javascript" language="javascript"></script>
-<script src="/themes/default/js/ConversionCalculators.js?t=1681978247" type="text/javascript" language="javascript"></script>
-<script type="text/javascript">
+<script type="text/javascript">$(".dropdown dt").click(function () {
+    $(".dropdown").find("ul").hide();
+    const container = $(this).closest("dl");
+    $(container).find("ul").toggle();
+});
+let sessionppmValSearch, sessionFirstbandColor, sessionSecondbandColor, sessionThirdbandColor,
+    sessionMultiplierColor, sessionToleranceColor, sessionPpmColor, sessionClickedTabBand, sessionIsAscending, sessionSortField,
+    sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, sessionppmVal, sessionLimit,
+    sessionResistorVal, sessionResistanceCurrency, sessionComboboxVal;
+let clickedTabBand = "dk-rb1",
+    firstbandVal = "-1",
+    secondbandVal = "-1",
+    thirdbandVal = "-1",
+    multiplierVal = "-1",
+    toleranceVal = "-1",
+    ppmVal = "-1",
+    toleranceSearchVal = "-1",
+    is6Band = "false",
+    resistorVal = "-1",
+    resistanceCurrency = "Ohm",
+    comboboxVal = "",
+    isChangeCurrency = "false",
+    errorMessage = "",
+    defaultColorBand = "Chọn một màu"
+    page_sub_type = "RC4";
 
-        var lblMultiplier3rd = $.parseHTML('Hệ số nh&#226;n (Dải thứ 3)')[0].textContent;
-        var lblMultiplier4th = $.parseHTML('Hệ số nh&#226;n (Dải thứ 4)')[0].textContent;
-        var lblTolerance4th = $.parseHTML('Dung sai (Dải thứ 4)')[0].textContent;
-        var lblTolerance55th = $.parseHTML('Dung sai (Dải thứ 5)')[0].textContent;
 
-        var noMatchingProducts = $.parseHTML('Kh&#244;ng c&#243; sản phẩm ph&#249; hợp để hiển thị.')[0].textContent;
+let toleranceBandColor;
+$(document).ready(function () {
+    listCategoriesLinks();
+    // Check #recommended-products-wrap-id exist
+    if ($('#recommended-products-wrap-id').length > 0) {
+        var widthRelated = document.getElementById('recommended-products-wrap-id').getBoundingClientRect().width;
+        $(".search-result-table").css("maxWidth", (widthRelated + "px"));
+        $(window).resize(function () {
+            widthRelated = document.getElementById('recommended-products-wrap-id').getBoundingClientRect().width;
+            $(".search-result-table").css("maxWidth", (widthRelated + "px"));
+        });
+    }
+    defaultColorBand = $("#firstband .select-color").text();
+    errorMessage = $(".error-invalid").html()
+    sessionStorage.setItem('isChangeCurrency', isChangeCurrency)
+    comboboxVal = Number($("#resistance-currency").find("option:selected").val());
+    sessionStorage.setItem('comboboxVal', comboboxVal)
+    sessionStorage.setItem('resistanceCurrency', resistanceCurrency)
+    $("#dk-rb1").attr("autocomplete", "off");
+    $("#dk-rb2").attr("autocomplete", "off");
+    $("#dk-rb3").attr("autocomplete", "off");
+    //Get all session storage band value
+    sessionFirstbandColor = sessionStorage.getItem("firstbandColor");
+    sessionSecondbandColor = sessionStorage.getItem("secondbandColor");
+    sessionThirdbandColor = sessionStorage.getItem("thirdbandColor");
+    sessionMultiplierColor = sessionStorage.getItem("multiplierColor");
+    sessionToleranceColor = sessionStorage.getItem("toleranceColor");
+    sessionPpmColor = sessionStorage.getItem("ppmColor");
+    sessionClickedTabBand = sessionStorage.getItem("clickedTabBand");
+    sessionSearchButtonIsClicked = sessionStorage.getItem("searchButtonIsClicked");
+    sessionResSearch = sessionStorage.getItem("resSearch");
+    sessionToleranceValSearch = sessionStorage.getItem("toleranceValSearch");
+    sessionResSearchEncode = sessionStorage.getItem("resSearchEncode");
+    sessionResDisplay = sessionStorage.getItem("resDisplay");
+    sessionppmValSearch = sessionStorage.getItem("ppmValSearch");
+    sessionKeySearch = sessionStorage.getItem("keySearch");
+    sessionFirstbandVal = sessionStorage.getItem("firstbandVal");
+    sessionSecondbandval = sessionStorage.getItem("secondbandVal");
+    sessionThirdbandVal = sessionStorage.getItem("thirdbandVal");
+    sessionMultiplierVal = sessionStorage.getItem("multiplierVal");
+    sessionToleranceVal = sessionStorage.getItem("toleranceVal");
+    sessionppmVal = sessionStorage.getItem("ppmVal");
+    sessionResistorVal = sessionStorage.getItem("resistorVal");
+    sessionResistanceCurrency = sessionStorage.getItem("resistanceCurrency");
+    // Check haven't sort table
+    if (sessionStorage.getItem("isAscending") == "true") {
+        sessionIsAscending = true;
+    } else {
+        sessionIsAscending = false;
+    }
+    // Get item limit
+    if (sessionStorage.getItem("limit") == null) {
+        sessionLimit = 10;
+    } else {
+        sessionLimit = parseInt(sessionStorage.getItem("limit"));
+    }
+    // Default sort by ManufacturerPartNumber
+    if (sessionStorage.getItem("sortField") == null) {
+        sessionSortField = "1000009";
+    } else {
+        sessionSortField = sessionStorage.getItem("sortField");
+    }
+    // Check haven't click page
+    if (sessionStorage.getItem("indexPage") == null) {
+        sessionIndexPage = 0;
+    } else {
+        sessionIndexPage = parseInt(sessionStorage.getItem("indexPage"));
+    }
+    //Check to see if the page is refreshed or not, if it's refreshed, clear all selection
+    // If not then load session seleted previous
+    if (performance.navigation.type == performance.navigation.TYPE_BACK_FORWARD) {
+        // Back from forward and search button was clicked
+        if (sessionSearchButtonIsClicked != null) {
+            setRelatedToolPosition();
+            // Check what tab is previously selected
+            switch (sessionSearchButtonIsClicked) {
+                case "6":
+                    $("#dk-rb3").attr("checked", true);
 
-        var digitOptions = [
-            { text: $.parseHTML('Chọn một m&#224;u')[0].textContent, enUsText: 'None', index: -1, value: -1 },
-            { text: $.parseHTML('Đen (0)')[0].textContent, enUsText: 'Black (0)', index: 0, value: 0 },
-            { text: $.parseHTML('N&#226;u (1)')[0].textContent, enUsText: 'Brown (1)', index: 1, value: 1 }, 
-            { text: $.parseHTML('Đỏ (2)')[0].textContent, enUsText: 'Red (2)', index: 2, value: 2 },
-            { text: $.parseHTML('Cam (3)')[0].textContent, enUsText: 'Orange (3)', index: 3, value: 3 }, 
-            { text: $.parseHTML('V&#224;ng (4)')[0].textContent, enUsText: 'Yellow (4)', index: 4, value: 4 }, 
-            { text: $.parseHTML('Xanh l&#225; (5)')[0].textContent, enUsText: 'Green (5)', index: 5, value: 5 }, 
-            { text: $.parseHTML('Xanh dương (6)')[0].textContent, enUsText: 'Blue (6)', index: 6, value: 6 }, 
-            { text: $.parseHTML('T&#237;m (7)')[0].textContent, enUsText: 'Violet (7)', index: 7, value: 7 }, 
-            { text: $.parseHTML('X&#225;m (8)')[0].textContent, enUsText: 'Grey (8)', index: 8, value: 8 },
-            { text: $.parseHTML('Trắng (9)')[0].textContent, enUsText: 'White (9)', index: 9, value: 9 }
-        ];
+                    $(".headline-4band").hide();
+                    $(".headline-5band").hide();
+                    $(".headline-6band").show();
 
-        var multiplierOptions = [
-            { text: $.parseHTML('Chọn một m&#224;u')[0].textContent, enUsText: 'None', index: -1, value: -1 },
-            { text: $.parseHTML('Bạc (0.01 Ω)')[0].textContent, enUsText: 'Silver (0.01 Ω)', index: 11, value: 1e-2 },
-            { text: $.parseHTML('V&#224;ng kim (0.1 Ω)')[0].textContent, enUsText: 'Gold (0.1 Ω)', index: 10, value: 1e-1 },
-            { text: $.parseHTML('Đen (1 Ω)')[0].textContent, enUsText: 'Black (1 Ω)', index: 0, value: 1e0 },
-            { text: $.parseHTML('N&#226;u (10 Ω)')[0].textContent, enUsText: 'Brown (10 Ω)', index: 1, value: 1e1 },
-            { text: $.parseHTML('Đỏ (100 Ω)')[0].textContent, enUsText: 'Red (100 Ω)', index: 2, value: 1e2 },
-            { text: $.parseHTML('Cam (1K Ω)')[0].textContent, enUsText: 'Orange (1K Ω)', index: 3, value: 1e3 },
-            { text: $.parseHTML('V&#224;ng (10K Ω)')[0].textContent, enUsText: 'Yellow (10K Ω)', index: 4, value: 1e4 },
-            { text: $.parseHTML('Xanh l&#225; (100K Ω)')[0].textContent, enUsText: 'Green (100K Ω)', index: 5, value: 1e5 },
-            { text: $.parseHTML('Xanh dương (1M Ω)')[0].textContent, enUsText: 'Blue (1M Ω)', index: 6, value: 1e6 },
-            { text: $.parseHTML('T&#237;m (10M Ω)')[0].textContent, enUsText: 'Violet (10M Ω)', index: 7, value: 1e7 }
-        ];
+                    $("#span-thirdband").show();
+                    $("#thirdband").show();
+                    $("#span-ppm").show();
+                    $("#ppm").show();
 
-        var toleranceOptions = [
-            { text: $.parseHTML('Chọn một m&#224;u')[0].textContent, enUsText: 'None', index: -1, value: -1 },
-            { text: $.parseHTML('Bạc (&#177; 10%)')[0].textContent, enUsText: 'Silver (± 10%)', index: 11, value: 0.1 },
-            { text: $.parseHTML('V&#224;ng kim (&#177; 5%)')[0].textContent, enUsText: 'Gold (± 5%)', index: 10, value: 0.05 },
-            { text: $.parseHTML('N&#226;u (&#177; 1%)')[0].textContent, enUsText: 'Brown (± 1%)', index: 1, value: 0.01 },
-            { text: $.parseHTML('Đỏ (&#177; 2%)')[0].textContent, enUsText: 'Red (± 2%)', index: 2, value: 0.02 },
-            { text: $.parseHTML('Xanh l&#225; (&#177; 0.5%)')[0].textContent, enUsText: 'Green (± 0.5%)', index: 5, value: 0.005 },
-            { text: $.parseHTML('Xanh dương (&#177; 0.25%)')[0].textContent, enUsText: 'Blue (± 0.25%)', index: 6, value: 0.0025 },
-            { text: $.parseHTML('T&#237;m (&#177; 0.1%)')[0].textContent, enUsText: 'Violet (± 0.1%)', index: 7, value: 0.001 }
-        ];
+                    $(".third-band").show();
+                    $(".ppm").show();
+                    // Set value click 6band is true
+                    is6Band = "true";
+                    clickedTabBand = "dk-rb3"
+                    calculate(6, sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, sessionppmVal);
+                    break;
+                case "5":
+                    $("#dk-rb2").attr("checked", true);
 
-        var ppmOptions = [
-            { text: $.parseHTML('Chọn một m&#224;u')[0].textContent, enUsText: 'None', index: -1, value: -1 },
-            { text: $.parseHTML('N&#226;u (100 ppm)')[0].textContent, enUsText: 'Brown (100 ppm)', index: 1, value: 100 },
-            { text: $.parseHTML('Đỏ (50 ppm)')[0].textContent, enUsText: 'Red (50 ppm)', index: 2, value: 50 },
-            { text: $.parseHTML('Cam (15 ppm)')[0].textContent, enUsText: 'Orange (15 ppm)', index: 3, value: 15 },
-            { text: $.parseHTML('V&#224;ng (25 ppm)')[0].textContent, enUsText: 'Yellow (25 ppm)', index: 4, value: 25 }
-        ]; 
+                    $(".headline-4band").hide();
+                    $(".headline-5band").show();
+                    $(".headline-6band").hide();
+
+                    $("#span-thirdband").show();
+                    $("#thirdband").show();
+                    $("#span-ppm").hide();
+
+                    $("#ppm").hide();
+
+                    $(".third-band").show();
+                    $(".ppm").hide();
+                    $("#resistor-color-diagram .tolerance-6b").removeClass().addClass('tolerance ' + toleranceBandColor);
+                    // Set value click 6band is false
+                    is6Band = "false";
+                    clickedTabBand = "dk-rb2"
+                    calculate(5, sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, "");
+                    break;
+                default:
+                    $("#dk-rb1").attr("checked", true);
+
+                    $(".headline-4band").show();
+                    $(".headline-5band").hide();
+                    $(".headline-6band").hide();
+                    $("#span-thirdband").hide();
+                    $("#thirdband").hide();
+                    $("#span-ppm").hide();
+                    $("#ppm").hide();
+
+                    $(".third-band").hide();
+                    $(".ppm").hide();
+                    $("#resistor-color-diagram .tolerance-6b").removeClass().addClass('tolerance ' + toleranceBandColor);
+                    // Set value click 6band is false
+                    is6Band = "false";
+                    clickedTabBand = "dk-rb1"
+                    calculate(4, sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, "");
+            }
+            // Call search API to get data
+            clickButtonSearchCatalog(sessionIndexPage, sessionLimit, sessionKeySearch, sessionResSearch, sessionToleranceValSearch, sessionResSearchEncode, sessionIsAscending, sessionSortField, sessionppmValSearch, is6Band);
+
+            // Show resistor value on text
+            $('.result').text(sessionResDisplay);
+
+            // Back from forward and search button don't click
+        } else {
+            // Check what tab is previously selected
+            switch (sessionClickedTabBand) {
+                case "6":
+                    $("#dk-rb3").attr("checked", true);
+                    switchBand($("#dk-rb3")[0]);
+                    break;
+                case "5":
+                    $("#dk-rb2").attr("checked", true);
+                    switchBand($("#dk-rb2")[0]);
+                    break;
+                default:
+                    $("#dk-rb1").attr("checked", true);
+                    switchBand($("#dk-rb1")[0]);
+            }
+
+            // Calculate resistor value
+            if (sessionFirstbandVal !== null && sessionSecondbandval !== null && sessionMultiplierVal !== null && sessionToleranceVal !== null && sessionClickedTabBand === "4") {
+                calculate(4, sessionFirstbandVal, sessionSecondbandval, 0, sessionMultiplierVal, sessionToleranceVal, "");
+            } else if (sessionFirstbandVal !== null && sessionSecondbandval !== null && sessionThirdbandVal !== null && sessionMultiplierVal !== null && sessionToleranceVal !== null && sessionClickedTabBand === "5") {
+                calculate(5, sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, "");
+            } else if (sessionFirstbandVal !== null && sessionSecondbandval !== null && sessionThirdbandVal !== null && sessionMultiplierVal !== null && sessionToleranceVal !== null && sessionppmVal !== null && sessionClickedTabBand === "6") {
+                calculate(6, sessionFirstbandVal, sessionSecondbandval, sessionThirdbandVal, sessionMultiplierVal, sessionToleranceVal, sessionppmVal);
+            }
+        }
+        //Apply all the stored selection
+        if (sessionFirstbandColor !== null)
+            applyCachedAttribute("firstband", "data-firstband-value", sessionFirstbandColor);
+        if (sessionSecondbandColor !== null)
+            applyCachedAttribute("secondband", "data-secondband-value", sessionSecondbandColor);
+        if (sessionThirdbandColor != null)
+            applyCachedAttribute("thirdband", "data-thirdband-value", sessionThirdbandColor);
+        if (sessionMultiplierColor !== null)
+            applyCachedAttribute("multiplier", "data-multiplier-value", sessionMultiplierColor);
+        if (sessionToleranceColor !== null)
+            applyCachedAttribute("tolerance", "data-tolerance-value", sessionToleranceColor);
+        if (sessionPpmColor != null)
+            applyCachedAttribute("ppm", "data-ppm-value", sessionPpmColor);
+
+        // Scroll top
+        $('html, body').animate({ scrollTop: 0 }, "slow");
+    } else {
+        cleanSelection();
+        //Switch to 4 band tab
+        $("#dk-rb1").attr("checked", true);
+        switchBand($("#dk-rb1")[0]);
+    }
+
+    $(".sponsored-content-wrap .mt-1").on('click', 'a', function (event) {
+        LinkClickedPushToGTM(event, 'Click Supplier Logo');
+    });
+
+    $("#recommended-products-wrap-id").on('click', 'a', function (event) {
+        LinkClickedPushToGTM(event, 'Select Related Products');
+    });
+
+    $(document).on('click', '#related-tool-container a', function (event) {
+        LinkClickedPushToGTM(event, 'Link to Related Tools');
+    });
+});
+
+// Close modal choose per page
+$(document).mouseup(function (e) {
+    var container = $(".pagination-modal");
+    // if the target of the click isn't the container nor a descendant of the container
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+    }
+});
+
+// Scrollbar top
+$(window).on('load', function () {
+    $('html, body').animate({ scrollTop: 0 }, "slow");
+})
+
+//Apply cached attribute to the band value selector and resistor color diagram
+function applyCachedAttribute(selectedBandLabel, valueAttribute, colorAttribute) {
+    const selectedBandList = $("dd").find("[data-type = '" + selectedBandLabel + "']");
+    const selectedBand = selectedBandList.find("[data-color ='" + colorAttribute + "']");
+
+    var color = selectedBand.attr("data-color");
+    var value = selectedBand.find('span.pull-right').text();
+    var bandValue = selectedBand.attr(valueAttribute);
+
+    whichDrop = selectedBand.closest("dl").prop("id");
+    var container = $('#resistor-color-diagram');
+
+    //Add color to resitor color diagram
+    if (whichDrop == "firstband") {
+        container.find('.first-band').removeClass().addClass('first-band ' + color).find('.value').text(value);
+        firstbandVal = bandValue;
+    } else if (whichDrop == "secondband") {
+        container.find('.second-band').removeClass().addClass('second-band ' + color).find('.value').text(value);
+        secondbandVal = bandValue;
+    } else if (whichDrop == "thirdband") {
+        container.find('.third-band').removeClass().addClass('third-band ' + color).find('.value').text(value);
+        thirdbandVal = bandValue;
+    } else if (whichDrop == "multiplier") {
+        container.find('.multiplier').removeClass().addClass('multiplier ' + color).find('.value').text(value);
+        multiplierVal = bandValue;
+    } else if (whichDrop == "tolerance") {
+        // Check if click tab 6 band then change class tolerance to tolerance-6b
+        if (clickedTabBand === "dk-rb3") {
+            container.find('.tolerance-6b').removeClass().addClass('tolerance-6b ' + color).find('.value').text(value);
+        } else {
+            container.find('.tolerance').removeClass().addClass('tolerance ' + color).find('.value').text(value);
+        }
+        toleranceVal = bandValue;
+    } else if (whichDrop == "ppm") {
+        container.find('.ppm').removeClass().addClass('ppm ' + color).find('.value').text(value);
+        ppmVal = bandValue;
+    }
+
+    // Set selected with cached attribute
+    const selector = selectedBand.closest("dl").find("dt .select-color");
+    if (!$(selector).hasClass("selected")) {
+        $(selector).addClass("selected");
+    }
+
+    $(selector).html(selectedBand.html());
+    selectedBand.parent().hide();
+}
+
+$(".dropdown dd ul li").click(function () {
+    whichDrop = $(this).closest("dl").prop("id");
+    var calctype_active = $('ul.calc-type > li.active > a').attr('data-target');
+    var color = $(this).attr("data-color");
+    var value = $(this).find('span.pull-right').text();
+    var container = $('#resistor-color-diagram');
+    if (whichDrop == "firstband") {
+        firstbandVal = $(this).attr("data-firstband-value");
+        sessionStorage.setItem("firstbandColor", color);
+        sessionStorage.setItem("firstbandVal", firstbandVal);
+        container.find('.first-band').removeClass().addClass('first-band ' + color).find('.value').text(value);
+    } else if (whichDrop == "secondband") {
+        secondbandVal = $(this).attr("data-secondband-value");
+        sessionStorage.setItem("secondbandColor", color);
+        sessionStorage.setItem("secondbandVal", secondbandVal);
+        container.find('.second-band').removeClass().addClass('second-band ' + color).find('.value').text(value);
+    } else if (whichDrop == "thirdband") {
+        thirdbandVal = $(this).attr("data-thirdband-value");
+        sessionStorage.setItem("thirdbandColor", color);
+        sessionStorage.setItem("thirdbandVal", thirdbandVal);
+        container.find('.third-band').removeClass().addClass('third-band ' + color).find('.value').text(value);
+    } else if (whichDrop == "multiplier") {
+        multiplierVal = $(this).attr("data-multiplier-value");
+        sessionStorage.setItem("multiplierColor", color);
+        sessionStorage.setItem("multiplierVal", String(multiplierVal));
+        container.find('.multiplier').removeClass().addClass('multiplier ' + color).find('.value').text(value);
+    } else if (whichDrop == "tolerance") {
+        toleranceVal = parseFloat($(this).attr("data-tolerance-value")).toString() + "%";
+        toleranceBandColor = $("ul").find("[data-tolerance-value='" + toleranceVal + "']").attr("data-color");
+        sessionStorage.setItem("toleranceColor", color);
+        sessionStorage.setItem("toleranceVal", toleranceVal);
+        toleranceSearchVal = $(this).attr("data-tolerance-search");
+
+        // Check if click tab 6 band then change class tolerance to tolerance-6b
+        if (clickedTabBand === "dk-rb3") {
+            container.find('.tolerance-6b').removeClass().addClass('tolerance-6b ' + color).find('.value').text(value);
+        } else {
+            container.find('.tolerance').removeClass().addClass('tolerance ' + color).find('.value').text(value);
+        }
+    } else if (whichDrop == "ppm") {
+        ppmVal = $(this).attr("data-ppm-value");
+        sessionStorage.setItem("ppmColor", color);
+        sessionStorage.setItem("ppmVal", ppmVal);
+        container.find('.ppm').removeClass().addClass('ppm ' + color).find('.value').text(value);
+    }
+    // case not language english 
+    if (!$(".resistor-input")[0]) {
+        const selector = $(this).closest("dl").find("dt .select-color");
+        if (!$(selector).hasClass("selected")) {
+            $(selector).addClass("selected");
+        }
+        $(selector).html($(this).html());
+        $(this).parent().hide();
+        if (firstbandVal && secondbandVal && multiplierVal && toleranceVal) {
+            if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb1") {
+                calculate(4, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+                // calculateResistorParameters(4,finalval);
+            } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb2") {
+                calculate(5, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+                // calculateResistorParameters(5,finalval);
+            } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && ppmVal !== "-1" && clickedTabBand === "dk-rb3") {
+                calculate(6, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, ppmVal);
+                // calculateResistorParameters(6,finalval);
+            }
+        }
+    } else {
+        var finalval = "";
+        if (whichDrop !== "tolerance") {
+            var resistorInput = "";
+            if (sessionResistanceCurrency === "Ohm") {
+                if (sessionClickedTabBand === "4") {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else {
+                            resistorInput += multiplierVal.replace("100", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                } else {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (thirdbandVal && thirdbandVal !== "-1") {
+                        resistorInput += thirdbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else {
+                            resistorInput += multiplierVal.replace("100", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1") || (thirdbandVal && thirdbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                }
+                finalval = String(Number($("#resistor-input").val()))
+            } else if (sessionResistanceCurrency === "KiloOhm") {
+                sessionStorage.setItem('isChangeCurrency', "true")
+                if (sessionClickedTabBand === "4") {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "100000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                } else {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (thirdbandVal && thirdbandVal !== "-1") {
+                        resistorInput += thirdbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "100000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1") || (thirdbandVal && thirdbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                }
+                finalval = String(Number($("#resistor-input").val()) * 1000)
+            } else if (sessionResistanceCurrency === "MegaOhm") {
+                sessionStorage.setItem('isChangeCurrency', "true")
+                if (sessionClickedTabBand === "4") {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100000") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10000") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.000001).toFixed(6))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.0000001).toFixed(7))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.00000001).toFixed(7))
+                        } else if (multiplierVal === "100000000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                } else {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (thirdbandVal && thirdbandVal !== "-1") {
+                        resistorInput += thirdbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100000") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10000") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.000001).toFixed(6))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.0000001).toFixed(7))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.00000001).toFixed(8))
+                        } else if (multiplierVal === "100000000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1") || (thirdbandVal && thirdbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                }
+                finalval = String(Number($("#resistor-input").val()) * 1000000)
+            } else if (sessionResistanceCurrency === "GigaOhm") {
+                sessionStorage.setItem('isChangeCurrency', "true")
+                if (sessionClickedTabBand === "4") {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000000000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000000000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100000000") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10000000") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1000000") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "10000") {
+                            resistorInput = String((Number(resistorInput) * 0.000001).toFixed(6))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.0000001).toFixed(7))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.00000001).toFixed(8))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.000000001).toFixed(9))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.0000000001).toFixed(10))
+                        } else if (multiplierVal === "100000000000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000000000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                } else {
+                    if (firstbandVal && firstbandVal !== "-1") {
+                        resistorInput += firstbandVal;
+                    }
+                    if (secondbandVal && secondbandVal !== "-1") {
+                        resistorInput += secondbandVal;
+                    }
+                    if (thirdbandVal && thirdbandVal !== "-1") {
+                        resistorInput += thirdbandVal;
+                    }
+                    if (multiplierVal && multiplierVal !== "-1") {
+                        if (multiplierVal === "10000000000") {
+                            resistorInput = String((Number(resistorInput) * 0.1).toFixed(1))
+                        } else if (multiplierVal === "1000000000") {
+                            resistorInput = String((Number(resistorInput) * 0.01).toFixed(2))
+                        } else if (multiplierVal === "100000000") {
+                            resistorInput = String((Number(resistorInput) * 0.001).toFixed(3))
+                        } else if (multiplierVal === "10000000") {
+                            resistorInput = String((Number(resistorInput) * 0.0001).toFixed(4))
+                        } else if (multiplierVal === "1000000") {
+                            resistorInput = String((Number(resistorInput) * 0.00001).toFixed(5))
+                        } else if (multiplierVal === "100000") {
+                            resistorInput = String((Number(resistorInput) * 0.000001).toFixed(6))
+                        } else if (multiplierVal === "1000") {
+                            resistorInput = String((Number(resistorInput) * 0.0000001).toFixed(7))
+                        } else if (multiplierVal === "100") {
+                            resistorInput = String((Number(resistorInput) * 0.00000001).toFixed(8))
+                        } else if (multiplierVal === "10") {
+                            resistorInput = String((Number(resistorInput) * 0.000000001).toFixed(9))
+                        } else if (multiplierVal === "1") {
+                            resistorInput = String((Number(resistorInput) * 0.0000000001).toFixed(10))
+                        } else if (multiplierVal === "100000000000") {
+                        } else {
+                            resistorInput += multiplierVal.replace("1000000000", "");
+                        }
+                    }
+                    if ((firstbandVal && firstbandVal !== "-1") || (secondbandVal && secondbandVal !== "-1") || (thirdbandVal && thirdbandVal !== "-1")) {
+                        $("#resistor-input").val(String(Number(resistorInput)));
+                    }
+                }
+                finalval = String(Number($("#resistor-input").val()) * 1000000000)
+            }
+        } else {
+            finalval = $("#resistor-input").val();
+        }
+
+        const selector = $(this).closest("dl").find("dt .select-color");
+        if (!$(selector).hasClass("selected")) {
+            $(selector).addClass("selected");
+        }
+        $(selector).html($(this).html());
+        $(this).parent().hide();
+        firstbandVal = sessionStorage.getItem("firstbandVal");
+        secondbandVal = sessionStorage.getItem("secondbandVal");
+        thirdbandVal = sessionStorage.getItem("thirdbandVal");
+        multiplierVal = sessionStorage.getItem("multiplierVal");
+        toleranceVal = sessionStorage.getItem("toleranceVal");
+        if (firstbandVal && secondbandVal && multiplierVal && toleranceVal) {
+            if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb1") {
+                calculate(4, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+                // calculateResistorParameters(4,finalval);
+            } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb2") {
+                calculate(5, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+                // calculateResistorParameters(5,finalval);
+
+            } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && ppmVal !== "-1" && clickedTabBand === "dk-rb3") {
+                calculate(6, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, ppmVal);
+                // calculateResistorParameters(6,finalval);
+            }
+        } else if ($(".error-invalid").is(":visible")) {
+            if (finalval !== "") {
+                calculateResistorParameters(4, finalval);
+            }
+        }
+    }
+
+
+});
+
+var mult, resDisplay, resSearch, resSearchEncode, res, toleranceValSearch, ppmValSearch
+
+// Calculate Resistance and Tolerance
+function calculate(band, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, ppmVal) {
+    var calctype = $('ul.calc-type > li.active > a').attr('data-target');
+    if (band == 4) {
+        res = ((100 * firstbandVal) + (10 * secondbandVal)) * multiplierVal / 1000;
+    } else {
+        res = ((1000 * firstbandVal) + (100 * secondbandVal) + (10 * thirdbandVal)) * multiplierVal / 1000;
+    }
+
+    if (res >= 1e9) {
+        res /= 1e9;
+        mult = "G";
+    } else if (res >= 1e6) {
+        res /= 1e6;
+        mult = "M";
+    } else if (res >= 1e3) {
+        res /= 1e3;
+        mult = "k";
+    } else {
+        mult = "";
+    }
+
+    resDisplay = res + mult + " Ohms";
+    resSearch = res + " " + mult + "Ohms";
+    resSearchEncode = res + mult + "Ohms" + " ";
+
+    toleranceValSearch = "±" + toleranceVal;
+
+    if (band === 6) {
+        resDisplay += " " + toleranceVal + " " + ppmVal;
+        ppmValSearch = ppmVal + "/°C";
+    } else {
+        resDisplay += " " + toleranceVal
+    }
+
+    // Show resistor value on text
+    $('.result').text(resDisplay);
+}
+
+$(document).click(function (e) {
+    if ($(e.target).closest("dt").length == 0 && e.target.tagName !== 'DT') {
+        $(".dropdown ul").hide();
+    }
+});
+
+$(".dropdown img.color").addClass("colorvisibility");
+$(".dropdown img.color").toggleClass("colorvisibility");
+
+$(function () {
+    // Custom modal
+    $('.modal-image').on('click', function () {
+        location.hash = '#modal';
+        $('body').addClass('overflow-hidden');
+        $('#imageModal').addClass('open-modal');
+        $('#the-img-modal').attr('src', $(this).attr('src'));
+        $('#caption').text(this.alt);
+    });
+
+    // Close the modal
+    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
+        history.replaceState({}, document.title, window.location.href.split('#')[0]);
+        $('body').removeClass('overflow-hidden');
+        $('#imageModal').removeClass('open-modal');
+
+        document.body.style.zoom = "100%";
+    });
+
+    $('#btn-instructions').on('click', function () {
+        location.hash = '#modal';
+        $('body').addClass('overflow-hidden');
+        $('#instructionsModal').addClass('open-modal');
+        $('#caption').text(this.alt);
+    });
+
+    // Close the modal
+    $('#instructionsModal').on('click', function () {
+        history.replaceState({}, document.title, window.location.href.split('#')[0]);
+        $('body').removeClass('overflow-hidden');
+        $('#instructionsModal').removeClass('open-modal');
+    });
+
+    $.getScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js");
+});
+
+// Set default value for bands
+function setDefaultValueBand() {
+    firstbandVal = "-1";
+    secondbandVal = "-1";
+    thirdbandVal = "-1";
+    multiplierVal = "-1";
+    toleranceVal = "-1";
+    toleranceSearchVal = "-1";
+    ppmVal = "-1";
+}
+// On Change Currency Resistance
+function onChangeUnitCombobox() {
+    // Set title for unit combobox selected
+    if ($(this).hasClass("input-dropdown")) {
+        var title = $(this).find("option:selected").attr("title");
+        $(this).attr("title", title);
+    }
+    sessionResistanceCurrency = title
+    let oldResistanceComboboxVal = Number(sessionStorage.getItem("comboboxVal"));
+    // Get value combobox
+    let newResistanceComboboxVal = parseFloat($(this).find("option:selected").val());
+    // Get value of resistance
+    let resistanceInput = Number($("#resistor-input").val());
+    if (newResistanceComboboxVal) {
+        // Conversion rate
+        let Rate = "";
+        // Avoiding Problems with Decimal Math in JavaScript
+        if (oldResistanceComboboxVal < newResistanceComboboxVal) {
+            resistanceVal = Number((resistanceInput * newResistanceComboboxVal).toFixed(10));
+        }
+        else {
+            resistanceVal = Number((resistanceInput * newResistanceComboboxVal).toFixed(2));
+        }
+
+        // Avoiding Problems with Decimal Math in JavaScript
+        // Calculate resistance value
+
+        var band = Number(sessionStorage.getItem("clickedTabBand"));
+        if ($("#resistor-input").val() !== "") {
+            sessionStorage.setItem('isChangeCurrency', "true")
+            calculateResistorParameters(band, resistanceVal.toString())
+        }
+        // Set value backup for combobox
+        sessionStorage.setItem('comboboxVal', newResistanceComboboxVal.toString())
+    } else {
+
+        // Set value backup for combobox
+        sessionStorage.setItem('comboboxVal', newResistanceComboboxVal.toString())
+    }
+
+}
+// Switch between bands
+function switchBand(clickedTab) {
+    // Get current CurrencyType
+    var CurrencyVal = Number(sessionStorage.getItem("comboboxVal"));
+    // Clear old result
+    $(".result").html("");
+    // Show result when click switch bands
+    if (sessionStorage.getItem("searchButtonIsClicked") != null) {
+        $(".search-mod").show();
+        if ($('#primary-search').length > 0) {
+            document.getElementById("primary-search").style.display = "none";
+        }
+        setRelatedToolPosition();
+    } else {
+        $(".search-mod").hide();
+    }
+
+    // Get id of band
+    clickedTabBand = clickedTab.id;
+    switch (clickedTabBand) {
+        case "dk-rb3":
+            page_sub_type = "RC6";
+            $('.calcType label').removeClass("active");
+            $('.calcType label[for="dk-rb3"]').addClass("active");
+
+            sessionStorage.setItem("clickedTabBand", "6");
+            toleranceBandColor = sessionStorage.getItem("toleranceColor")
+
+            $(".headline-4band").hide();
+            $(".headline-5band").hide();
+            $(".headline-6band").show();
+
+            $("#span-thirdband").show();
+            $("#thirdband").show();
+            $("#span-ppm").show();
+            $("#ppm").show();
+
+            $(".third-band").show();
+            $(".ppm").show();
+
+            // Set value click 6band is true
+            is6Band = "true";
+            // Changed style ppm band
+            $("#resistor-color-diagram .tolerance").removeClass().addClass('tolerance-6b ' + toleranceBandColor);
+
+            sessionClickedTabBand = sessionStorage.getItem("clickedTabBand");
+
+            if ($("#resistor-input").val().length > 3 && !$("#resistor-input").val().includes(".")) {
+                temp = $("#resistor-input").val().slice(3);
+                if (!temp.match(/^0+$/)) {
+                    showErrorInvalidCode();
+                    return
+                }
+            }
+            if (firstbandVal && secondbandVal && thirdbandVal && multiplierVal && toleranceVal) {
+                if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && ppmVal !== "-1")
+                    calculate(6, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, ppmVal);
+            }
+            if ($("#resistor-input").val() !== "" && (thirdbandVal && thirdbandVal !== "-1")) {
+                var res = ((1000 * firstbandVal) + (100 * secondbandVal) + (10 * thirdbandVal)) * multiplierVal / 1000;
+                if (CurrencyVal === 1) {
+                    $("#resistor-input").val(res)
+                } else {
+                    $("#resistor-input").val(res / CurrencyVal)
+                }
+            }
+            if ($(".error-invalid").is(":visible")) {
+                calculateResistorParameters(6, $("#resistor-input").val())
+            }
+            break;
+        case "dk-rb2":
+            page_sub_type = "RC5"
+            $('.calcType label').removeClass("active");
+            $('.calcType label[for="dk-rb2"]').addClass("active");
+
+            sessionStorage.setItem("clickedTabBand", "5");
+            toleranceBandColor = sessionStorage.getItem("toleranceColor")
+
+            $(".headline-4band").hide();
+            $(".headline-5band").show();
+            $(".headline-6band").hide();
+
+            $("#span-thirdband").show();
+            $("#thirdband").show();
+            $("#span-ppm").hide();
+
+            $("#ppm").hide();
+
+            $(".third-band").show();
+            $(".ppm").hide();
+            $("#resistor-color-diagram .tolerance-6b").removeClass().addClass('tolerance ' + toleranceBandColor);
+            // Set value click 6band is false
+            is6Band = "false";
+            sessionClickedTabBand = sessionStorage.getItem("clickedTabBand");
+
+            if ($("#resistor-input").val().length > 3 && !$("#resistor-input").val().includes(".")) {
+                temp = $("#resistor-input").val().slice(3);
+                if (!temp.match(/^0+$/)) {
+                    showErrorInvalidCode();
+                    return
+                }
+            }
+            if (firstbandVal && secondbandVal && thirdbandVal && multiplierVal && toleranceVal) {
+                if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1")
+                    calculate(5, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+            }
+
+            if ($("#resistor-input").val() !== "" && (thirdbandVal && thirdbandVal !== "-1")) {
+                var res = ((1000 * firstbandVal) + (100 * secondbandVal) + (10 * thirdbandVal)) * multiplierVal / 1000;
+                if (CurrencyVal === 1) {
+                    $("#resistor-input").val(res)
+                } else {
+                    $("#resistor-input").val(res / CurrencyVal)
+                }
+            }
+            if ($(".error-invalid").is(":visible")) {
+                calculateResistorParameters(5, $("#resistor-input").val())
+            }
+            break;
+        default:
+            page_sub_type = "RC4"
+            $('.calcType label').removeClass("active");
+            $('.calcType label[for="dk-rb1"]').addClass("active");
+
+            sessionStorage.setItem("clickedTabBand", "4");
+            toleranceBandColor = sessionStorage.getItem("toleranceColor")
+
+            $(".headline-4band").show();
+            $(".headline-5band").hide();
+            $(".headline-6band").hide();
+
+            $("#span-thirdband").hide();
+            $("#thirdband").hide();
+            $("#span-ppm").hide();
+            $("#ppm").hide();
+
+            $(".third-band").hide();
+            $(".ppm").hide();
+            $("#resistor-color-diagram .tolerance-6b").removeClass().addClass('tolerance ' + toleranceBandColor);
+            // Set value click 6band is false
+            is6Band = "false";
+
+            sessionClickedTabBand = sessionStorage.getItem("clickedTabBand");
+
+
+            if (firstbandVal && secondbandVal && multiplierVal && toleranceVal) {
+                if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1")
+                    calculate(4, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+            }
+            if ($("#resistor-input").val() !== "") {
+                if ($(".error-invalid").is(":hidden")) {
+                    if (firstbandVal && secondbandVal && multiplierVal) {
+                        if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1") {
+                            var res = ((100 * firstbandVal) + (10 * secondbandVal)) * multiplierVal / 1000;
+                            if (CurrencyVal === 1) {
+                                $("#resistor-input").val(res)
+                            } else {
+                                $("#resistor-input").val(res / CurrencyVal)
+                            }
+                        }
+                    }
+                }
+            } else {
+                if (firstbandVal && secondbandVal && multiplierVal) {
+                    if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1") {
+                        var res = ((100 * firstbandVal) + (10 * secondbandVal)) * multiplierVal / 1000;
+                        if (CurrencyVal === 1) {
+                            $("#resistor-input").val(res)
+                        } else {
+                            $("#resistor-input").val(res / CurrencyVal)
+                        }
+                    }
+                }
+            }
+            if ($(".error-invalid").is(":visible")) {
+                // calculateResistorParameters(4,$("#resistor-input").val())
+            }
+    }
+
+    // push a page view event depend on RC tab
+    GTMPageViewPush();
+
+    if ($("dl#thirdband").find("dt .select-color").html() === defaultColorBand && clickedTab.id !== "dk-rb1") {
+        $("#resistor-input").val("")
+    }
+}
+// select digit of input value
+function digitAt(val, index) {
+    // convert number to a string, then extract the first digit
+    var resStr = String(val).charAt(index);
+    // var resStr = val.charAt(index);
+
+    // convert the first digit back to an integer
+    var resNum = Number(resStr);
+    return resNum;
+};
+// Calculate Resistance and Tolerance
+function calculateResistorParameters(band, resistorValue) {
+    var firstBandValue, secondBandValue, thirdBandValue, multiplerValue;
+    isChangeCurrency = sessionStorage.getItem('isChangeCurrency');
+    if (resistorValue === "") {
+        return
+    }
+    if (sessionResistanceCurrency === "Ohm") {
+        if (sessionClickedTabBand === "4") {
+            if ($("#resistor-input").val().length > 11 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        } else {
+
+            if ($("#resistor-input").val().length > 12 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        }
+    } else if (sessionResistanceCurrency === "KiloOhm") {
+        if (sessionClickedTabBand === "4") {
+
+            if ($("#resistor-input").val().length > 8 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        } else {
+
+            if ($("#resistor-input").val().length > 9 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        }
+    }
+    else if (sessionResistanceCurrency === "MegaOhm") {
+        if (sessionClickedTabBand === "4") {
+
+            if ($("#resistor-input").val().length > 5 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        } else {
+            if ($("#resistor-input").val().length > 6 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        }
+    }
+    else if (sessionResistanceCurrency === "GigaOhm") {
+        if (sessionClickedTabBand === "4") {
+            if ($("#resistor-input").val().length > 2 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        } else {
+            if ($("#resistor-input").val().length > 3 && !$("#resistor-input").val().includes(".")) {
+                showErrorInvalidCode()
+                // Refresh all value
+                return false;
+            }
+        }
+    }
+    $(".error-invalid").hide();
+
+    if (resistorValue.toString().includes(".") && (resistorValue.toString().indexOf(".") === 1 ||
+        (resistorValue.toString().indexOf(".") === 2 && band !== 4))) {
+        var indexDot = resistorValue.toString().indexOf(".");
+        if (band === 4) {
+            if (resistorValue.toString().indexOf("0") === 0) {
+                if (resistorValue.length < 4) {
+                    multiplerValue = 0.1;
+                    resistorValue = resistorValue.toString().replace(".", "")
+                    firstBandValue = digitAt(resistorValue, 0);
+                    secondBandValue = digitAt(resistorValue, 1);
+                } else {
+                    multiplerValue = 0.01;
+                    resistorValue = resistorValue.toString().replace(".", "")
+                    firstBandValue = digitAt(resistorValue, 1);
+                    secondBandValue = digitAt(resistorValue, 2);
+                }
+            } else {
+                multiplerValue = 0.1;
+                resistorValue = resistorValue.toString().replace(".", "")
+                firstBandValue = digitAt(resistorValue, 0);
+                secondBandValue = digitAt(resistorValue, 1);
+            }
+        } else if (band === 5 || band === 6) {
+            if (resistorValue.indexOf(".") === 2) {
+                multiplerValue = 0.1;
+                resistorValue = resistorValue.toString().replace(".", "");
+                firstBandValue = digitAt(resistorValue, 0);
+                secondBandValue = digitAt(resistorValue, 1);
+                thirdBandValue = digitAt(resistorValue, 2);
+            } else if (resistorValue.indexOf(".") === 1) {
+                if (resistorValue.length < 4) {
+                    multiplerValue = 0.1;
+                    resistorValue = resistorValue.toString().replace(".", "");
+                    firstBandValue = 0;
+                    secondBandValue = digitAt(resistorValue, 0);
+                    thirdBandValue = digitAt(resistorValue, 1);
+                } else {
+                    multiplerValue = 0.01;
+                    resistorValue = resistorValue.toString().replace(".", "");
+                    firstBandValue = digitAt(resistorValue, 0);
+                    secondBandValue = digitAt(resistorValue, 1);
+                    thirdBandValue = digitAt(resistorValue, 2);
+                }
+            }
+        }
+    } else {
+        resistorValue = String(Number(resistorValue));
+        if (band == 4) {
+            firstBandValue = digitAt(resistorValue, 0);
+            secondBandValue = digitAt(resistorValue, 1);
+            if (resistorValue >= 1e10) {
+                multiplerValue = 1e11;
+                // mult = "G";
+            } else if (resistorValue >= 1e9) {
+                multiplerValue = 1e10;
+                // mult = "100M";
+            } else if (resistorValue >= 1e8) {
+                multiplerValue = 1e9;
+                // mult = "10M";
+            } else if (resistorValue >= 1e7) {
+                multiplerValue = 1e8;
+                // mult = "1M";
+            } else if (resistorValue >= 1e6) {
+                multiplerValue = 1e7;
+                // mult = "100k";
+            } else if (resistorValue >= 1e5) {
+                multiplerValue = 1e6;
+                // mult = "10k";
+            } else if (resistorValue >= 1e4) {
+                multiplerValue = 1e5;
+                // mult = "1k";
+            } else if (resistorValue >= 1e3) {
+                multiplerValue = 1e4;
+                // mult = "100";
+            } else if (resistorValue >= 1e2) {
+                multiplerValue = 1e3;
+                // mult = "10";
+            } else if (resistorValue >= 1e1) {
+                multiplerValue = 1e2;
+                // mult = "1";
+            } else {
+                firstBandValue = 0;
+                secondBandValue = resistorValue;
+                multiplerValue = 1e2;
+                // mult = "";
+            }
+        } else {
+            firstBandValue = digitAt(resistorValue, 0);
+            secondBandValue = digitAt(resistorValue, 1);
+            thirdBandValue = digitAt(resistorValue, 2);
+            if (resistorValue >= 1e11) {
+                multiplerValue = 1e11;
+                // mult = "G";
+            } else if (resistorValue >= 1e10) {
+                multiplerValue = 1e10;
+                // mult = "100M";
+            } else if (resistorValue >= 1e9) {
+                multiplerValue = 1e9;
+                // mult = "100M";
+            } else if (resistorValue >= 1e8) {
+                multiplerValue = 1e8;
+                // mult = "M";
+            } else if (resistorValue >= 1e7) {
+                multiplerValue = 1e7;
+                // mult = "M";
+            } else if (resistorValue >= 1e6) {
+                multiplerValue = 1e6;
+                // mult = "M";
+            } else if (resistorValue >= 1e5) {
+                multiplerValue = 1e5;
+                // mult = "M";
+            } else if (resistorValue >= 1e4) {
+                multiplerValue = 1e4;
+                // mult = "M";
+            } else if (resistorValue >= 1e3) {
+                multiplerValue = 1e3;
+                // mult = "k";
+            } else if (resistorValue >= 1e2) {
+                multiplerValue = 1e2;
+                // mult = "M";
+            } else if (resistorValue >= 1e1) {
+                firstBandValue = 0;
+                secondBandValue = digitAt(resistorValue, 0);
+                thirdBandValue = digitAt(resistorValue, 1);
+                multiplerValue = 1e2;
+                // mult = "M";
+            } else {
+                firstBandValue = 0;
+                secondBandValue = 0;
+                thirdBandValue = resistorValue;
+                multiplerValue = 1e2;
+                // mult = "";
+            }
+        }
+    }
+
+    const selector1 = $("dl#firstband").find("dt .select-color");
+    if (!(selector1).hasClass("selected")) {
+        (selector1).addClass("selected")
+    }
+    const selector2 = $("dl#secondband").find("dt .select-color");
+    if (!(selector2).hasClass("selected")) {
+        (selector2).addClass("selected")
+    }
+    const selector3 = $("dl#thirdband").find("dt .select-color");
+    if (!(selector3).hasClass("selected")) {
+        if ($("dl#thirdband").find("dt .select-color").html() !== defaultColorBand || band !== 4) {
+            (selector3).addClass("selected")
+        }
+    }
+    const multiplier = $("dl#multiplier").find("dt .select-color");
+    if (!(multiplier).hasClass("selected")) {
+        (multiplier).addClass("selected")
+    }
+    $(selector1).html($(".dropdown dd ul li[data-firstband-value='" + firstBandValue.toString() + "']").html());
+    $(selector2).html($(".dropdown dd ul li[data-secondband-value='" + secondBandValue.toString() + "']").html());
+    if (thirdBandValue >= 0) {
+        $(selector3).html($(".dropdown dd ul li[data-thirdband-value='" + thirdBandValue.toString() + "']").html());
+    }
+    if (isChangeCurrency === "false") {
+        if (sessionResistanceCurrency === "KiloOhm") {
+            if ($("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 1
+                || $("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 2 && band !== 4) {
+                multiplerValue *= 100;
+            }
+            multiplerValue *= 1000;
+        } else if (sessionResistanceCurrency === "MegaOhm") {
+            if ($("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 1
+                || $("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 2 && band !== 4) {
+                multiplerValue *= 100;
+            }
+            multiplerValue *= 1000000;
+        } else if (sessionResistanceCurrency === "GigaOhm") {
+            if ($("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 1
+                || $("#resistor-input").val() !== "" && $("#resistor-input").val().includes(".") && $("#resistor-input").val().indexOf(".") === 2 && band !== 4) {
+                multiplerValue *= 100;
+            }
+            multiplerValue *= 1000000000;
+        }
+    }
+    sessionStorage.setItem('isChangeCurrency', "false")
+    var fixMultiplerValue = multiplerValue;
+    if (multiplerValue === 0.1) {
+        fixMultiplerValue = 10;
+    } else if (multiplerValue === 0.01) {
+        fixMultiplerValue = 1;
+    }
+    $(multiplier).html($(".dropdown dd ul li[data-multiplier-value='" + fixMultiplerValue.toString() + "']").html());
+
+    // var color1 = selector1.find(".color-item").text().toLowerCase().trim().replace(/[0-9]/g, "");
+    // var color2 = selector2.find(".color-item").text().toLowerCase().trim().replace(/[0-9]/g, "");
+    // var color3 = selector3.find(".color-item").text().toLowerCase().trim().replace(/[0-9]/g, "");
+    if (typeof selector1.find(".color-item").attr('class') !== "undefined") {
+        var color1 = selector1.find(".color-item").attr('class').split(' ')[0];
+    }
+
+    if (typeof selector2.find(".color-item").attr('class') !== "undefined") {
+        var color2 = selector2.find(".color-item").attr('class').split(' ')[0];
+    }
+
+    if (typeof selector3.find(".color-item").attr('class') !== "undefined") {
+        var color3 = selector3.find(".color-item").attr('class').split(' ')[0];
+    }
+
+    //add color and number into diagram
+    var container = $('#resistor-color-diagram');
+    const addColor1 = container.find(".first-band");
+    const addNumber1 = container.find(".first-band").find(".value");
+    addNumber1.text(firstBandValue.toString())
+    addColor1.removeClass().addClass('first-band ' + color1);
+    const addColor2 = container.find(".second-band");
+    const addNumber2 = container.find(".second-band").find(".value");
+    addNumber2.text(secondBandValue.toString())
+    addColor2.removeClass().addClass('second-band ' + color2);
+    if (thirdBandValue >= 0) {
+        const addColor3 = container.find(".third-band");
+        const addNumber3 = container.find(".third-band").find(".value");
+        addNumber3.text(thirdBandValue.toString())
+        addColor3.removeClass().addClass('third-band ' + color3);
+    }
+
+    if (typeof multiplier.find(".color-item").attr('class') !== "undefined") {
+        var color4 = multiplier.find(".color-item").attr('class').split(' ')[0];
+    }
+    const addColorMul = container.find(".multiplier");
+    const addNumberMul = container.find(".multiplier").find(".value");
+    addNumberMul.text(multiplier.find(".pull-right").text())
+    addColorMul.removeClass().addClass('multiplier ' + color4);
+
+
+    sessionStorage.setItem("firstbandColor", color1);
+    sessionStorage.setItem("firstbandVal", firstBandValue.toString());
+    sessionStorage.setItem("secondbandColor", color2);
+    sessionStorage.setItem("secondbandVal", secondBandValue.toString());
+    sessionStorage.setItem("thirdbandColor", color3);
+    if (thirdBandValue >= 0) {
+        sessionStorage.setItem("thirdbandVal", thirdBandValue.toString());
+    }
+    sessionStorage.setItem("multiplierColor", color4);
+    sessionStorage.setItem("multiplierVal", fixMultiplerValue.toString());
+    sessionFirstbandVal = sessionStorage.getItem("firstbandVal");
+    sessionSecondbandval = sessionStorage.getItem("secondbandVal");
+    sessionThirdbandVal = sessionStorage.getItem("thirdbandVal");
+    sessionMultiplierVal = sessionStorage.getItem("multiplierVal");
+    sessionToleranceVal = sessionStorage.getItem("toleranceVal");
+    sessionFirstbandColor = sessionStorage.getItem("firstbandColor");
+    sessionSecondbandColor = sessionStorage.getItem("secondbandColor");
+    sessionThirdbandColor = sessionStorage.getItem("thirdbandColor");
+    sessionMultiplierColor = sessionStorage.getItem("multiplierColor");
+    sessionToleranceColor = sessionStorage.getItem("toleranceColor");
+    firstbandVal = sessionStorage.getItem("firstbandVal");
+    secondbandVal = sessionStorage.getItem("secondbandVal");
+    thirdbandVal = sessionStorage.getItem("thirdbandVal");
+    multiplierVal = sessionStorage.getItem("multiplierVal");
+    toleranceVal = sessionStorage.getItem("toleranceVal");
+    if (firstbandVal && secondbandVal && multiplierVal && toleranceVal) {
+        if (firstbandVal !== "-1" && secondbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb1") {
+            calculate(4, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+        } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && clickedTabBand === "dk-rb2") {
+            calculate(5, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, "");
+        } else if (firstbandVal !== "-1" && secondbandVal !== "-1" && thirdbandVal !== "-1" && multiplierVal !== "-1" && toleranceVal !== "-1" && ppmVal !== "-1" && clickedTabBand === "dk-rb3") {
+            calculate(6, firstbandVal, secondbandVal, thirdbandVal, multiplierVal, toleranceVal, ppmVal);
+        }
+    }
+
+}
+// Show invalid Code and reset all select
+function showErrorInvalidCode() {
+    var err = errorMessage.replace("*N", sessionClickedTabBand)
+    $(".error-invalid").html(err);
+    $(".error-invalid").show();
+    $(".result").html("");
+    $("#firstband .select-color").html(defaultColorBand);
+    $("#firstband .select-color").removeClass("selected");
+    // Clear selection second band
+    $("#secondband .select-color").html(defaultColorBand);
+    $("#secondband .select-color").removeClass("selected");
+    // Clear selection third band
+    $("#thirdband .select-color").html(defaultColorBand);
+    $("#thirdband .select-color").removeClass("selected");
+    // Clear selection multiplier band
+    $("#multiplier .select-color").html(defaultColorBand);
+    $("#multiplier .select-color").removeClass("selected");
+
+    // Clear resistor color diagram selection
+    $("#resistor-color-diagram .first-band").removeClass().attr("class", "first-band");
+    $("#resistor-color-diagram .first-band .value").html("-");
+    $("#resistor-color-diagram .second-band").removeClass().attr("class", "second-band");
+    $("#resistor-color-diagram .second-band .value").html("-");
+    $("#resistor-color-diagram .third-band").removeClass().attr("class", "third-band");
+    $("#resistor-color-diagram .third-band .value").html("-");
+    $("#resistor-color-diagram .multiplier").removeClass().attr("class", "multiplier");
+    $("#resistor-color-diagram .multiplier .value").html("-");
+    $(".result").html("");
+    sessionStorage.setItem('isChangeCurrency', 'false');
+    sessionStorage.removeItem("firstbandColor");
+    sessionStorage.removeItem("secondbandColor");
+    sessionStorage.removeItem("thirdbandColor");
+    sessionStorage.removeItem("multiplierColor");
+    sessionStorage.removeItem("firstbandVal");
+    sessionStorage.removeItem("secondbandVal");
+    sessionStorage.removeItem("thirdbandVal");
+    sessionStorage.removeItem("multiplierVal");
+}
+// Clear session storage
+function clearSesstionStorage() {
+    sessionStorage.removeItem("firstbandColor");
+    sessionStorage.removeItem("secondbandColor");
+    sessionStorage.removeItem("thirdbandColor");
+    sessionStorage.removeItem("multiplierColor");
+    sessionStorage.removeItem("toleranceColor");
+    sessionStorage.removeItem("ppmColor");
+    sessionStorage.removeItem("searchButtonIsClicked");
+    sessionStorage.removeItem("toleranceValSearch");
+    sessionStorage.removeItem("resSearch");
+    sessionStorage.removeItem("resSearchEncode");
+    sessionStorage.removeItem("isAscending");
+    sessionStorage.removeItem("sortField");
+    sessionStorage.removeItem("resDisplay");
+    sessionStorage.removeItem("ppmValSearch");
+    sessionStorage.removeItem("indexPage");
+    sessionStorage.removeItem("keySearch");
+    // sessionStorage.removeItem("clickedTabBand");
+    sessionStorage.removeItem("firstbandVal");
+    sessionStorage.removeItem("secondbandVal");
+    sessionStorage.removeItem("thirdbandVal");
+    sessionStorage.removeItem("multiplierVal");
+    sessionStorage.removeItem("toleranceVal");
+    sessionStorage.removeItem("ppmVal");
+    sessionStorage.removeItem("limit");
+    sessionLimit = null;
+    sessionIsAscending = null;
+    sessionSortField = null;
+}
+// Clear values selection
+function cleanSelection() {
+    //Reset tolerance band color
+    toleranceBandColor = "";
+
+    //Clear session storage
+    clearSesstionStorage();
+
+    //Set default value band
+    setDefaultValueBand();
+
+    // Clear selection first band
+    $("#firstband .select-color").html(defaultColorBand);
+    $("#firstband .select-color").removeClass("selected");
+    // Clear selection second band
+    $("#secondband .select-color").html(defaultColorBand);
+    $("#secondband .select-color").removeClass("selected");
+    // Clear selection third band
+    $("#thirdband .select-color").html(defaultColorBand);
+    $("#thirdband .select-color").removeClass("selected");
+    // Clear selection multiplier band
+    $("#multiplier .select-color").html(defaultColorBand);
+    $("#multiplier .select-color").removeClass("selected");
+    // Clear selection tolerance band
+    $("#tolerance .select-color").html(defaultColorBand);
+    $("#tolerance .select-color").removeClass("selected");
+    // Clear selection ppm band
+    $("#ppm .select-color").html(defaultColorBand);
+    $("#ppm .select-color").removeClass("selected");
+    // Clear selection resistance currency
+    $("#resistance-currency")[0].selectedIndex = 0;
+    sessionResistanceCurrency = "Ohm"
+
+    // Clear resistor color diagram selection
+    $("#resistor-color-diagram .first-band").removeClass().attr("class", "first-band");
+    $("#resistor-color-diagram .first-band .value").html("-");
+    $("#resistor-color-diagram .second-band").removeClass().attr("class", "second-band");
+    $("#resistor-color-diagram .second-band .value").html("-");
+    $("#resistor-color-diagram .third-band").removeClass().attr("class", "third-band");
+    $("#resistor-color-diagram .third-band .value").html("-");
+    $("#resistor-color-diagram .multiplier").removeClass().attr("class", "multiplier");
+    $("#resistor-color-diagram .multiplier .value").html("-");
+    $("#resistor-color-diagram .tolerance").removeClass().attr("class", "tolerance");
+    $("#resistor-color-diagram .tolerance .value").html("-");
+    $("#resistor-color-diagram .tolerance-6b").removeClass().attr("class", "tolerance-6b");
+    $("#resistor-color-diagram .tolerance-6b .value").html("-");
+    $("#resistor-color-diagram .ppm").removeClass().attr("class", "ppm");
+    $("#resistor-color-diagram .ppm .value").html("-");
+
+    // Clean keyword search
+    $("#search-keyword").val("");
+    // Clean resistor input
+    $("#resistor-input").val("");
+    // Hide all error
+    $(".error-invalid").hide();
+    $(".result").html("");
+}
+
+// set related tool to original position
+function resetRelatedToolPosition() {
+    var windowWidth = $(window).width();
+    if (windowWidth > 1000) {
+        $(".content-container").css("display", "grid");
+
+        $(".related-tool-right").css("border", "1px solid #ccc");
+        $(".related-tool-right").css("border-radius", "5px");
+
+        $(".related-tool-right ul").css("grid-template-columns", "1fr");
+        $(".related-tool-right ul").css("grid-gap", "0");
+
+        $(".related-tool-right ul a").css('display', 'grid');
+        $(".related-tool-right ul a").css('text-align', 'inherit');
+        $(".related-tool-right ul a").css('border', 'none');
+
+        // Reset
+        $(".related-tool-right ul a").hover(function () {
+            $(this).css('border', 'none');
+        }, function () {
+            $(this).css('border', 'none');
+        });
+        $(".related-tool-right ul li").css('height', '75px');
+
+        $(".related-tool-right ul li span").css('text-align', 'inherit');
+
+        // For IE
+        $(".content-container").css("display", "-ms-grid");
+
+        $(".related-tool-right ul").css("-ms-grid-columns", "1fr");
+        $(".related-tool-right ul").css("-ms-grid-rows", "1fr 1fr 1fr 1fr 1fr");
+
+        $(".related-tool-right ul a").css('display', '-ms-grid');
+
+        $(".dk-container .related-tool-right ul>*:nth-child(1)").css("-ms-grid-row", "1");
+        $(".dk-container .related-tool-right ul>*:nth-child(1)").css("-ms-grid-column", "1");
+
+        $(".dk-container .related-tool-right ul>*:nth-child(2)").css("-ms-grid-row", "2");
+        $(".dk-container .related-tool-right ul>*:nth-child(2)").css("-ms-grid-column", "1");
+
+        $(".dk-container .related-tool-right ul>*:nth-child(3)").css("-ms-grid-row", "3");
+        $(".dk-container .related-tool-right ul>*:nth-child(3)").css("-ms-grid-column", "1");
+
+        $(".dk-container .related-tool-right ul>*:nth-child(4)").css("-ms-grid-row", "4");
+        $(".dk-container .related-tool-right ul>*:nth-child(4)").css("-ms-grid-column", "1");
+
+        $(".dk-container .related-tool-right ul>*:nth-child(5)").css("-ms-grid-row", "5");
+        $(".dk-container .related-tool-right ul>*:nth-child(5)").css("-ms-grid-column", "1");
+    }
+    // Hide title Related Tools
+    $(".relate-tool-title").hide();
+}
+
+// resistor input validate
+$("#resistor-input").on("select", function (event) {
+    $(".error-invalid").hide();
+})
+
+$("#resistor-input").keypress(function (event) {
+    if ($(".error-invalid").is(":visible")) {
+        $(".error-invalid").show();
+        return false
+    }
+});
+// function select change
+$('#resistance-currency').on('change', onChangeUnitCombobox);
+// function input onchange input
+$("#resistor-input").on("propertychange input", function (e) {
+    sessionStorage.setItem("resistorVal", this.value);
+
+    sessionClickedTabBand = sessionStorage.getItem("clickedTabBand");
+
+    var temp = ""
+    switch (sessionClickedTabBand) {
+        case "6":
+            if (this.value.length > 3 && !this.value.includes(".")) {
+                temp = this.value.slice(3);
+                if (!temp.match(/^0+$/)) {
+                    showErrorInvalidCode();
+                    return
+                }
+            }
+            calculateResistorParameters(6, this.value)
+
+            break;
+        case "5":
+            if (this.value.length > 3 && !this.value.includes(".")) {
+                temp = this.value.slice(3);
+                if (!temp.match(/^0+$/)) {
+                    showErrorInvalidCode();
+                    return
+                }
+            }
+            calculateResistorParameters(5, this.value);
+            break;
+        default:
+            if (this.value.length > 2 && !this.value.includes(".")) {
+                temp = this.value.slice(2);
+                if (!temp.match(/^0+$/)) {
+                    showErrorInvalidCode();
+                    return;
+                }
+            }
+            calculateResistorParameters(4, this.value);
+    }
+    if (this.value === "") {
+        // Clear selection first band
+        $("#firstband .select-color").html(defaultColorBand);
+        $("#firstband .select-color").removeClass("selected");
+        // Clear selection second band
+        $("#secondband .select-color").html(defaultColorBand);
+        $("#secondband .select-color").removeClass("selected");
+        // Clear selection third band
+        $("#thirdband .select-color").html(defaultColorBand);
+        $("#thirdband .select-color").removeClass("selected");
+        // Clear selection multiplier band
+        $("#multiplier .select-color").html(defaultColorBand);
+        $("#multiplier .select-color").removeClass("selected");
+
+        // Clear resistor color diagram selection
+        $("#resistor-color-diagram .first-band").removeClass().attr("class", "first-band");
+        $("#resistor-color-diagram .first-band .value").html("-");
+        $("#resistor-color-diagram .second-band").removeClass().attr("class", "second-band");
+        $("#resistor-color-diagram .second-band .value").html("-");
+        $("#resistor-color-diagram .third-band").removeClass().attr("class", "third-band");
+        $("#resistor-color-diagram .third-band .value").html("-");
+        $("#resistor-color-diagram .multiplier").removeClass().attr("class", "multiplier");
+        $("#resistor-color-diagram .multiplier .value").html("-");
+        $(".result").html("");
+        sessionStorage.setItem('isChangeCurrency', 'false');
+        sessionStorage.removeItem("firstbandColor");
+        sessionStorage.removeItem("secondbandColor");
+        sessionStorage.removeItem("thirdbandColor");
+        sessionStorage.removeItem("multiplierColor");
+        sessionStorage.removeItem("firstbandVal");
+        sessionStorage.removeItem("secondbandVal");
+        sessionStorage.removeItem("thirdbandVal");
+        sessionStorage.removeItem("multiplierVal");
+    }
+})
+// Click button clean selection
+$("#btn-clearSelection-calMod").click(function () {
+    $(".search-mod").hide();
+    cleanSelection();
+    resetRelatedToolPosition();
+})
+
 </script>
-
-<script src="/themes/default/js/bootstrap.min.js?t=1681978247"></script>
+      
 </body></html>
