@@ -3878,7 +3878,9 @@ div.dk-table .dk-table__headings,div.dk-table thead>tr {
     color: #221abb;
     color: var(--link-blue)
 }
-
+.pull-left{
+filter: hue-rotate(125deg);
+}
 @media screen and (max-width: 500px) {
     .product-table__table th {
         display:none
