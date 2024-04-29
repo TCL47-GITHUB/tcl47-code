@@ -1,0 +1,596 @@
+<html class="no-js hydrated" lang="en-us" dir="ltr"><head>
+        <meta charset="utf-8">     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="Weight Chuyển đổi Calculator, digikey"><meta name="description" content="Convert kilograms to grams, kilograms to pounds, and other units including tons, metric tons, and ounces using DigiKey's weight measurement Chuyển đổi calculator.">
+        <base href="https://www.digikey.com/">
+        <title>
+            Weight Chuyển đổi Calculator | DigiKey Electronics
+        </title>
+        <style type="text/css">
+.dk-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dk-container .header-wrap {
+    padding: 0 0 10px;
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+}
+.dk-container .header-wrap .dk-icon-border {
+    height: 41px;
+    max-width: 43px;
+    margin: 0 9px 0 0;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #CC0000;
+}
+
+.dk-container .header-wrap .dk-icon {
+    padding: 0 9px 0 0;
+    height: 50px;
+    width: 80px;
+}
+
+@media (max-width: 767px) {
+    .dk-container .header-wrap .btn-actions li {
+        padding-bottom: 20px;
+    }
+}
+
+.dk-container .header-wrap .btn-actions li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+.dk-container .header-wrap .btn-actions li a:hover {
+    border: 1px solid #cc2500;
+}
+
+.dk-container .header-wrap .btn-actions li .fa {
+    padding: 0 2px 0 0;
+    color: #cc2500;
+}
+
+@media (max-width: 767px) {
+    .dk-container .header-wrap .pull-left,
+    .dk-container .header-wrap .pull-right {
+        float: none !important;
+    }
+}
+
+.dk-container .single-dk-calc-cont {
+    padding: 20px 0 0;
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .single-dk-calc-cont {
+        padding: 0;
+    }
+}
+
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-output {
+    padding: 15px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+.dk-container .calculator-input .input-label,
+.dk-container .calculator-input .input-dropdown {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+}
+
+.rtl .dk-container .calculator-input .input-label,
+.rtl .dk-container .calculator-input .input-dropdown {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 4px 0 0 4px;
+    background-color: #f4f4f4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+}
+
+.dk-container .calculator-input {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 57px;
+    grid-template-columns: 1fr 57px;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'input dd';
+    margin-bottom: 15px;
+}
+
+.dk-container .calculator-input .input-dropdown {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+    background-position: right 1px center;
+    background-repeat: no-repeat;
+    background-size: 1.25ex;
+    background-origin: content-box;
+    padding-left: 0.5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    padding: 10px 5px 10px 7px;
+}
+
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
+    outline: 0;
+}
+
+.dk-container .input-headline {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.dk-container .calculator-input {
+    position: relative;
+    width: 100%;
+}
+.rtl .dk-container .calculator-input input {
+    grid-area: input;
+    width: 100%;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    border-right: 1px solid #ddd;
+}
+
+.dk-container .calculator-input .input-label {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    width: 45px;
+    border-radius: 0 3px 3px 0;
+    background-color: #F2F1F6;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+.dk-container .calculator-input input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.dk-container .calculator-input input {
+    -webkit-appearance: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px 0 0 3px;
+    padding: 0px 5px 0px 5px;
+    max-width: 100%;
+    width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin-bottom: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    color: #333333;
+    z-index: 10;
+    border-right: none;
+}
+
+.dk-container .calculator-input input::-webkit-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input::-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-ms-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input.bg-black .input-label {
+    color: #FFF;
+    border: 0;
+    background: none;
+}
+
+.dk-container .calculator-input.bg-black input {
+    padding: 0 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input::-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input:-ms-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.dk-container .calculator-input.bg-black input:-moz-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+@media (max-width: 991px) {
+    .dk-container .single-dk-calc-cont .calc-formula {
+        margin: 30px 0 0 !important;
+    }
+}
+
+.dk-container .single-dk-calc-cont .calc-formula .formula-desc {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dk-container .single-dk-calc-cont .calculator-input input[type='number'] {
+    margin: 0;
+}
+
+.dk-container .single-dk-calc-cont .calculator-input .input-dropdown {
+    width: 57px !important;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #f2f1f6;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+.dk-container .single-dk-calc-cont .extra-txt {
+    padding: 6px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .single-dk-calc-cont {
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+@media (max-width: 767px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
+        padding: 1.5em 1em;
+        margin: 0 -15px;
+        border: 0;
+        border-radius: 0;
+    }
+}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tcl47-github.github.io/tcl47-code/tool/digikey.global.min.css">
+
+ </head>
+    <body itemscope="" itemtype="http://schema.org/WebPage" class="ltr flymenu-body">
+        <div id="main-layout-content">
+            
+<div class="layout-onecolumn">
+    <div class="content-column">
+        <div class="richtextcontent" dir="ltr">
+<div class="dk-container">
+
+  <div class="header-wrap clearfix">
+    
+
+    <div class="pull-left flex">
+      <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/weightmainicon3x.svg?la=en-US&amp;ts=7958c694-7960-4883-97a5-28a2a5364c77" class="dk-icon">
+        <h1 class="headline-title">Chuyển đổi Trọng lượng / Khối lượng</h1>
+    </div>
+  </div>
+
+  <div class="dk-content">
+    <div class="calculator-mod">
+      <div class="tab-calc-content">
+        <div class="single-dk-calc-cont">
+          <div class="dk-calc-wrap">
+            <div class="inner-box">
+              <div class="col-md-5">
+                <div class="ml">
+                  <span class="input-headline">Measurement type 1</span>
+                  <div class="calculator-input">
+                    <select id="calc-unit-1" title="kilograms" name="calc-unit-1" class="input-dropdown">
+                      <option value="mt" selected="selected" title="metric tons" disabled="disabled">mt
+                      </option><option value="kg" title="kilograms">kg
+                      </option><option value="g" title="grams">g
+                      </option><option value="mg" title="milligrams">mg
+                      </option><option value="ug" title="micrograms">µg
+                      </option><option value="ST" title="US Tons">ST
+                      </option><option value="LT" title="Imperial Tons">LT
+                      </option><option value="lb" title="pounds">lb
+                      </option><option value="oz" title="ounce">oz
+                    </option></select>
+                    <input placeholder="Nhập giá trị..." name="calc-input-1" id="calc-input-1" type="number">
+                          </div>
+                </div>
+                <div class="extra-txt">To</div>
+                <div class="l">
+                  <span class="input-headline">Measurement type 2</span>
+                  <div class="calculator-input">
+                    <select id="calc-unit-2" title="metric tons" name="calc-unit-2" class="input-dropdown">
+                      <option value="mt" title="metric tons">mt
+                      </option><option value="kg" selected="selected" title="kilograms" disabled="disabled">kg
+                      </option><option value="g" title="grams">g
+                      </option><option value="mg" title="milligrams">mg
+                      </option><option value="ug" title="micrograms">µg
+                      </option><option value="ST" title="US Tons">ST
+                      </option><option value="LT" title="Imperial Tons">LT
+                      </option><option value="lb" title="pounds">lb
+                      </option><option value="oz" title="ounce">oz
+                    </option></select>
+                    <input placeholder="Nhập giá trị..." name="calc-input-2" id="calc-input-2" type="number">
+                          </div>
+                </div>
+              </div>
+  
+              <div class="col-md-7">
+                <div class="calc-formula">
+                  <h2 class="formula-title">Chuyển đổi</h2>
+                  <p class="formula-desc" id="formula-desc">1 kg = 0.001 mt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+     
+      
+  </div>
+</div></div>
+    </div>
+</div>
+        </div>
+        
+<script type="text/javascript" src="//www.digikey.com/-/media/Files/Marketing/Calculators/jquery360min.js?la=en-US&amp;ts=cf241c84-3d9e-40c0-9897-82230bea9425"></script>
+<script type="text/javascript">// Clear values when refresh
+$('.dk-container input[type=number]').val('');
+
+//
+var calc_unit_1 = document.getElementById("calc-unit-1");
+var calc_unit_2 = document.getElementById("calc-unit-2");
+var calc_input_1 = document.getElementById("calc-input-1");
+var calc_input_2 = document.getElementById("calc-input-2");
+
+function convert(id, value) {
+    switch (id) {
+        case 'mt':
+            return {
+                "mt": value,
+                "kg": parseFloat((value * 1e+3).toFixed(10)),
+                "g": parseFloat((value * 1e+6).toFixed(10)),
+                "mg": parseFloat((value * 1e+9).toFixed(10)),
+                "ug": parseFloat((value * 1e+12).toFixed(10)),
+                "ST": parseFloat((value * 1.1023113109).toFixed(10)),
+                "LT": parseFloat((value * .98420652761).toFixed(10)),
+                "lb": parseFloat((value * 2204.6226218).toFixed(10)),
+                "oz": parseFloat((value * 35273.96195).toFixed(10)),
+            }
+        case 'kg':
+            return {
+                'kg': value,
+                "mt": parseFloat((value * .001).toFixed(10)),
+                "g": parseFloat((value * 1000).toFixed(10)),
+                "mg": parseFloat((value * 1e+6).toFixed(10)),
+                "ug": parseFloat((value * 1e+9).toFixed(10)),
+                "ST": parseFloat((value * .0011023113109).toFixed(10)),
+                "LT": parseFloat((value * .00098420652761).toFixed(10)),
+                "lb": parseFloat((value * 2.2046226218).toFixed(10)),
+                "oz": parseFloat((value * 35.27396195).toFixed(10)),
+            }
+        case 'g':
+            return {
+                'g': value,
+                "mt": parseFloat((value * 1e-6).toFixed(10)),
+                "kg": parseFloat((value * .001).toFixed(10)),
+                "mg": parseFloat((value * 1000).toFixed(10)),
+                "ug": parseFloat((value * 1e+6).toFixed(10)),
+                "ST": parseFloat((value * .0000011023113109).toFixed(10)),
+                "LT": parseFloat((value * 9.8420652761e-7).toFixed(10)),
+                "lb": parseFloat((value * .0022046226218).toFixed(10)),
+                "oz": parseFloat((value * .03527396195).toFixed(10)),
+            }
+        case 'mg':
+            return {
+                'mg': value,
+                "mt": parseFloat((value * 1e-9).toFixed(10)),
+                "kg": parseFloat((value * .000001).toFixed(10)),
+                "g": parseFloat((value * .001).toFixed(10)),
+                "ug": parseFloat((value * 1000).toFixed(10)),
+                "ST": parseFloat((value * 1.1023113109e-9).toFixed(10)),
+                "LT": parseFloat((value * 9.8420652761e-10).toFixed(10)),
+                "lb": parseFloat((value * .0000022046226218).toFixed(10)),
+                "oz": parseFloat((value * .00003527396195).toFixed(10)),
+            }
+        case 'ug':
+            return {
+                'ug': value,
+                "mt": parseFloat((value * 1e-12).toFixed(10)),
+                "kg": parseFloat((value * 1e-9).toFixed(10)),
+                "g": parseFloat((value * .000001).toFixed(10)),
+                "mg": parseFloat((value * .001).toFixed(10)),
+                "ST": parseFloat((value * 1.1023113109e-12).toFixed(10)),
+                "LT": parseFloat((value * 9.8420652761e-13).toFixed(10)),
+                "lb": parseFloat((value * 2.2046226218e-9).toFixed(10)),
+                "oz": parseFloat((value * 3.527396195e-8).toFixed(10)),
+            }
+        case 'ST':
+            return {
+                'ST': value,
+                "mt": parseFloat((value * .90718474).toFixed(10)),
+                "kg": parseFloat((value * 907.18474).toFixed(10)),
+                "g": parseFloat((value * 907184.74).toFixed(10)),
+                "mg": parseFloat((value * 907184740).toFixed(10)),
+                "ug": parseFloat((value * 907184740000).toFixed(10)),
+                "LT": parseFloat((value * .89285714286).toFixed(10)),
+                "lb": parseFloat((value * 2000).toFixed(10)),
+                "oz": parseFloat((value * 32000).toFixed(10)),
+            }
+        case 'LT':
+            return {
+                'LT': value,
+                "mt": parseFloat((value * 1.0160469088).toFixed(10)),
+                "kg": parseFloat((value * 1016.0469088).toFixed(10)),
+                "g": parseFloat((value * 1016046.9088).toFixed(10)),
+                "mg": parseFloat((value * 1016046908.8).toFixed(10)),
+                "ug": parseFloat((value * 1016046908800).toFixed(10)),
+                "ST": parseFloat((value * 1.12).toFixed(10)),
+                "lb": parseFloat((value * 2240).toFixed(10)),
+                "oz": parseFloat((value * 35840).toFixed(10)),
+            }
+        case 'lb':
+            return {
+                'lb': value,
+                "mt": parseFloat((value * .00045359237).toFixed(10)),
+                "kg": parseFloat((value * .45359237).toFixed(10)),
+                "g": parseFloat((value * 453.59237).toFixed(10)),
+                "mg": parseFloat((value * 453592.37).toFixed(10)),
+                "ug": parseFloat((value * 453592370).toFixed(10)),
+                "ST": parseFloat((value * .0005).toFixed(10)),
+                "LT": parseFloat((value * .00044642857143).toFixed(10)),
+                "oz": parseFloat((value * 16).toFixed(10)),
+            }
+        case 'oz':
+            return {
+                'oz': value,
+                "mt": parseFloat((value * .000028349523125).toFixed(10)),
+                "kg": parseFloat((value * .028349523125).toFixed(10)),
+                "g": parseFloat((value * 28.349523125).toFixed(10)),
+                "mg": parseFloat((value * 28349.523125).toFixed(10)),
+                "ug": parseFloat((value * 28349523.125).toFixed(10)),
+                "ST": parseFloat((value * .00003125).toFixed(10)),
+                "LT": parseFloat((value * .000027901785714).toFixed(10)),
+                "lb": parseFloat((value * .0625).toFixed(10)),
+            }
+        default:
+            return {}
+    }
+}
+
+function update() {
+    var input = calc_unit_1.value;
+    var output = calc_unit_2.value;
+    var text_output = '1 ' + (input == 'ug' ? 'µg' : input) + ' = ' + convert(input, 1)[output] + ' ' + (output == 'ug' ? 'µg' : output);
+    $('#formula-desc').text(text_output);
+    $("#calc-unit-1 option[value=" + output + "]").attr('disabled', 'disabled').siblings().removeAttr('disabled');
+    $("#calc-unit-2 option[value=" + input + "]").attr('disabled', 'disabled').siblings().removeAttr('disabled');
+    $('#calc-input-1').attr('placeholder', placeholder(input));
+    $('#calc-input-2').attr('placeholder', placeholder(output));
+}
+
+$('#calc-input-1').on("propertychange input", function (e) {
+    var key = 'which' in e ? e.which : e.keyCode;
+    if (key == 9) return;
+    var id = calc_unit_1.value;
+    var id_conv = calc_unit_2.value;
+    var value = calc_input_1.value;
+    if (!value || value === '') {
+        calc_input_2.value = '';
+        return;
+    }
+    calc_input_2.value = convert(id, value)[id_conv];
+});
+
+$('#calc-input-2').on("propertychange input", function (e) {
+    var key = 'which' in e ? e.which : e.keyCode;
+    if (key == 9) return;
+    var id = calc_unit_2.value;
+    var id_conv = calc_unit_1.value;
+    var value = calc_input_2.value;
+    if (!value || value === '') {
+        calc_input_1.value = '';
+        return;
+    }
+    calc_input_1.value = convert(id, value)[id_conv];
+});
+
+$('#calc-unit-1, #calc-unit-2').change(function () {
+    const title = $(this).find("option:selected").attr("title");
+    $(this).attr("title", title);
+    var id = calc_unit_1.value;
+    var id_conv = calc_unit_2.value;
+    var value = calc_input_1.value;
+    calc_input_2.value = convert(id, value)[id_conv] ? convert(id, value)[id_conv] : '';
+    update();
+});
+
+
+</script>      
+    
+</body></html>
