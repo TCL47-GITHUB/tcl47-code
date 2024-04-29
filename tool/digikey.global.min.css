@@ -2646,27 +2646,6 @@ a img,img[usemap] {
     color: var(--red)
 }
 
-.error {
-    color: #c00;
-    color: var(--error)
-}
-
-blockquote {
-    background-color: #f5f5f5;
-    background-color: var(--bg-color);
-    border: solid 1px #ccc;
-    border: solid 1px var(--border-color);
-    padding: 0 10px;
-    border-left-width: 8px;
-    clear: both;
-    margin: 16px
-}
-
-.rtl blockquote {
-    border-left-width: 0;
-    border-right-width: 8px
-}
-
 .dk-link,a.link {
     cursor: pointer;
     color: #221abb;
@@ -2679,59 +2658,8 @@ blockquote {
     text-decoration: underline
 }
 
-.subheader {
-    white-space: nowrap;
-    height: 30px;
-    max-width: 1200px;
-    margin: 0 auto
-}
-
-.sublogo__text,.sublogo__text a {
-    font-weight: 700;
-    font-size: 16px;
-    color: #000;
-    text-decoration: none
-}
-
-.sublogo__text {
-    padding: 5px 0 2px 20px
-}
-
-.rtl .sublogo__text {
-    padding: 5px 20px 2px 0
-}
-
-.sublogo__text span {
-    color: #ff2100;
-    color: var(--red)
-}
-
-.breadcrumbs {
-    max-width: 1160px;
-    font-size: 10px;
-    color: #666;
-    color: var(--stone-grey);
-    padding: 5px 20px 0 20px;
-    margin: 0 auto
-}
-
-.content-column div#breadcrumbs {
-    margin-bottom: 15px;
-    padding: 0
-}
-
-.subheader+#content .breadcrumbs {
-    padding-top: 5px
-}
-
-.breadcrumbs a {
-    color: #222;
-    color: var(--onyx-grey)
-}
-
 .layout-onecolumn,.layout-threecolumn,.layout-twocolumn {
     max-width: 1160px;
-    padding: 20px 20px 25px 20px;
     margin: 0 auto
 }
 
@@ -2825,10 +2753,9 @@ blockquote {
         padding: 0;
         margin-bottom: 15px
     }
-
-    .rtl .layout-twocolumn #rightColumn {
-        padding: 0
-    }
+.layout-onecolumn,.layout-threecolumn,.layout-twocolumn {
+        padding: 0px 10px 0px 10px;
+}
 }
 
 .dk-skeleton {
