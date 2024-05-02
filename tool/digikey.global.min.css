@@ -2660,7 +2660,8 @@ a img,img[usemap] {
 
 .layout-onecolumn,.layout-threecolumn,.layout-twocolumn {
     max-width: 1160px;
-    margin: 0 auto
+    margin: 0 auto;
+    padding: 1rem 0.5rem;
 }
 
 .content-column {
