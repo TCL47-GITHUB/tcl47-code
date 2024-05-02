@@ -1,0 +1,1885 @@
+<html class="no-js hydrated" lang="en-us" dir="ltr"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="Wire Size Conversion Calculator"><meta name="description" content="Convert American Wire Gauge (AWG) to diameter and area values in inches (in) millimeters (mm) or circular mil area (CMA) using the Wire Size Conversion Calculator.">
+		<base href="https://www.digikey.com/">
+        <title>
+            Wire AWG (American Wire Gauge) Size Conversion Calculator | truongcongly
+        </title>
+        <style type="text/css">:after,
+:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body * .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    body * .flex {
+        width: 100%;
+    }
+}
+
+.dk-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+}
+
+.dk-container .header-wrap {
+    padding: 0 0 10px;
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+}
+
+.dk-container .content {
+    display: -ms-grid;
+    /* display: grid; */
+    -ms-grid-columns: 3fr 2em 1fr;
+    -ms-grid-rows: 1fr;
+    grid-template-columns: 3fr;
+    grid-gap: 2em;
+}
+
+.dk-container .content .calculator-mod {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+}
+
+.dk-container .header-wrap .dk-icon {
+    height: 50px;
+    width: 80px;
+    margin-right: 1em;
+}
+
+.rtl .dk-container .header-wrap .dk-icon {
+    height: 50px;
+    width: 80px;
+    margin-right: 0em;
+    margin-left: 1em;
+}
+
+.dk-container .tab-calc-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: -webkit-min-content;
+    grid-template-rows: min-content;
+    grid-gap: 3em;
+    padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .single-dk-calc-cont {
+        padding: 0;
+    }
+    .dk-container .header-wrap .pull-left,
+    .dk-container .header-wrap .pull-right {
+        float: none !important;
+    }
+    .dk-container .input-headline {
+        font-size: 13px;
+    }
+    .dk-container .single-dk-calc-cont .calc-formula {
+        margin: 30px 0 20px;
+    }
+    .dk-container .tab-calc-content {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: -webkit-min-content;
+        -ms-grid-rows: min-content;
+        grid-template-rows: min-content;
+    }
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        /*display: table-cell;*/
+        vertical-align: top;
+    }
+}
+
+.dk-container .single-dk-calc-cont .section-title {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dk-container .single-dk-calc-cont .section-title .title {
+    color: #666666;
+}
+
+@media (min-width: 768px) {
+    #calculationModal .modal-body .tab-pane-content .modal-box {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1em;
+        grid-template-rows: min-content min-content;
+        -ms-grid-rows: -ms-min-content;
+        width: 100%;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(5) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(6) {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(7) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(8) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(9) {
+        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(10) {
+        -ms-grid-row: 6;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(11) {
+        -ms-grid-row: 7;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(12) {
+        -ms-grid-row: 8;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    #calculationModal .modal-body .tab-pane-content .modal-box>*:nth-child(13) {
+        -ms-grid-row: 9;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1em;
+        grid-template-rows: min-content min-content;
+        -ms-grid-rows: -ms-min-content;
+        width: 100%;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(5) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(6) {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .inner-box-input>*:nth-child(7) {
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box {
+        display: -ms-grid;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1em;
+        grid-template-rows: min-content min-content;
+        -ms-grid-rows: -ms-min-content;
+        width: 100%;
+        padding: 17px 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(2) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(3) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(5) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .col-md-3 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .col-md-6 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+    .dk-container .single-dk-calc-cont .inner-box .col-md-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+}
+
+.dk-container .single-dk-calc-cont .calc-formula {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #f2f1f6;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+.dk-container .single-dk-calc-cont .calc-formula .formula-title {
+    margin: 0 0 20px;
+    padding: 0 0 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+}
+
+.dk-container .input-headline {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.rtl .dk-container .input-headline {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.dk-container .calculator-input {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 60px;
+    grid-template-columns: 1fr 70px;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'input dd';
+    margin-bottom: 15px;
+}
+
+.dk-container .calculator-input input {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: input;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid #ddd;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+    min-width: 10ch;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+}
+
+.rtl .dk-container .calculator-input input {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: input;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border: 1px solid #ddd;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+    min-width: 10ch;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    border-radius: 0 4px 4px 0;
+    border-right: solid 1px #ddd;
+    border-left: none;
+}
+
+.dk-container .calculator-input .input-dropdown::-ms-expand {
+    display: none;
+}
+
+.dk-container .calculator-input .input-dropdown:focus {
+    outline: 0;
+}
+
+.dk-container .calculator-input .input-label,
+.dk-container .calculator-input .input-dropdown {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+}
+
+.rtl .dk-container .calculator-input .input-label,
+.dk-container .calculator-input .input-dropdown {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    padding: 10px 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 0 4px 4px 0;
+    background-color: #f4f4f4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+}
+
+.dk-container .calculator-input .input-dropdown {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+    background-position: right 1px center;
+    background-repeat: no-repeat;
+    background-size: 1.25ex;
+    background-origin: content-box;
+    padding-left: 0.5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.rtl .dk-container .calculator-input .input-dropdown {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+    background-position: left 1px center;
+    background-repeat: no-repeat;
+    background-size: 1.25ex;
+    background-origin: content-box;
+    padding-left: 0.5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.dk-container .calculator-input input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.dk-container .single-dk-calc-cont .inner-box {
+    position: relative;
+}
+
+.dk-container .calculator-input input::-webkit-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input::-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-ms-input-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+.dk-container .calculator-input input:-moz-placeholder {
+    opacity: 0.5;
+    color: #333333;
+}
+
+@media (min-width: 992px) {
+    .dk-container .single-dk-calc-cont .sn input,
+    .dk-container .single-dk-calc-cont .ltnf input {
+        margin-bottom: 0;
+    }
+}
+
+.dk-container .single-dk-calc-cont .extra-section .section-title {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .section-content {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 2em 1fr;
+    grid-template-rows: min-content min-content;
+    -ms-grid-rows: -ms-min-content;
+    width: 100%;
+    padding: 17px 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .section-content>*:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .section-content>*:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .the-list {
+    margin: 0;
+    padding: 0;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .the-list li {
+    padding: 10px;
+}
+
+.dk-container .single-dk-calc-cont .extra-section .the-list li:nth-child(odd) {
+    background: #EEE;
+}
+
+
+/*------------------------------------------------*/
+
+.dk-container .single-dk-calc-cont .calc-output {
+    padding: 15px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+@media (max-width: 991px) {
+    .dk-container .single-dk-calc-cont .inner-box {
+        -ms-grid-rows: 1fr 2em 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .dk-container .single-dk-calc-cont .inner-box>*:nth-child(2) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+ 
+}
+
+@media (max-width: 450px) {
+    .dk-container .single-dk-calc-cont .extra-section .section-content {
+        display: block;
+    }
+}
+
+@media (max-width: 320px) {
+    .dk-container .single-dk-calc-cont .calc-formula svg {
+        max-width: 220px;
+    }
+}
+
+.rtl .pull-left {
+    float: right !important;
+}
+
+.rtl .pull-right {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.open-modal {
+    display: fixed;
+}
+
+#calculationModal {
+    display: none;
+    max-width: unset;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    align-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+#calculationModal .modal-dialog {
+    margin: auto;
+    top: 24vh;
+    max-width: 850px;
+    margin-top: 13vh !important;
+    height: 80%;
+}
+
+#calculationModal .modal-dialog .modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 6px;
+    outline: 0;
+    display: block;
+    padding: 10px 30px;
+    height: 80%;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-header {
+    display: flex;
+    border-bottom: 1px solid #dddddd;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-header .modal-title-area {
+    width: -webkit-fill-available;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-header .modal-title-area .modal-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-header .close-button-area {
+    margin: auto;
+    margin-right: unset;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-header .close-button-area .close {
+    margin-bottom: 20px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body {
+    position: relative;
+    padding: 5px;
+    font-family: Verdana, sans-serif;
+    max-height: calc(100% - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body div {
+    margin-bottom: 10px;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body .col-md-6 {
+    margin-right: 10px;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body .tab-pane-content {
+    display: flex;
+    margin-top: 10px;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body .instruction-col {
+    margin-right: 20px;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-body .instruction-col .instruction-btn-area {
+    bottom: 10px;
+    position: absolute;
+}
+
+#calculationModal .modal-dialog .modal-content .modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.awgTitle {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-top: 55px;
+}
+
+.content-header-modal {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 16px;
+    margin-bottom: 15px;
+}
+
+.awgInvalidate {
+    color: red;
+}
+
+.error-awgInvalidate {
+    color: red;
+    display: none;
+    margin: 5px;
+}
+
+.lable-rounded {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.image-responsive {
+    max-width: 100%;
+    height: auto;
+    margin: 0px auto;
+}
+
+.search-mod .result-awg {
+    display: inherit;
+}
+
+.group-show-mobile,
+.manufacturer-name-moblie {
+    display: none;
+}
+
+:root {
+    --display-available: flex;
+}
+
+
+.wire-size-header {
+    position: relative;
+}
+
+.wire-size-header button {
+    position: relative;
+    right: calc(-70% - 16px);
+    top: -62px;
+}
+
+@media only screen and (min-width: 768px) {
+    .wire-size-header {
+        margin-left: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+ 
+.wire-size-header button {
+    position: relative;
+    right: calc(0% - 0px);
+    top: -17px;
+}
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+     :root {
+        --display-available: block;
+    }
+    .button,
+    .button.primary {
+        display: block;
+        width: 100%;
+    }
+    .btn-normal {
+        padding: 12px 24px!important;
+    }
+    .content .inner-box .search-btn-area {
+        margin-left: auto;
+    }
+    .lable-rounded {
+        padding-left: 0!important;
+    }
+    .block-wheel {
+        margin-top: 50px;
+    }
+    .search-mod .inner-box {
+        border: none;
+        padding: 0;
+    }
+    .search-mod .inner-box .resistor-specs {
+        display: flex;
+    }
+    .result-awg {
+        margin: auto;
+    }
+    .search-mod .summary-result {
+        display: block;
+        border: none;
+    }
+    .search-mod .search-within {
+        margin: 15px 0;
+    }
+    .search-mod .resister-types .resister-types-body {
+        grid-template-columns: 1fr 1fr;
+    }
+    #productSearchResult tbody .table-data-row {
+        width: auto;
+        cursor: pointer;
+        height: 100%;
+        margin: 8px 0px;
+        display: grid;
+        padding: 24px;
+        border: 1px solid #EAEAEA;
+        box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+    }
+    .search-mod .resister-types,
+    .search-mod .search-result .search-result-container .search-result-table #productSearchResult {
+        border: none;
+    }
+    .search-mod .search-result .search-result-container .search-result-table #productSearchResult tbody .table-data-row .table-data-cell {
+        border-right: none;
+    }
+    #productSearchResult tbody .table-data-row .alternate {
+        background-color: #FFFFFF;
+    }
+    .group-show-mobile {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    .manufacturer-name-moblie {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .price-mobile {
+        border: 1px solid #EAEAEA;
+        height: 17px;
+        display: inline-block;
+        padding: 3px 18px;
+        font-size: 12px;
+        text-align: center;
+        margin: 5px 8px;
+        border-radius: 14px;
+        vertical-align: middle;
+        background-color: #EAEAEA;
+        line-height: 18px;
+    }
+    .btn-detail-mobile {
+        min-width: auto!important;
+        width: 70px!important;
+        padding: 0!important;
+    }
+    #productSearchResult thead,
+    .td-manufacture,
+    .td-price,
+    .td-stock,
+    .td-min-qty,
+    .td-digikey-part-no,
+    .td-wire-gauge,
+    .td-length,
+    .part-action-button {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 600px) {
+    .search-mod .resister-types .resister-types-body {
+        grid-template-columns: 1fr 1fr;
+    }
+    #productSearchResult tbody .table-data-row {
+        width: auto;
+        cursor: pointer;
+        height: 100%;
+        margin: 8px 0px;
+        display: grid;
+        padding: 24px;
+        border: 1px solid #EAEAEA;
+        box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+    }
+    .search-mod .resister-types,
+    .search-mod .search-result .search-result-container .search-result-table #productSearchResult {
+        border: none;
+    }
+    .search-mod .search-result .search-result-container .search-result-table #productSearchResult tbody .table-data-row .table-data-cell {
+        border-right: none;
+    }
+    #productSearchResult tbody .table-data-row .alternate {
+        background-color: #FFFFFF;
+    }
+    .group-show-mobile {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    .manufacturer-name-moblie {
+        display: block;
+        padding-bottom: 20px;
+    }
+    .price-mobile {
+        border: 1px solid #EAEAEA;
+        height: 17px;
+        display: inline-block;
+        padding: 3px 18px;
+        font-size: 12px;
+        text-align: center;
+        margin: 5px 8px;
+        border-radius: 14px;
+        vertical-align: middle;
+        background-color: #EAEAEA;
+        line-height: 18px;
+    }
+    .btn-detail-mobile {
+        min-width: auto!important;
+        width: 70px!important;
+        padding: 0!important;
+    }
+    #productSearchResult thead,
+    .td-manufacture,
+    .td-price,
+    .td-stock,
+    .td-min-qty,
+    .td-digikey-part-no,
+    .td-wire-gauge,
+    .td-length,
+    .part-action-button {
+        display: none;
+    }
+}
+
+
+/* ipad */
+
+@media screen and (max-width: 1019px) and (min-width: 768px) {
+    .dk-container .calculator-mod .tab-calc-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+.dk-container .related-tools-wrap {
+    padding: 30px 0 0;
+}
+
+
+.dk-container,
+.content-column {
+    position: relative;
+}
+
+.sponsored-content-wrap:first-child {
+    position: absolute;
+    top: 14px;
+    right: 0px;
+    z-index: 1;
+}
+
+.rtl .sponsored-content-wrap:first-child {
+    right: auto;
+    left: 0px;
+}
+
+@media (max-width: 615px) {
+
+    .dk-container .header-wrap {
+        padding: 0 0 10px;
+    }
+
+}
+
+.sponsored-content-wrap:first-child .md\:w-1\/6,
+.sponsored-content-wrap:first-child .push__w-5\/6 {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.sponsored-content-wrap:last-child .push__w-5\/6 {
+    justify-content: flex-end;
+    margin-left: 0 !important;
+    width: auto !important;
+}
+
+
+
+@media (max-width: 600px) {
+
+    .sponsored-content-wrap:first-child {
+        position: static;
+        right: inherit;
+        padding-top: 0 !important;
+        margin-bottom: 10px;
+    }
+
+    .rtl .sponsored-content-wrap:first-child {
+        position: static;
+    }
+
+    .dk-container .pull-right {
+        position: relative;
+    }
+
+    .calculator-col.col-md-6.has-tab.selectColor {
+        margin-bottom: 70px;
+    }
+
+    .dk-container .pull-right {
+        position: relative;
+        left: 0px;
+        float: none !important;
+        top: 0px;
+    }
+
+}</style><link rel="stylesheet" type="text/css" href="https://tcl47-github.github.io/tcl47-code/tool/digikey.global.min.css">
+        
+
+    </head>
+    <body itemscope="" itemtype="http://schema.org/WebPage" class="ltr flymenu-body">
+     <div id="main-layout-content">
+            
+<div class="layout-onecolumn">
+    <div class="content-column">
+            <div class="sponsored-content-wrap">
+        <div class="mt-1 md:w-1/6 push__w-5/6 flex" title="Trương Công Lý">
+            <h2 class="mr-1">Trình bày bởi</h2>
+            <a ref_page_event="Click Supplier Logo" href="https://www.truongcongly.com/p/about-us.html">
+                <img src="https://tcl47-github.github.io/tcl47-code/tool/img/truongcongly.jpg" alt="Image of Molex color logo" style="
+    width: 40px;
+    aspect-ratio: 1 / 1;
+">
+            </a>
+        </div>
+    </div>
+<div class="richtextcontent" dir="ltr">
+<div class="dk-container">
+
+    <div class="header-wrap clearfix">
+        
+
+        <div class="pull-left flex">
+            <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/roundwiresizeicon3x.svg?la=en-US&amp;ts=37d21bda-3f8c-4d30-8969-b5c549863a5c" class="dk-icon">
+            <h1 class="headline-title">Chuyển đổi kích thước dây AWG / Wire AWG Size Conversion Calculator</h1>
+        </div>
+
+      
+    </div>
+    
+
+
+    <div class="content">
+        <div class="calculator-mod" id="wire-calculator">
+            <div class="tab-calc-content">
+                <div class="single-dk-calc-cont">
+                    <div class="dk-calc-wrap">
+                        <div class="inner-box">
+                            <div class="wire-size-header">
+                                    <h2 class="section-title" title="Wire Size Parameters">Thông số kích thước dây</h2>
+                                     <button type="button" id="btn-calculations" class="button btn-normal" data-toggle="modal" data-target="#calculationModal" title="Chart &amp; Calculations">Biểu đồ &amp; Tính toán</button>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="inner-box-input">
+                                    <div class="lable-rounded" title="Results are rounded to the nearest wire gauge">
+                                        <label>Kết quả được làm tròn đến thước dây gần nhất</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="awg">
+                                            <span class="input-headline">AMERICAN WIRE GAUGE</span>
+                                            <div class="calculator-input">
+                                                <span class="input-label">AWG</span>
+                                                <input id="awg" placeholder="Nhập AWG">
+                                                <span class="error-awgInvalidate" style="display: none; margin: 0px;"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="lbf">
+                                            <span class="input-headline">CIRCULAR MIL AREA</span>
+                                            <div class="calculator-input">
+                                                <select id="cma_cb" class="input-dropdown">
+                                                    <option value="cmil" selected="selected">CMIL
+                                                    </option><option value="kcmil">KCMIL
+                                                </option></select>
+                                                <input id="cma" placeholder="Nhập Circular Mil Area" step="any" type="number" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="awf">
+                                            <span class="input-headline">SQUARE MILLIMETER AREA</span>
+                                            <div class="calculator-input">
+                                                <span class="input-label">mm<sup>2</sup></span>
+                                                <input id="sma" placeholder="Nhập Sq. Millimeter Area" step="any" type="number" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="awf">
+                                            <span class="input-headline">MILLIMETER DIAMETER</span>
+                                            <div class="calculator-input">
+                                                <span class="input-label">mm Ø</span>
+                                                <input id="md" placeholder="Nhập Millimeter Diameter" step="any" type="number" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="awf">
+                                            <span class="input-headline">SQUARE INCH AREA</span>
+                                            <div class="calculator-input">
+                                                <span class="input-label">in<sup>2</sup></span>
+                                                <input id="sia" placeholder="Nhập Square Inch Area" step="any" type="number" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="awf">
+                                            <span class="input-headline">INCH DIAMETER</span>
+                                            <div class="calculator-input">
+                                                <span class="input-label">in Ø</span>
+                                                <input id="id" placeholder="Nhập Inch Diameter" step="any" type="number" min="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 block-wheel">
+                                <div style="text-align: center">
+                                    <svg width="100%" height="245" viewBox="0 0 340 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="m 28.630613,95.363878 c 14.8745,0 46.0809,19.787992 55.7448,25.637992 0.6809,0.412 0.6544,1.419 -0.051,1.788 -10.3968,5.431 -40.7527,22.574 -55.6938,22.574 -15.8322,0 -28.66670082,-11.193 -28.66670142,-25 -6e-7,-13.807 12.83450142,-24.999992 28.66670142,-24.999992 z" fill="#cc0000" id="path10"></path>
+                                        <text x="36.749165" y="126.58772" fill="#ffffff" font-size="14px" id="text12" style="font-size: 14px;">AWG</text>
+                                        <text x="12" y="128.84946" fill="#ffffff" font-size="22px" id="svgAWG" visibility="hidden" style="font-size: 20px;"></text>
+                                        <g id="wheel">
+                                            <animateTransform id="animation" attributeName="transform" attributeType="XML" type="rotate" from="0 212 122" to="0 212 122" dur="1s" repeatCount="1" fill="freeze"></animateTransform>
+                                            <circle id="wheel40" cx="323.61313" cy="130.75458" r="1.28114" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel39" cx="323.01242" cy="136.0533" r="1.49466" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel38" cx="322.21426" cy="141.78" r="1.70819" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel37" cx="320.87744" cy="147.9317" r="1.92171" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel36" cx="319.0733" cy="154.74817" r="2.13523" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel35" cx="316.25378" cy="162.77126" r="2.34875" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel34" cx="312.89886" cy="170.36215" r="2.56228" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel33" cx="308.88113" cy="178.06668" r="2.7758" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel32" cx="303.73438" cy="186.16315" r="2.98932" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel31" cx="297.88559" cy="193.75925" r="3.20285" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel30" cx="290.72589" cy="201.54758" r="3.41637" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel29" cx="282.27582" cy="209.0258" r="3.62989" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel28" cx="273.01102" cy="215.83604" r="3.84342" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel27" cx="262.1944" cy="222.06734" r="4.05694" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel26" cx="250.05745" cy="227.29266" r="4.27046" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel25" cx="237.03246" cy="231.15321" r="4.48399" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel24" cx="223.46358" cy="233.41841" r="4.69751" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel23" cx="210.3197" cy="233.94054" r="4.91103" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel22" cx="195.97441" cy="232.86832" r="5.12456" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel21" cx="181.16284" cy="229.78841" r="5.33808" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel20" cx="166.93542" cy="224.52377" r="5.5516" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel19" cx="152.85994" cy="217.09006" r="5.76512" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel18" cx="140.07593" cy="207.85312" r="5.97865" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel17" cx="127.62988" cy="195.72241" r="6.19217" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel16" cx="117.60531" cy="182.46687" r="6.40569" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel15" cx="109.22758" cy="166.761" r="6.61922" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel14" cx="103.74806" cy="150.78629" r="6.83274" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel13" cx="100.71297" cy="134.26671" r="7.04626" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel12" cx="100.10645" cy="116.31316" r="7.25979" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel11" cx="102.61713" cy="97.933533" r="7.47331" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel10" cx="108.29412" cy="79.637299" r="7.68683" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel9" cx="117.44104" cy="61.993481" r="7.90036" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel8" cx="129.17982" cy="46.568569" r="8.11388" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel7" cx="145.11003" cy="32.194118" r="8.3274" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel6" cx="163.64252" cy="20.951187" r="8.54093" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel5" cx="184.70293" cy="13.433177" r="8.75445" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel4" cx="207.50441" cy="9.9896641" r="8.96797" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel3" cx="231.08754" cy="11.607" r="9.18149" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel2" cx="252.89029" cy="17.896708" r="9.39502" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel1" cx="273.48865" cy="28.550451" r="9.60854" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel0" cx="291.95297" cy="43.710552" r="9.82206" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel-1" cx="307.08411" cy="62.944588" r="10.0356" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel-2" cx="317.63513" cy="84.976883" r="10.2491" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                            <circle id="wheel-3" cx="323.36606" cy="110.391" r="10.4626" fill="#222222" onclick="clickWheel(this.id)"></circle>
+                                        </g>
+                                        <text x="162" y="100" fill="red" font-size="24" font-weight="bold" id="text62">American</text>
+                                        <text x="183" y="125" fill="red" font-size="24" font-weight="bold" id="text64">Wire</text>
+                                        <text x="178" y="150" fill="red" font-size="24" font-weight="bold" id="text66">Gauge</text>
+                                    </svg>
+                                </div>
+
+                                <div class="col-md-16">
+                                    <div class="awgTitle">
+                                        <div class="section-title" title="Result"><span class="title">Kết quả: </span><span id="resultAWG" class="result"></span> AWG</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <!-- calculation Modal -->
+    <div id="calculationModal" class="custom-modal" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div id="modal-content-primary" class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title-area">
+                        <h4 class="modal-title">Wire Size Calculations</h4>
+                    </div>
+                    <div class="close-button-area">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-pane-content">
+                        <div class="modal-box col-md-6">
+                            <div class="col-md-12">
+                                <div class="content-header-modal">Wire Diameter Calculations</div>
+                            </div>
+                            <div class="col-md-6">
+                                <svg width="198" height="33" viewBox="0 0 198 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <image width="198" height="33" xlink:href="data:image/png;base64,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"></image>
+                                </svg>
+                            </div>
+                            <div class="col-md-6">
+                                <svg width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <rect width="221" height="31" fill="url(#pattern0)"></rect>
+                                    <defs>
+                                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                            <use xlink:href="#image0" transform="translate(0 -0.16129) scale(0.00452489 0.0322581)"></use>
+                                        </pattern>
+                                        <image id="image0" width="221" height="36" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN0AAAAkCAYAAAANWT/LAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAzsDFwMHAxMCRmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis74+Os34w9V3897eVwkOjmxaY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFAwMkouTyTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRAQMDKLwhqj/fAIcjoxgHQiy1jYHBGOhXRl6EWOZkBoadH4BeiESIqe9lYBAC+vng8YLEIoQ/GL+xFKcZG0HY3NsZGFin/f//OZyBgV2TgeHv9f//f2/////vMgYG5lsMDAe+AQCv1GDHbPktoAAAAZxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MjIxPC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjM2PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CoQyxU0AAA3VSURBVHgB7ZwJtFZTFMd3gwyRIZlpGZsTCxmSZFZoUJJCwhKiJUPKKkNImWerjM2FVimUJplShkIpVDTITMYIx/7t5dx1v+/d+w297/VevbvX+t6998xn37PP/u+9z33iEtqgHFiyZImrWbOm69y5s/vkk0/cypUr3W233WZpd955Z0HHcv/991u7Dz74oPvmm2/c/PnzXevWrd0+++zjPvroo4L2VZ4bW7t2rWvcuLGbMGFCTmyoQClJaINy4K677pKnnnpKfvnll6DfVq1aCemVKlUK0op78/PPP8sll1wis2fPln///deaq1Kliqhwy+mnn17c5pP6IQ6sWrVKdt9991BK/G0idPG8KdGcf/75R95//30TvEaNGsn2229fYv0hfG+//bZUr15d6tevLwheQqXHgUToSo/3Sc/llAMVy+m8k2knHCg1DiRCV2qsTzourxxIhK68vvlk3qXGgUToSo31Scf5cODXX3/Np3jeZdetWyd//vlnZL0vv/wyMn19ExOhW1/OJfU2CAfwvN5www3y+eefS//+/eXoo4+Wa6+9VnDRp9PChQulZ8+eFhLRuGR6dsZnQiq0v2jRopRyGku18A7e5rj+33zzTbngggukU6dOcvfddwfhmZSGwg85RfOSQgkHSoEDutDd+eef7z788EM3ePBgN378ePfWW2+5I444wl1zzTUpIxoxYoQ75ZRT7LBBSkYeD3/88Ydr27at+/7774NaHFj44IMPYvvXTcHVrVvX/fDDD+6vv/5yTZs2dc8880xQP+qmclgAk/uEA2WJA2PHjjXIR2xRT9HIVlttZcM78cQT5e+//w6GumDBArn11ltFhTLnAHVQOXSzxRZbyDnnnCM33XST3HfffZajJ3dMe+67776R/U+bNk322muvIM6qQitPP/206ImjUMuptznDS9Tvp59+Ki+99JJMnjw5tZXkKeFACXCAUzuqvaxlL3CqUWTx4sXSo0ePoMdbbrlFDjroIHnnnXdENWLKSZ+g0P83rOHLLrtM2rRpIwgUQtKlS5egWJMmTUx4V69eLcDVOnXqWF5c/8DcpUuXBvbgrrvuKl988YWohgvaTL/JWegwMl977TXp1q2bqLpPb2eTeobZ7FQclWK+a9asyTg/eKOQQo488khjeLiwnsuTxx57TI4//ng58MAD5aqrrpKffvopKDJnzhzR85BFfnoeMyizsd4MHz5cWrZsKccee6xceOGFErazsvEFx8nHH38se+yxRzB9njt27CgKMWXo0KGWjsbjZA+nbfRMq0yaNMkENW7R77///rL11lvLLrvsIqNGjZIzzjgjRUhr1KhhJ3YQ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"></image>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="col-md-6">The n gauge wire diameter dn in inches (in) is equal to 0.005in times
+                                92 raised to the power of 36 minus gauge number n, divided by 39.</div>
+                            <div class="col-md-6">The n gauge wire diameter dn in millimeters (mm) is equal to 0.127mm
+                                times 92 raised to the power of 36 minus gauge number n, divided by 39.</div>
+                            <div class="col-md-12">
+                                <div class="content-header-modal">Wire Cross Sectional Area Calculations</div>
+                            </div>
+                            <div class="col-md-6">
+                                <svg width="313" height="32" viewBox="0 0 313 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <image id="image0" width="313" height="32" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATkAAAAgCAYAAABpTw8WAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAzsDFwMHAxMCRmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis74+Os34w9V3897eVwkOjmxaY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFAwMkouTyTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRAQMDKLwhqj/fAIcjoxgHQiy1jYHBGOhXRl6EWOZkBoadH4BeiESIqe9lYBAC+vng8YLEIoQ/GL+xFKcZG0HY3NsZGFin/f//OZyBgV2TgeHv9f//f2/////vMgYG5lsMDAe+AQCv1GDHbPktoAAAAZxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzEzPC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjMyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CuJ6mxsAABDVSURBVHgB7ZwFtB01EECnxd1dCi3u7i7F/eBQ3N0diju0UFqc4nZwO2hxd/ePu7uHucPJnn35a++//z5fMufs200yySaTZDK2r5dTkAiRApECkQLdlAK9u+m44rAiBSIFIgWMApHJxYUQKRAp0K0pEJlct57eOLhIgUiByOTiGogU6EEU+PXXX5s+2j///FN+//33zPd88sknmfnNzIxMrpnU7eJtv/HGG7L77rvLMsssI6eeeqr8+OOPXXxEze3+TTfdJOuss46st956cuONNzb3ZW1o/eKLL5ZrrrnGat56662yxhpryIYbbigPPvhgq9ZeffVV2WeffeSUU06RL774olV5UcY///wjxxxzjLz++us1aG+++aYMHz7c8j766CM55JBDrP000jfffCO77rqr7LDDDrL99tsXvvuEE06Q9ddf365zzz033UzNc2RyNeSIiTQFzjjjDFl66aVl0003lQsuuEDYJBGyKYCEApPbaaedZNppp5U999xT3n333Wzk/yH36quvls8//1y22GIL4fB64YUXBCYx4YQT2kGG9OXhyiuvlH333Vf23ntvu0866aS+qNJ9tNFGMwZ26KGHCkzLwy233GKMlTRM9LnnnpOffvrJF9v9gAMOkCWWWELOOecc6dOnj+yxxx415T4BbV955RVZdtll7VpuueV8Ues7ISQRIgVCCnz99dfu0UcfTbJ18bk111wzSceHWgo88MAD7ocffrDMP/74w80777xON2ot0v+U+uqrr9xss83mVCKzHvz8889JT5588km3wAILuL/++svyXn75ZTf77LO7t99+O8Fp68P111/vVBNIqm+55ZbJMw+UHXHEEUmeMjw344wzOmVglvfWW285ZXROmXKC4x/22msvo+/ff//ts3LvdUlyShz5/vvvW3PKmNOlKPDLL7/YKXrttdcKKkQWcMIvuuiiSdHEE08sc8wxR5Lu7g8ffvihoFJVhaWWWkrGGWccQx9llFFkvPHG6zT0QjKba665ZJJJJrH+jTnmmMmwlBHJcccdJyONNJLlHX300aIMWp5++mk577zzCk0USH8nnniiLLLIIiYZIoVR16u3SGRIt59++qlJbrPOOmvyXh5GHnnkmrQyY9EDIlFzp5xySitvaWmpwcNsgiR6/PHHyworrFBqGqiLyR188MHy7LPP1rywpycee+wx2XjjjeXss89uRQqMrwcddJCsttpqZqd55plnanAaLa9prI7E+++/b7aR/fbbT/QEL63JYn7ooYdkt912K8WtilA29rCdMvx7771XVFKQWWaZRdZdd93MdcqGxmbmL1SiPNh6661lxx13zCsu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"></image>
+                                </svg>
+                            </div>
+                            <div class="col-md-6">
+                                <svg width="347" height="28" viewBox="0 0 347 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <image id="image0" width="347" height="28" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVsAAAAcCAYAAADP5RyNAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAzsDFwMHAxMCRmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis74+Os34w9V3897eVwkOjmxaY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFAwMkouTyTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRAQMDKLwhqj/fAIcjoxgHQiy1jYHBGOhXRl6EWOZkBoadH4BeiESIqe9lYBAC+vng8YLEIoQ/GL+xFKcZG0HY3NsZGFin/f//OZyBgV2TgeHv9f//f2/////vMgYG5lsMDAe+AQCv1GDHbPktoAAAAZxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzQ3PC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjI4PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CjJmN7gAABPjSURBVHgB7ZwDtCVHE8d7Nxvbzsa2vRvb9sa2befE1m5s27btZGPb7K9+la/m9O07uu/i7WanzrlvZtpT011d9a/q18MLuYoqDlQcqDhQcaCtHOjZ1tarxisOVByoOFCCAz/99FOJUl0v8ueff7rff/89tYFPPvkkNb3ViZWwbTVHB/H2brjhBrfKKqu41VZbzV1//fWD+Gir4TXDgV9++cUdc8wxrk+fPm6nnXZyr776ajPNtaXuDz/84Pbbbz83cOBAd9hhh7mFFlrI7bHHHu7jjz+u64/x77rrru64445zX3zxRV1+XsI///yj7b/++us1xd588003YMAATXvkkUfc2muv7Z599tmaMo8++qjbZJNN3Prrr++OP/54R1tpxIax7rrrujXWWEN/L730Uk2xXjVP1cN/mgPs4Ajbrbfe2t122226AGeeeWY3+eST/6ffe0h9uSuuuMINNdRQbvfdd3ennnqq22233dytt946yLADobXjjjuqAH388ccdc3HxxRd3u+yyi46RjcLosssucxdddJE755xz3IQTTmjJpa/DDjus23fffVVgnn322W6MMcbQujfddJNbYYUV3DfffONYH4zj77//Ttr98ccf3eabb+4efvhhN9JII+n4xh57bLfBBhskZezmwgsvdNNOO60ba6yxlO/TTz+9Zf17BbOtaMjgwAMPPOBFk9CX/eOPP/xss83mzzrrrCHj5YfAt7zllluSt37wwQd97969/UcffZSkdffN5Zdf7tdZZx0dxs8//5wM58ADD/QiGJPnl19+2c8wwwz+7bffTtK6enPttdf6HXbYIaner1+/5J6bKaaYwj/55JNJ2nXXXeeXXnrp5Pmkk07yiy22WPJsN4x/gQUW8KI5W1LdtWEYQRp133//fa3E/g8/Ya6EO12ZV33ttdcc5lEeffbZZ3nZDecxzoceeshdcMEFmeNdeOGF3cgjj6xtDz300G7UUUd1M844Y8N9VRW6hwMvvPCC+/XXX0t3vuyyyyZl0bZGH310N8EEEyRp3X2D+b7MMsvoMEYYYQS9omG+8cYbanXZ+A499FAnioF7+umnVbNF28yit956y2277bZu1VVXdSKkFS7beOONk+ILLrigWneffvqpwirTTTddkscNlkBIwBnvvvtugveOP/747v3333ciScNiDgiCb7PUUku5TTfdVN+hpoA8NCxs99lnnzpMI260lc/33HOPk91H1XMYGOMprewrbgszjA8dMzYuFz+DK8V17r//fjfppJM6PjLEMxjVb7/9Flfv0vMrr7ziRCNQ/CmeMGkNPvfccwofzD///GnZXUoDU8O8WnHF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"></image>
+                                </svg>
+                            </div>
+                            <div class="col-md-6">The n gauge wire's cross sectional area An in kilo-circular mils
+                                (kcmil) is equal to 1000 times the square wire diameter d in inches (in).</div>
+                            <div class="col-md-6">The n gauge wire's cross sectional area An in square inches (in2) is
+                                equal to pi divided by 4 times the square wire diameter d in inches (in).</div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-md-6">
+                        <svg width="351" height="33" viewBox="0 0 351 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <image id="image0" width="351" height="33" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV8AAAAhCAYAAAB+6qiEAAABQmlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSCwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAzsDFwMHAxMCRmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis74+Os34w9V3897eVwkOjmxaY6lEAV0pqcTKQ/gPEyckFRSUMDIwJQLZyeUkBiN0CZIsUAR0FZM8AsdMh7DUgdhKEfQCsJiTIGci+AmQLJGckpgDZT4BsnSQk8XQkNtReEOD0CFAwMkouTyTgVpJBSWpFCYh2zi+oLMpMzyhRcASGUKqCZ16yno6CkYGRAQMDKLwhqj/fAIcjoxgHQiy1jYHBGOhXRl6EWOZkBoadH4BeiESIqe9lYBAC+vng8YLEIoQ/GL+xFKcZG0HY3NsZGFin/f//OZyBgV2TgeHv9f//f2/////vMgYG5lsMDAe+AQCv1GDHbPktoAAAAZxpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MzUxPC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjMzPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CmqZvnYAABQUSURBVHgB7ZwFlBw3D8edFFKmlCkpMzOnzMzMzMyUpMzMbYopMzMzMzMzc+tPP31P8zyzM7Ozd7vZS896b2/AssejsWXpL/l6eCEXKUogSiBKIEpgiEqg5xB9WnxYlECUQJRAlIBKICrfOBCiBKIEogTaIIGofNsg9PjIKIEogSiBqHzjGIgSiBJomwT++OMP988//7T0+b/++mth+5999plrV9grKt/Cz9K9C2644Qa36qqrutVXX91df/313VsYQ+Hbv/HGG26nnXZy/fr1c8cdd5z76aefutxbvPjii+6ggw5yf/31l3v33XfdVltt5RZddFF3+umnu3///TfVX/o/YMAAN3DgQPfYY4+lyupdXHPNNe7KK6/MZdtvv/1cjx493O+//+4GDRrkVltttRQfivnkk092W2+9tVtrrbXcQw89lCoPL+6//3635ppr6m+zzTYLi3LPo/LNFUv3vvnpp586lO+2227rJp10UrfLLrvo5OjeUhm63h6Fscgii7j111/fnXfeee7CCy/sUi/w0UcfucMPP9wdeuihbrjhhnNnnXWW22677dymm27qjj76aPfwww8n/X3nnXfccsst5+add153wAEHuPnmmy8pq3Ky4YYburfeesvdeuutKXYWqKmnnlrvcc5z6FdIzIOnnnpK+4ei3nLLLR3zI48uuOACXTxYQNZee+08lvQ9Us0iRQmEEnjggQf8jz/+qLf+/PNPP9tss3mZHCFLPO/CEvjmm2/8o48+mvRw77339iuttFJy3RVORCH6Sy65RLsiVq4XaCDp1pxzzpn0X2AJL4rXn3nmmUl5R07EcvaitP3333+fVD/mmGP8Sy+9lFzffvvtnmeHJMrWn3LKKcmtpZZayh9//PHJtZ3cfffdXha6VPtWVnRs2PL95Zdf3A8//JDW4PHK/f333+6LL75oSBKvvfaaEyVXWufzzz8vLW+08Msvv1TXCUuoCGtbeOGF3aijjqpNY5WMPvrobsYZZ2z0UZG/TRIYa6yxUtbh2GOP3aW+HxDDgw8+qNYsIsLtH3HEEVVaWLzzzz9/0v/LL7/cvf32265v374Kn3BeRHfccYdbfvnl3amnnuouu+wytZSvuOIKZR9llFHcxBNPnIIfXnnllZRcGOtZ+uSTT9zrr7+e3J5gggnc+++/n1zbyb333qsWMn3Hoi/Dma1Ow8oX0/vZZ5+1+l3m+N5777kDDzzQzTLLLG7BBRd0559//hDrG0p08803bxhX23333WvAfnAjBhqBAIhrcC4wqWYQA+7ggw92gwTfGmaYYeo2+dxzz7nJJ59cJ0Rd5ooMr776qsMVFGtMoY16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"></image>
+                        </svg>
+                    </div>
+                    <div class="col-md-6 offset-md-6">The n gauge wire's cross sectional area An in square millimeters
+                        (mm2) is equal to pi divided by 4 times the square wire diameter d in millimeters (mm).</div>
+                    <div style="display: flex;">
+                        <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/chart-wire-gauge.png?la=en-US&amp;ts=655d9f79-7589-4d9b-b9b2-301171ea81f0" alt="data-lookup" class="image-responsive">
+                    </div>
+                    <div class=""><button type="button" class="button primary btn-normal" data-dismiss="modal">Close</button></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div></div>    
+    
+
+    </div>
+</div>
+        </div>
+        
+        
+    
+
+
+
+
+
+
+<script type="text/javascript" src="//www.digikey.com/-/media/Files/Marketing/Calculators/jquery360min.js?la=en-US&amp;ts=cf241c84-3d9e-40c0-9897-82230bea9425"></script><script type="text/javascript">let currentAngle = 0;
+let currentIndex = 12;
+let previousIndicator = '';
+$(document).ready(function () {
+    // Call list categories for recommended products
+    listCategoriesLinks();
+
+    $(".sponsored-content-wrap .mt-1").on('click', 'a', function (event) {
+        LinkClickedPushToGTM(event, 'Click Supplier Logo');
+    });
+
+    $("#recommended-products-wrap-id").on('click', 'a', function (event) {
+        LinkClickedPushToGTM(event, 'Select Related Products');
+    });
+
+    $(document).on('click', '.related-tool-container a', function (event) {
+        LinkClickedPushToGTM(event, 'Link to Related Tools');
+    });
+});
+$(function () {
+    $('#btn-calculations').on('click', function () {
+        location.hash = '#modal';
+        $('body').addClass('overflow-hidden');
+        $('#calculationModal').addClass('open-modal');
+        $('#caption').text(this.alt);
+    });
+
+    // Close the modal
+    $('#calculationModal').on('click', function () {
+        history.replaceState({}, document.title, window.location.href.split('#')[0]);
+        $('body').removeClass('overflow-hidden');
+        $('#calculationModal').removeClass('open-modal');
+    });
+    $.getScript("https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js");
+});
+
+// Clear values selection
+function cleanSelection() {
+    $("#awg").val("");
+    $("#cma").val("");
+    $("#sma").val("");
+    $("#md").val("");
+    $("#sia").val("");
+    $("#id").val("");
+    $("#resultAWG").val("");
+    $(".result").html("");
+    $('#indicator').attr('visibility', 'hidden');
+    $('#awg').removeClass('awgInvalidate');
+    $(".error-awgInvalidate").html("");
+    $(".error-awgInvalidate").css("margin", "0px");
+
+    // Reset value at the wheel
+    $("#svgAWG").text("");
+    $('#svgAWG').attr('visibility', 'hidden');
+    if (previousIndicator) {
+        $(previousIndicator).attr('fill', '#222222')
+    }
+    $('#animation').attr('from', "0 212 122");
+    $('#animation').attr('to', "0 212 122");
+
+    $('#animation').attr('dur', "1s");
+    $('#animation')[0].beginElement()
+}
+
+$('#btn-clearSelection-calMod').on("click", function (e) {
+    if (this.hash !== "") {
+        e.preventDefault();
+        var hash = this.hash;
+        var windowWidth = $(window).width();
+
+        if (windowWidth <= 767) {
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 150
+            }, 600, function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        }
+        // else{
+        // $('html, body').animate({
+        // scrollTop: $(hash).offset().top
+        // }, 600, function(){
+        // // Add hash (#) to URL when done scrolling (default click behavior)
+        // window.location.hash = hash;
+        // });
+        // }
+    } // End if
+
+    cleanSelection();
+});
+
+$("#btn-searchCatalog-calMod").click(function (e) {
+    //
+    // Insert the ajax search here ...
+    //
+
+    // Switch to search mod
+    $(".calculator-mod").hide();
+    $(".search-mod").show();
+    // document.getElementById("primary-search").style.display = "flex";
+    document.getElementById("primary-search").style.display = getComputedStyle(document.documentElement).getPropertyValue('--display-available');
+    $(".result").text($("#resultAWG").val() + " AWG");
+})
+
+
+$("#btn-searchCatalog-searchMod").click(function (e) {
+    // Switch to calculator mod
+    document.getElementById("primary-search").style.display = "none";
+    $(".calculator-mod").show();
+    $(".result").text($("#resultAWG").val());
+})
+
+$("#btn-clearSelection-searchMod").click(function (e) {
+    // Switch to calculator mod
+    $(".search-mod").hide();
+    $(".calculator-mod").show();
+    cleanSelection();
+})
+
+function roundAWG() {
+    const n = $("#awg").val();
+    if (n == "00" || n == "000" || n == "0000" || n == "1/0" || n == "2/0" || n == "3/0" || n == "4/0") return;
+    $("#awg").val(Math.round($("#awg").val()));
+}
+
+function awgToMm() {
+    let n = $("#awg").val()
+    if (n == "0000" || n == "4/0") n = -3;
+    if (n == "000" || n == "3/0") n = -2;
+    if (n == "00" || n == "2/0") n = -1;
+    if (n == "1/0") n = 0;
+    return 0.127 * Math.pow(92, ((36 - n) / 39));
+}
+function awgToIn() {
+    let n = $("#awg").val()
+    if (n == "0000" || n == "4/0") n = -3;
+    if (n == "000" || n == "3/0") n = -2;
+    if (n == "00" || n == "2/0") n = -1;
+    if (n == "1/0") n = 0;
+    return 0.005 * Math.pow(92, ((36 - n) / 39));
+}
+
+function setAwgByMM(d) {
+    var n = -39 * Math.log(d / 0.127) / 4.521788577 + 36;
+    if (n.toFixed() == -1) {
+        $("#awg").val("2/0");
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+        return true;
+    }
+    if (n.toFixed() == -2) {
+        $("#awg").val("3/0");
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+        return true;
+    }
+    if (n.toFixed() == -3) {
+        $("#awg").val("4/0");
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+        return true;
+    }
+
+    $("#awg").val(n.toFixed().toString());
+    if (-3 <= n.toFixed() && n.toFixed() <= 40) {
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+        return true;
+    } else {
+        $('#awg').addClass('awgInvalidate');
+        $(".error-awgInvalidate").show();
+        return false;
+    }
+}
+
+function populate() {
+    if ($("#awg").val()) {
+        // define variable
+        let circle = 0
+        let circleX = 0
+        let circleY = 0
+        let angle = 0
+        let delta = 0
+
+        let mm = 0;
+        let mm2 = 0;
+        let inValue = 0;
+        let in2Value = 0;
+        let cma = 0;
+
+        // awg
+        mm = awgToMm();
+        mm2 = Math.PI * Math.pow(mm / 2, 2);
+        inValue = awgToIn();
+        in2Value = mm2 * 0.001550003;
+        cma = $("#cma_cb").val() === 'cmil' ? mm2 * 1973.525 : mm2 * 1973.525 / 1000;
+
+        let awg = $('#awg').val();
+        switch (awg) {
+            case "0000":
+                $("#svgAWG").attr("x", "3");
+                $("#svgAWG").attr("y", "127.84946");
+                $("#svgAWG").css("font-size", "16px");
+                $("#text12").attr("x", "44");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "13px");
+                break;
+            case "000":
+                $("#svgAWG").attr("x", "6");
+                $("#svgAWG").attr("y", "127.84946");
+                $("#svgAWG").css("font-size", "18px");
+                $("#text12").attr("x", "40");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "14px");
+                break;
+            case "00":
+                $("#svgAWG").attr("x", "8");
+                $("#svgAWG").attr("y", "128.84946");
+                $("#svgAWG").css("font-size", "20px");
+                $("#text12").attr("x", "36.749165");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "14px");
+                break;
+            case "4/0":
+            case "3/0":
+            case "2/0":
+            case "1/0":
+                $("#svgAWG").attr("x", "8");
+                $("#svgAWG").attr("y", "128.84946");
+                $("#svgAWG").css("font-size", "20px");
+                $("#text12").attr("x", "39");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "14px");
+                break;
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+            case "4":
+            case "5":
+            case "6":
+            case "7":
+            case "8":
+            case "9":
+                $("#svgAWG").attr("x", "18");
+                $("#svgAWG").attr("y", "128.84946");
+                $("#svgAWG").css("font-size", "22px");
+                $("#text12").attr("x", "39");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "14px");
+                break;
+            default:
+                $("#svgAWG").attr("x", "12");
+                $("#svgAWG").attr("y", "128.84946");
+                $("#svgAWG").css("font-size", "20px");
+                $("#text12").attr("x", "36.749165");
+                $("#text12").attr("y", "126.58772");
+                $("#text12").css("font-size", "14px");
+        }
+
+        $("#cma").val($("#cma_cb").val() === 'cmil' ? Math.round(cma) : cma.toFixed(3));
+        $("#sma").val(mm2.toFixed(4));
+        $("#md").val(mm.toFixed(4));
+        $("#sia").val(in2Value.toFixed(5));
+        $("#id").val(inValue.toFixed(4));
+        $("#resultAWG").val(awg);
+        $('.result').text(awg);
+
+
+        let index = awg;
+        switch (awg) {
+            case "0000":
+            case "4/0":
+                index = -3
+                break;
+            case "000":
+            case "3/0":
+                index = -2
+                break;
+            case "00":
+            case "2/0":
+                index = -1
+                break;
+            case "1/0":
+                index = 0
+                break;
+        }
+
+        // number is interger between -3 and 40
+        if (-3 <= index && index <= 40 && parseInt(index) == index) {
+            circle = $("#wheel" + index.toString());
+            circleX = circle.attr('cx') - 212;
+            circleY = circle.attr('cy') - 122;
+            angle = 180 - (Math.atan2(circleY, circleX) * 180 / Math.PI)
+            if (previousIndicator) {
+                $(previousIndicator).attr('fill', '#222222')
+            }
+            previousIndicator = "#wheel" + index.toString()
+
+            $('#svgAWG').text(awg);
+            $('#svgAWG').attr('visibility', '');
+
+            // circular
+            if (Math.abs(currentAngle - angle) > 180) {
+                if (currentAngle > angle) {
+                    $('#animation').attr('from', currentAngle + " 212 122");
+                    $('#animation').attr('to', (angle + 360) + " 212 122");
+                    delta = Math.abs((angle + 360) - currentAngle)
+                } else {
+                    $('#animation').attr('from', (currentAngle + 360) + " 212 122");
+                    $('#animation').attr('to', angle + " 212 122");
+                    delta = Math.abs(angle - (currentAngle + 360))
+                }
+            } else {
+                $('#animation').attr('from', currentAngle + " 212 122");
+                $('#animation').attr('to', angle + " 212 122");
+                delta = Math.abs(angle - currentAngle)
+            }
+
+            $('#animation').attr('dur', delta / 360 + "s");
+            $('#animation')[0].beginElement()
+            setTimeout(function () {
+                $(previousIndicator).attr('fill', 'red')
+            }, delta / 360 * 1000)
+            currentIndex = index
+            currentAngle = angle;
+        } else {
+            $('#svgAWG').attr('visibility', 'hidden');
+            if (previousIndicator) {
+                $(previousIndicator).attr('fill', '#222222')
+            }
+        }
+    }
+}
+
+function mm2ToMm(mm2) {
+    if (mm2 > 0) {
+        return Math.sqrt(mm2 / Math.PI) * 2
+    }
+    return 0
+}
+
+$('#cma_cb').on("change", function (e) {
+    if ($("#cma").val() !== '') {
+        if (e.target.value === 'cmil') {
+            $("#cma").val(Math.round($("#cma").val() * 1000));
+        } else {
+            $("#cma").val(($("#cma").val() / 1000).toFixed(3));
+        }
+    }
+
+});
+
+//Click wheel
+function clickWheel(idWheel) {
+    if (idWheel != undefined) {
+        let awg = idWheel.slice(5);
+        switch (awg) {
+            case "-3":
+                awg = "4/0";
+                break;
+            case "-2":
+                awg = "3/0";
+                break;
+            case "-1":
+                awg = "2/0";
+                break;
+        }
+        $('#awg').val((awg));
+        populate();
+
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+    }
+}
+
+//AWG
+function handleAwg(e) {
+    e.preventDefault();
+    let awg = $('#awg').val();
+    if (awg == '') {
+        cleanSelection();
+        return;
+    }
+    switch (awg) {
+        case '4/0':
+            awg = '0000';
+            break;
+        case '3/0':
+            awg = '000'
+            break;
+        case '2/0':
+            awg = '00'
+            break;
+        case '1/0':
+            awg = '0'
+            break;
+    }
+
+    let awgTemp = Math.round(awg);
+    if (-3 > awgTemp || awgTemp > 40 || isNaN(awg)) {
+        $('#awg').addClass('awgInvalidate');
+        $(".error-awgInvalidate").show();
+        return;
+    } else {
+        $('#awg').removeClass('awgInvalidate');
+        $(".error-awgInvalidate").hide();
+    }
+
+    roundAWG();
+    populate();
+
+}
+
+
+$('#awg').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleAwg(e)
+    }
+});
+
+$('#awg').on("blur", function (e) {
+    handleAwg(e)
+});
+
+//CMA
+function handleCma(e) {
+    e.preventDefault();
+    if ($("#cma").val() == '') {
+        cleanSelection();
+        return;
+    }
+    let cma = $("#cma_cb").val() === 'cmil' ? $("#cma").val() : $("#cma").val() * 1000
+
+    if (setAwgByMM(mm2ToMm(cma / 1973.525))) {
+        roundAWG();
+        populate();
+    }
+}
+
+$('#cma').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleCma(e)
+    }
+});
+
+$('#cma').on("blur", function (e) {
+    handleCma(e)
+});
+
+//SMA
+function handleSma(e) {
+    e.preventDefault();
+    if ($("#sma").val() == '') {
+        cleanSelection();
+        return;
+    }
+    if (setAwgByMM(mm2ToMm($("#sma").val()))) {
+        roundAWG();
+        populate();
+    }
+}
+$('#sma').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleSma(e)
+    }
+});
+
+$('#sma').on("blur", function (e) {
+    handleSma(e)
+});
+
+//MD
+function handleMd(e) {
+    e.preventDefault();
+    if ($("#md").val() == '') {
+        cleanSelection();
+        return;
+    }
+    if (setAwgByMM($("#md").val())) {
+        roundAWG();
+        populate();
+    }
+}
+$('#md').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleMd(e)
+    }
+});
+
+$('#md').on("blur", function (e) {
+    handleMd(e)
+});
+
+//SIA
+function handleSia(e) {
+    e.preventDefault();
+    if ($("#sia").val() == '') {
+        cleanSelection();
+        return;
+    }
+    if (setAwgByMM(mm2ToMm($("#sia").val() / 0.001550003))) {
+        roundAWG();
+        populate()
+    }
+}
+$('#sia').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleSia(e)
+    }
+});
+
+$('#sia').on("blur", function (e) {
+    handleSia(e)
+});
+
+//ID
+function handleId(e) {
+    e.preventDefault();
+    if ($("#id").val() == '') {
+        cleanSelection();
+        return;
+    }
+    if (setAwgByMM($("#id").val() * 25.4)) {
+        roundAWG()
+        populate()
+    }
+}
+$('#id').on("keypress", function (e) {
+    if (e.keyCode === 13) {
+        handleId(e)
+    }
+});
+
+$('#id').on("blur", function (e) {
+    handleId(e)
+});
+
+</script>      
+</body></html>
