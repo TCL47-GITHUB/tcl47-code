@@ -1,1 +1,830 @@
+<html class="no-js hydrated" lang="en-us" dir="ltr"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="capacitance conversion calculator, DigiKey, electrostatic capacitance "><meta name="description" content="Use DigiKey’s electrostatic capacitance conversion calculator to quickly perform conversions between capacitance units including pF, µF, nF, and F.">
+		<base href="https://www.digikey.com/">
+        <title>
+            Capacitance Conversion Calculator | Trương Công Lý
+        </title>
+        <style type="text/css">* .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 
+.dkc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dkc .header-wrap {
+    padding: 0 0 10px;
+    border-bottom: solid 1px #ccc;
+}
+
+.dkc .header-wrap .dk-icon-border {
+    height: 41px;
+    max-width: 43px;
+    margin: 0 9px 0 0;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #CC0000;
+}
+
+.dkc .header-wrap .dk-icon {
+    margin-right: 1em;
+    height: 50px;
+    width: 80px;
+}
+
+.dkc .dkc-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 2em 1fr;
+    -ms-grid-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2em;
+}
+
+.dkc .dkc-content .dkc-grid {
+    padding: 20px 0 0;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+}
+
+.dkc .dkc-content .dkc-side {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.dkc-app {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1.5em 2em;
+}
+
+.dkc-related {
+    padding: 30px 0 0;
+}
+
+
+/* INPUT GUI ────────── */
+
+.dkc-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: #000;
+    font-weight: bold;
+    background-color: #ccc;
+    border: solid 1px #666;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dkc-button:hover {
+    background-color: #737373;
+}
+
+.dkc-button.disable {
+    opacity: 0.5;
+    background-color: #ccc;
+    cursor: default;
+}
+
+.dkc-button--primary {
+    color: #fff;
+    background-color: #CE2828;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#CC0103), to(#A30202));
+    background-image: -o-linear-gradient(top, #CC0103, #A30202);
+    background-image: linear-gradient(to bottom, #CC0103, #A30202);
+    border-color: #333;
+}
+
+.dkc-button--primary:hover {
+    background-color: #640203;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#640203), to(#4F0200));
+    background-image: -o-linear-gradient(top, #640203, #4F0200);
+    background-image: linear-gradient(to bottom, #640203, #4F0200);
+}
+
+.dkc-button--primary.disable:hover {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#CC0103), to(#A30202));
+    background-image: -o-linear-gradient(top, #CC0103, #A30202);
+    background-image: linear-gradient(to bottom, #CC0103, #A30202);
+}
+
+.dkc-label {
+    font-weight: 700;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+:-moz-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.dkc-input {
+    border: 1px solid #ddd;
+    /*height: 40px;*/
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    min-width: 10ch;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.dkc-input:invalid {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+.dkc-dropdown {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    height: 40px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-position: right 6px center;
+    background-repeat: no-repeat;
+    background-size: 1.25ex;
+    background-origin: content-box;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+}
+
+.dkc-field--dropUnit {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 64px;
+    grid-template-columns: 1fr 64px;
+    -ms-grid-rows: 18px 1fr;
+    grid-template-rows: 18px 1fr;
+    grid-template-areas: 'label label' 'input dd';
+    font-size: 13px;
+}
+
+.dkc-field--dropUnit .dkc-label {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: label;
+    margin: 0 0 5px 0;
+}
+
+.dkc-field--dropUnit .dkc-input {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: input;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    width: 100%;
+    z-index: 10;
+}
+
+.rtl .dkc-field--dropUnit .dkc-input {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: input;
+    border-radius: 0 4px 4px 0;
+    border-right: solid 1px #ddd;
+    border-left: none;
+    width: 100%;
+}
+
+.dkc-field--dropUnit .dkc-dropdown {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: dd;
+    border-radius: 0 4px 4px 0;
+    background-color: #f4f4f4;
+}
+
+.dkc-field--dark {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 64px;
+    grid-template-columns: 1fr 64px;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'input dd';
+}
+
+.dkc-field--dark .dkc-label {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: label;
+    position: absolute;
+    color: white;
+    left: 1em;
+    top: 1em;
+}
+
+.dkc-field--dark .dkc-input {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: input;
+    border-radius: 24px 0 0 24px;
+    border: none;
+    color: white;
+    padding-left: 2em;
+    background-color: #222;
+}
+
+.dkc-field--dark .dkc-dropdown {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    color: white;
+    grid-area: dd;
+    border-radius: 0 24px 24px 0;
+    border: none;
+    height: 38px;
+    background-color: #222;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAApklEQVRIie3W3QnDMAwE4Gsm8AjdoKtkBI3QETJiu0E2uaDgQsif5TQWIVhw4Bf7Qw8SfpCEZzWuWgVvAwYAHwAsHDWCjoUeXk4NfrXDpxOmFRR8O4IddNOQFJYvGbdaBEuj8nOmYClUpsYcPBuV+ftr4FnoAtsD/0VXsRR4FN3ELGAuuotZQSuaxHLAFGrCcsEt1IwdATUtyT6mzb1ff20VvDgIYAC0hrX/6mrNPwAAAABJRU5ErkJggg==");
+}
+
+.dkc-unit-label {
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 36px;
+    width: 45px;
+    border-radius: 0 4px 4px 0;
+    background-color: #F4F4F4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
+
+.rtl .dkc-unit-label {
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 36px;
+    width: 45px;
+    border-radius: 4px 0 0 4px;
+    background-color: #F4F4F4;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    display: inline-block;
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
+
+.dkc-wrap {
+    padding: 15px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.dkc-formula {
+    background-color: #F2F1F6;
+}
+
+.dkc-title,
+.dkc-underline-title {
+    margin: 0 0 20px;
+    padding: 0 0 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.dkc-underline-title {
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* ─────                    End of DIGIKEY CALCULATORS                   ───── */
+
+.indc {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2em 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: -webkit-min-content;
+    -ms-grid-rows: -webkit-min-content;
+    -ms-grid-rows: min-content;
+    grid-template-rows: min-content;
+    grid-gap: 2em;
+}
+
+.indc>*:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.indc>*:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.indc .dkc-input.no-unit {
+    border-radius: 24px 24px 24px 24px;
+}
+
+
+/* RESPONSIVE STYLES ────────── */
+
+.modal-image {
+    width: 100%;
+}
+
+.custom-modal {
+    display: none;
+    overflow: auto;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 100px 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.custom-modal .the-img-modal {
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    max-width: 700px;
+}
+
+.custom-modal.open-modal {
+    display: block;
+}
+
+.custom-modal .close-modal:hover,
+.custom-modal .close-modal:focus {
+    color: #BE0003;
+}
+
+.custom-modal .close-modal {
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 65px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.dkc-field--dropUnit {
+    margin-bottom: 1em;
+}
+
+
+/* RESPONSIVE STYLES ────────── */
+
+@media (max-width: 767px) {
+    .dkc-grid {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: 'app' 'side' 'related';
+    }
+    .dkc-products {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .dkc-product {
+        border-bottom: none;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    .dkc-product+.dkc-product {
+        border-left: 1px solid #999;
+    }
+    .dkc-product_link {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .dkc-app {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        padding: 1.5em 1em;
+        margin: 0 -15px;
+        border: 0;
+        border-radius: 0;
+    }
+    .indc {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: min-content 2em min-content;
+        grid-template-rows: min-conten min-conten;
+        grid-template-rows: -webkit-min-content -webkit-min-content;
+        -ms-grid-columns: 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+    }
+    .indc>*:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .indc>*:nth-child(2) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .dkc .header-wrap .headline-title {}
+    .dkc .header-wrap .pull-left,
+    .dkc .header-wrap .pull-right {
+        float: none !important;
+    }
+    .dkc .dkc-grid {
+        padding: 0;
+    }
+    .dkc .dkc-grid .blc {
+        padding: 1.5em 1em;
+        margin: 0 -15px;
+        border: 0;
+        border-radius: 0;
+    }
+    .dkc .dkc-content {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 2em;
+    }
+    .dkc .dkc-content .dkc-grid {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .dkc-products {
+        display: block;
+    }
+    .dkc-field--dropUnit {
+        margin-bottom: 1em;
+    }
+    .dkc-product_link {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .dkc-related_list {
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+    .dkc-button {
+        margin-bottom: 1em;
+    }
+}
+
+.mr-1 {
+  flex-direction: row;
+  right: 10%;
+}
+.mt-1 {/* max-width: 100%; *//* text-align: right; *//* flex-direction: row; */}
+
+.mr-1 {
+  flex-direction: row;
+  right: -28px;
+}
+
+.mt-1 a {}
+
+
+
+@media (max-width: 800px) {
+  .dkc .header-wrap {
+    /* margin-bottom: 70px; */
+}
+  
+}
+
+.dk-container,
+.content-column {
+    position: relative;
+}
+
+
+@media (max-width: 615px) {
+
+    .dk-container .header-wrap {
+        padding: 0 0 10px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .dk-container .pull-right {
+        position: relative;
+    }
+
+    .calculator-col.col-md-6.has-tab.selectColor {
+        margin-bottom: 70px;
+    }
+
+    .dk-container .pull-right {
+        position: relative;
+        left: 0px;
+        float: none !important;
+        top: 0px;
+    }
+
+}
+</style><link rel="stylesheet" type="text/css" href="https://tcl47-github.github.io/tcl47-code/tool/digikey.global.min.css">
+    </head>
+    <body itemscope="" itemtype="http://schema.org/WebPage" class="ltr flymenu-body" style="zoom: 100%;">
+        <div id="main-layout-content">
+            
+<div class="layout-onecolumn">
+    <div class="content-column">
+            
+<div class="richtextcontent" dir="ltr">
+<div class="dkc" id="inductanceConversion">
+    <div class="header-wrap clearfix">       
+        <div class="pull-left flex">
+            <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/Icon/capacitancemainicon3x.svg?la=en-US&amp;ts=e9d86903-b026-42a0-8914-d021ebfa1fe9" class="dk-icon">
+            <h1 class="headline-title">Chuyển đổi Điện dung / Capacitance Conversion</h1>
+        </div>
+    </div>  
+    <div class="content">
+        <div class="calculator-mod">
+            <div class="tab-calc-content">
+                <div class="dkc-grid">
+                    <div class="dkc-app indc">
+                        <div class="indc-requirement">
+                            <div class="dkc-field--dropUnit">
+                                <span class="dkc-label">Picofarad</span>
+                                <input placeholder="Nhập picofarad..." name="pF" id="pF" type="number" step="any" class="dkc-input">
+                                <span class="dkc-unit-label" title="Picofarad">pF</span>
+                            </div>
+                            <div class="dkc-field--dropUnit">
+                                <span class="dkc-label">Nanofarad</span>
+                                <input placeholder="Nhập nanofarad..." name="nF" id="nF" type="number" step="any" class="dkc-input">
+                                <span class="dkc-unit-label" title="Nanofarad">nF</span>
+                            </div>
+                            <div class="dkc-field--dropUnit">
+                                <span class="dkc-label" title="Microfarad">Microfarad</span>
+                                <input placeholder="Nhập microfarad..." name="uF" id="uF" type="number" step="any" class="dkc-input">
+                                <span class="dkc-unit-label" title="Microfarad">µF</span>
+                            </div>
+                            <div class="dkc-field--dropUnit">
+                                <span class="dkc-label">Farad</span>
+                                <input placeholder="Nhập farad..." name="F" id="F" type="number" step="any" class="dkc-input">
+                                <span class="dkc-unit-label" title="Farad">F</span>
+                            </div>
+                        </div>
+                        <div class="dkc-info">
+                            <div class="dkc-underline-title">Capacitor Conversion Chart</div>
+                            <img src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/capacitance-conversion-table.png?la=en-US&amp;ts=373a63b5-6e0f-49d8-8a69-027753b03d84" alt="" class="modal-image">
+                        </div>
+                    </div>
+                </div>                     
+            </div>
+        </div>
+    </div>
+       
+</div>
+
+<!-- The Modal -->
+<div id="imageModal" class="custom-modal">
+    <span class="close-modal">×</span>
+    <img class="the-img-modal" id="the-img-modal" src="//www.digikey.com/-/media/Images/Marketing/Resources/Calculator/capacitance-conversion-table.png?la=en-US&amp;ts=373a63b5-6e0f-49d8-8a69-027753b03d84">
+    <div id="caption"></div>
+</div></div>      
+    </div>
+</div>
+        </div>              
+<script type="text/javascript" src="//www.digikey.com/-/media/Files/Marketing/Calculators/jquery360min.js?la=en-US&amp;ts=cf241c84-3d9e-40c0-9897-82230bea9425"></script>
+
+<script type="text/javascript">// Clear values when refresh
+$('.dkc input[type=number]').val('');
+//
+var pFInput = document.getElementById("pF");
+var uFInput = document.getElementById("uF");
+var nFInput = document.getElementById("nF");
+var FInput = document.getElementById("F");
+
+function convert(val) {
+    if (val < 1) {
+        return parseFloat(val.toPrecision(5));
+    } else if (val >= 1e9 || val <= 1e-9) {
+        return parseFloat(val.toExponential(5));
+    } else {
+        return parseFloat(val.toFixed(5));
+    }
+}
+
+function pfConv() {
+    var pfI = document.getElementById("pF").value;
+    document.getElementById("uF").value = convert((pfI * 1e-6));
+    document.getElementById("nF").value = convert((pfI * 1e-3));
+    document.getElementById("F").value = convert((pfI * 1e-12));
+}
+
+function ufConv() {
+    var ufI = document.getElementById("uF").value;
+    document.getElementById("nF").value = convert((ufI * 1e+3));
+    document.getElementById("F").value = convert((ufI * 1e-6));
+    document.getElementById("pF").value = convert((ufI * 1e+6));
+}
+
+function nfConv() {
+    var nfI = document.getElementById("nF").value;
+    document.getElementById("uF").value = convert((nfI * 1e-3));
+    document.getElementById("F").value = convert((nfI * 1e-9));
+    document.getElementById("pF").value = convert((nfI * 1e+3));
+}
+
+function fConv() {
+    var fI = document.getElementById("F").value;
+    document.getElementById("uF").value = convert((fI * 1e+6));
+    document.getElementById("nF").value = convert((fI * 1e+9));
+    document.getElementById("pF").value = convert((fI * 1e+12));
+}
+
+// Get list categories
+function listCategoriesLinks() {
+    $.ajax({
+        url: window.location.origin + "/" + __headerData.lang + "/api/calculator/categories-list",
+        type: "POST",
+        data: JSON.stringify({
+            Site: __headerData.site,
+            Lang: __headerData.lang,
+            Cur: __headerData.cur,
+            CategoryIds: ["58", "59", "60", "62", "65"]
+        }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (dataResult) {
+            var output = "";
+            if (dataResult.length >= 0) {
+                // Get value of View follow site/language
+                let viewName = "View";
+                for (var key in viewSiteArray) {
+                    if (__headerData.lang.toLowerCase() == key) {
+                        viewName = viewSiteArray[key];
+                    }
+                }
+                for (var i in dataResult) {
+                    let imageUrl = noPhoto;
+                    if (dataResult[i].imageUrl) {
+                        imageUrl = dataResult[i].imageUrl;
+                    }
+                    output += '<li>' + '<div class="related-product">'
+                        + '<div class="image-container">'
+                        + '<a class="dkc-related_item" href="' + dataResult[i].url + '">'
+                        + '<img class="dkc-related-product_img" src ="' + imageUrl + '"  alt="' + dataResult[i].name + '"/>'
+                        + '</a>' + '</div>'
+                        + '<span class="dkc-related_itemTitle input-headline">' + dataResult[i].name + '</span>'
+                        + '<a class="dkc-related_item" href="' + dataResult[i].url + '">'
+                        + '<button class="button primary btn-normal">' + viewName + '</button>'
+                        + '</a>' + '</div>' + '</li>';
+                }
+            }
+
+            output += "";
+            if ($('#recommended-products-wrap-id').length > 0) {
+                $("#recommended-products-wrap-id ul").html(output);
+            }
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    })
+}
+
+pFInput.addEventListener("change", pfConv);
+uFInput.addEventListener("change", ufConv);
+nFInput.addEventListener("change", nfConv);
+FInput.addEventListener("change", fConv);
+
+
+$(function () {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function (event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+
+    $('span.input-headline').each(function (index) {
+        var title = $(this).text().replace(':', '');
+        $(this).siblings('.calculator-input').find('span.input-label').attr('title', title);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var calcInputs = document.querySelectorAll('.calculator input');
+    for (var i = 0; i < calcInputs.length; i++) {
+        calcInputs[i].addEventListener("keypress", function (e) {
+            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
+                return;
+            } else {
+                e.preventDefault();
+            }
+        });
+    };
+});
+
+(function (document) {
+    'use strict';
+
+    var LightTableFilter = (function (Arr) {
+
+        var _input;
+
+        function _onInputEvent(e) {
+            _input = e.target;
+            var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+            Arr.forEach.call(tables, function (table) {
+                Arr.forEach.call(table.tBodies, function (tbody) {
+                    Arr.forEach.call(tbody.rows, _filter);
+                });
+            });
+        }
+
+        function _filter(row) {
+            var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+            row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+        }
+
+        return {
+            init: function () {
+                var inputs = document.getElementsByClassName('light-table-filter');
+                Arr.forEach.call(inputs, function (input) {
+                    input.oninput = _onInputEvent;
+                });
+            }
+        };
+    })(Array.prototype);
+
+    document.addEventListener('readystatechange', function () {
+        if (document.readyState === 'complete') {
+            LightTableFilter.init();
+        }
+    });
+
+    // Custom modal
+    $('.modal-image').on('click', function () {
+        location.hash = '#modal';
+        $('body').addClass('overflow-hidden');
+        $('#imageModal').addClass('open-modal');
+        $('#the-img-modal').attr('src', $(this).attr('src'));
+        $('#caption').text(this.alt);
+    });
+
+    // Close the modal
+    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
+        history.replaceState({}, document.title, window.location.href.split('#')[0]);
+        $('body').removeClass('overflow-hidden');
+        $('#imageModal').removeClass('open-modal');
+
+        document.body.style.zoom = "100%";
+    });
+})(document);
+</script>
+</body></html>
