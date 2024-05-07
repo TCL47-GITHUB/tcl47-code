@@ -43,7 +43,7 @@ body {
   margin: 0;
   font-family: Arial;
   line-height: 27px;
-  background: #787878;
+  /*background: #787878;*/
   padding: 30px 0px;
 }
 .des {
@@ -63,6 +63,7 @@ input {
   padding: 0px 10px;
   border: 1px solid #ccc;
   box-shadow: 0px 3px 6px 0px #ccc;
+  border-radius: 6px;
   width: 215px;
   font-size: 1.1em;
 }
@@ -89,8 +90,9 @@ input {
   font-size: 16px;
 }
 .title-box {
-  background: #eeeeee;
+  background: #d8efff;
   padding: 0px 15px;
+  width: -webkit-fill-available;
   box-sizing: border-box;
   height: 35px;
   position: relative;
@@ -105,7 +107,7 @@ input {
   font-weight: 600;
 }
 .title-box:before {
-  content: "";
+  /*content: "";*/
   border-left: 25px solid #eeeeee;
   border-top: 35px solid transparent;
   border-bottom: 0px solid #eeeeee;
