@@ -1,0 +1,146 @@
+<html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển Đổi Thời Gian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .converter {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+			width: 100%;
+			max-width: 800px;
+        }
+
+        .converter h2 {
+            margin: unset;
+			padding: 1rem;
+			background: #f5f5f5;
+        }
+
+        .converter input, .converter select, .converter button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+			width:100%;
+			box-sizing: border-box;
+        }
+
+        .converter p {
+            font-weight: bold;
+			margin: unset;
+			padding: 1rem;
+			background: #f5f5f5;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter">
+    <h2>Chuyển Đổi Thời Gian</h2>
+	<div style="padding: 1rem;">
+    <input type="number" id="inputValue" placeholder="Nhập giá trị" oninput="convert()">
+	<div style="
+    display: flex;
+    gap: 0.5rem;
+">
+    <select id="inputUnit" onchange="convert()">
+        <option value="seconds">Giây</option>
+        <option value="minutes">Phút</option>
+        <option value="hours">Giờ</option>
+        <option value="days">Ngày</option>
+        <option value="weeks">Tuần</option>
+        <option value="months">Tháng</option>
+        <option value="years">Năm</option>
+        <option value="decades">Thập kỷ</option>
+        <option value="centuries">Thế kỷ</option>
+    </select>
+	<span style="
+    font-size: 2rem;
+    line-height: 1.7;
+">↔</span>
+    <select id="outputUnit" onchange="convert()">
+        <option value="seconds">Giây</option>
+        <option value="minutes">Phút</option>
+        <option value="hours">Giờ</option>
+        <option value="days">Ngày</option>
+        <option value="weeks">Tuần</option>
+        <option value="months">Tháng</option>
+        <option value="years">Năm</option>
+        <option value="decades">Thập kỷ</option>
+        <option value="centuries">Thế kỷ</option>
+    </select>
+	</div>
+    </div>
+	<p id="outputValue">Vui lòng nhập một số hợp lệ.</p>
+</div>
+
+<script>
+    const timeConversions = {
+        seconds: 1,
+        minutes: 60,
+        hours: 3600,
+        days: 86400,
+        weeks: 604800,
+        months: 2628000, // Xấp xỉ
+        years: 31536000,
+        decades: 315360000,
+        centuries: 3153600000
+    };
+
+    const unitNames = {
+        seconds: "giây",
+        minutes: "phút",
+        hours: "giờ",
+        days: "ngày",
+        weeks: "tuần",
+        months: "tháng",
+        years: "năm",
+        decades: "thập kỷ",
+        centuries: "thế kỷ"
+    };
+
+    function convert() {
+        const inputValue = parseFloat(document.getElementById("inputValue").value);
+        const inputUnit = document.getElementById("inputUnit").value;
+        const outputUnit = document.getElementById("outputUnit").value;
+
+        if (isNaN(inputValue)) {
+            document.getElementById("outputValue").innerText = "Vui lòng nhập một số hợp lệ.";
+            return;
+        }
+
+         const valueInSeconds = inputValue * timeConversions[inputUnit];
+        const convertedValue = valueInSeconds / timeConversions[outputUnit];
+        
+        const displayValue = (convertedValue % 1 === 0) ? convertedValue : convertedValue.toFixed(3);
+		
+
+        document.getElementById("outputValue").innerText = `Giá trị chuyển đổi: ${displayValue} ${unitNames[outputUnit]}`;
+    }
+
+    // Chuyển đổi ban đầu
+    convert();
+</script>
+</body></html>
