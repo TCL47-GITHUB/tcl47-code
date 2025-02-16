@@ -1,0 +1,886 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" class="mdl-js" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="./TÍNH TOÁN PHÂN TẦN LOA_files/jquery.min.js.download"></script>
+   
+<title>TÍNH TOÁN PHÂN TẦN LOA</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- javaScript -->
+    
+    <!--<base href="https://maybelle.com.vn/">--><base href=".">
+
+<div class="main">
+    
+   
+
+    <div class="container">
+<div class="page_detail_news ">
+	<h2 style=" text-align: center;">TÍNH TOÁN PHÂN TẦN LOA</h2>
+	<div class="calculate_page clear_float">
+		<div class="select_list_ca">
+			<select>
+				<option value="">CHỌN LOẠI THIẾT KẾ PHÂN TẦN CẦN TÍNH TOÁN</option>
+				<option value="0">PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 1 (6dB/octave)</option>
+				<option value="1">PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 2 (12dB/octave)</option>
+				<option value="2">PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 3 (18dB/octave)</option>
+				<option value="3">PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 4 (24dB/octave)</option>
+				<option value="4">Phân tần 3 đường tiếng bậc 1 (First order crossover)</option>
+				<option value="5">Phân tần 3 đường tiếng bậc 2 (Second order crossover)</option>
+				<option value="6">Mạch cân bằng trở kháng (Zobel Networks)</option>
+				<option value="7">Mạch cân bằng độ nhạy (L-pad)</option>
+			</select>
+		</div>
+		<!-- <div class="list_menu">
+			<ul>
+				<li class="active">PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 1 (6dB/octave)</li>
+				<li>PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 2 (12dB/octave)</li>
+				<li>PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 3 (18dB/octave)</li>
+				<li>PHÂN TẦN 2 ĐƯỜNG TIẾNG BẬC 4 (24dB/octave)</li>
+				<li>Phân tần 3 đường tiếng bậc 1 (First order crossover)</li>
+				<li>Phân tần 3 đường tiếng bậc 2 (Second order crossover)</li>
+				<li>Mạch cân bằng trở kháng (Zobel Networks)</li>
+				<li>Mạch cân bằng độ nhạy (L-pad)</li>
+			</ul>
+		</div> -->
+		<div class="content_calculate">
+
+			<div class="list_p active">
+				<h3>Phân Tần Bậc 1 Cho Loa 2 Đường Tiếng (Butterworth)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" class="number_input" id="rh">
+								
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass (Ohms)</label>
+								<input type="text" name="" class="number_input" id="ri">
+								
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Tần số cắt (Hz)</label>
+								<input type="text" name="" class="number_input" id="f">
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v1">Tính</button>
+						</div>
+
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>PHÂN TẦN BẬC 2 (Second order crossover – 12dB/octave)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>
+									<input type="radio" name="v2" value="v1" checked=""><span>Linkwitz-Riley</span>
+								</label>
+								<label>
+									<input type="radio" name="v2" value="v2"><span>Butterworth</span>
+								</label>
+								<label>
+									<input type="radio" name="v2" value="v3"><span>Bessel</span>
+								</label>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" id="rh_v2" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass (Ohms)</label>
+								<input type="text" name="" id="ri_v2" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Tần số cắt (Hz)</label>
+								<input type="text" name="" id="f_v2" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v2">Tính</button>
+
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v2" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1_v2" style="color: red"></span><span>mH</span></p>
+							<p><span>C2=</span><span id="c2_v2" style="color: red"></span><span>µF</span></p>
+							<p><span>L2=</span><span id="l2_v2" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>PHÂN TẦN BẬC 3 (Third order crossover – 18dB/octave)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" id="rh_v3" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass (Ohms)</label>
+								<input type="text" name="" id="rl_v3" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Tần số cắt (Hz)</label>
+								<input type="text" name="" id="f_v3" class="number_input"> 
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v3">Tính</button>
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v3" style="color: red"></span><span>µF</span></p>
+							<p><span>C2=</span><span id="c2_v3" style="color: red"></span><span>µF</span></p>
+							<p><span>C3=</span><span id="c3_v3" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1_v3" style="color: red"></span><span>mH</span></p>
+							<p><span>L2=</span><span id="l2_v3" style="color: red"></span><span>mH</span></p>
+							<p><span>L3=</span><span id="l3_v3" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>PHÂN TẦN BẬC 4 (Fourth order crossover – 24dB/octave)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>
+									<input type="radio" name="v4" value="v1" checked=""><span>Linkwitz-Riley</span>
+								</label>
+								<label>
+									<input type="radio" name="v4" value="v2"><span>Butterworth</span>
+								</label>
+								<label>
+									<input type="radio" name="v4" value="v3"><span>Bessel</span>
+								</label>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" id="rh_v4" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass (Ohms)</label>
+								<input type="text" name="" id="ri_v4" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Tần số cắt (Hz)</label>
+								<input type="text" name="" id="f_v4" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v4">Tính</button>
+
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v4" style="color: red"></span><span>µF</span></p>
+							<p><span>C2=</span><span id="c2_v4" style="color: red"></span><span>µF</span></p>
+							<p><span>C3=</span><span id="c3_v4" style="color: red"></span><span>µF</span></p>
+							<p><span>C4=</span><span id="c4_v4" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1_v4" style="color: red"></span><span>mH</span></p>
+							<p><span>L2=</span><span id="l2_v4" style="color: red"></span><span>mH</span></p>
+							<p><span>L3=</span><span id="l3_v4" style="color: red"></span><span>mH</span></p>
+							<p><span>L4=</span><span id="l4_v4" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- v5 -->
+			<div class="list_p">
+				<h3>Mạch phân tần 3 đường tiếng bậc 1</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Nhập vào tần số cắt loa mid và loa tép (Hz)</label>
+								<input type="text" name="" id="fh_v5" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Nhập vào tần số cắt loa mid và loa bass (Hz)</label>
+								<input type="text" name="" id="fl_v5" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" id="rh_v5" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa trung</label>
+								<input type="text" name="" id="rm_v5" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass(Ohms)</label>
+								<input type="text" name="" id="fm_v5" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							
+							<button class="form_v5">Tính</button>
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v5" style="color: red"></span><span>µF</span></p>
+							<p><span>C2=</span><span id="c2_v5" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1_v5" style="color: red"></span><span>mH</span></p>
+							<p><span>L2=</span><span id="l2_v5" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>Mạch phân tần 3 đường tiếng bậc 2</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Nhập vào tần số cắt loa mid và loa tép (Hz)</label>
+								<input type="text" name="" id="fh_v6" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Nhập vào tần số cắt loa mid và loa bass (Hz)</label>
+								<input type="text" name="" id="fl_v6" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa tép (Ohms)</label>
+								<input type="text" name="" id="rh_v6" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa trung (Ohms)</label>
+								<input type="text" name="" id="rm_v6" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Trở kháng loa bass(Ohms)</label>
+								<input type="text" name="" id="fm_v6" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							
+							<button class="form_v6">Tính</button>
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v6" style="color: red"></span><span>µF</span></p>
+							<p><span>C2=</span><span id="c2_v6" style="color: red"></span><span>µF</span></p>
+							<p><span>C3=</span><span id="c3_v6" style="color: red"></span><span>µF</span></p>
+							<p><span>C4=</span><span id="c4_v6" style="color: red"></span><span>µF</span></p>
+							<p><span>L1=</span><span id="l1_v6" style="color: red"></span><span>mH</span></p>
+							<p><span>L2=</span><span id="l2_v6" style="color: red"></span><span>mH</span></p>
+							<p><span>L3=</span><span id="l3_v6" style="color: red"></span><span>mH</span></p>
+							<p><span>L4=</span><span id="l4_v6" style="color: red"></span><span>mH</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>Mạch cân bằng trở kháng (Zobel networks)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Trở kháng DC của loa (Re) (Ohms)</label>
+								<input type="number" name="" class="" id="re">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Độ tự cảm của cuộn âm của driver (Le) mH</label>
+								<input type="number" name="" class="" id="le">
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v7">Tính</button>
+
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>C1=</span><span id="c1_v7" style="color: red"></span><span>µF</span></p>
+							<p><span>R1=</span><span id="r1_v7" style="color: red"></span><span>Ohms</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list_p">
+				<h3>Mạch cân bằng độ nhạy (L-pad)</h3>
+				<div class="content_form">
+					<div class="left">
+						<div class="form_page">
+							<div class="group_input">
+								<label>Trở kháng của loa (Ohms)</label>
+								<input type="text" name="" id="z_v8" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<div class="group_input">
+								<label>Số dB cần giảm đi (dB)</label>
+								<input type="text" name="" id="a_v8" class="number_input">
+								<p class="red_ip"></p>
+							</div>
+							<button class="form_v8">Tính</button>
+						</div>
+					</div>
+					<div class="right">
+						<div>
+							<p><span>R1=</span><span id="r1_v8" style="color: red"></span><span>Ohm</span></p>
+							<p><span>R2=</span><span id="r2_v8" style="color: red"></span><span>Ohm</span></p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+				<div class="tpkt">
+			<h4>Sơ đồ mạch phân tần</h4>
+			<div class="page_v active">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp1.png">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp2.png">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp3.png">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp4.png">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp41.jpg">
+				
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp51.jpg">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp7.png">
+			</div>
+			<div class="page_v">
+				<img src="./TÍNH TOÁN PHÂN TẦN LOA_files/vp8.png">
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
+<style type="text/css">
+body{font-family:tahoma,Arial,"Helvetica Neue",Helvetica,sans-serif;font-size:12.9px;line-height:1.62857143;color:#333;background-color:#fff}
+	.calculate_page .list_menu li{
+		padding: 10px 5px;
+		background: #FFF;
+		cursor: pointer;
+		transition: all .5s;
+		font-weight: 700;
+	}
+	.calculate_page .list_menu li.active , .calculate_page .list_menu li:hover{
+		background: #0d79c780;
+		color: #FFF;
+		font-weight: 700;
+	}
+	.calculate_page .list_p h3 {
+		font-weight: 700;
+	}
+	.red_ip{
+		color: red;
+		font-size: 12px;
+
+	}
+	.calculate_page{
+		/*flex-wrap: wrap;
+		display: flex;*/
+		margin: 0 auto;
+		max-width: 800px;
+	}
+	.calculate_page select{
+		width: 100%;
+		height: 40px;
+		margin-bottom: 1rem;
+		text-align-last: center;
+		letter-spacing: 0;
+		color: #333333;
+	}
+	.calculate_page select option{
+		text-align-last: center;
+		text-align: justify; 
+	}
+	.tpkt{
+		width: 100%;
+		margin-top: 10px;
+		background: #fff;
+		padding: 10px 0px;
+	}
+	.tpkt h4{
+		font-size: 18px;
+		margin: 0px;
+		margin-bottom: 15px;
+		text-align: center;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.tpkt img{
+		max-height: 500px;	
+		    width: 100%;
+	}
+	.tpkt .page_v{
+		display: none;
+		text-align: center;
+	}
+	.tpkt .page_v.active{
+		display: block;
+		text-align: center;
+	}
+	.calculate_page .list_menu{
+		float: left;
+		width: 40%;
+		margin-bottom: 5px;
+	}
+	.calculate_page .list_p{
+		/*margin: 0px 10px;*/
+		border: 1px solid #c4c4c4;
+		background: #fff;
+		display: none;
+	}
+	.calculate_page .list_p.active{
+		display: block;
+	}
+	.calculate_page .content_calculate{
+		width: 100%;
+	}
+	.calculate_page .list_p h3{
+		margin: 0px;
+		margin-bottom: 10px;
+		padding: 10px;
+		font-size: 18px;
+		background: #82B8DF;
+		text-align: center;
+		color: #fff;
+	}
+	.calculate_page .content_form{
+		display: flex;
+	}
+	.calculate_page .content_form .left{
+		width: 50%;
+		border-right: 1px solid #c4c4c4;
+	}
+	.calculate_page .content_form .right{
+		width: 50%;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		padding: 0px 10px;
+		flex-wrap: wrap;
+	}
+	.form_page{
+		padding: 0px 30px;
+	}
+	@media(max-width: 767px){
+		.form_page{
+			padding: 0px 10px;
+		}
+	}
+	.form_page label{
+		width: 100%;
+		margin-bottom: 5px;
+		font-size: 12px;
+		font-weight: 400;
+
+	}
+	.form_page input{
+		width: 100%;
+		height: 30px;
+		padding: 5px 10px;
+	}
+	.form_page label input{
+		width: 48%;
+		height: 15px;
+		padding: 0px 5px;
+	}
+	.form_page .group_input{
+		position: relative;
+		margin-bottom: 20px;
+	}
+	
+	.form_page button{
+		display: block;
+		padding: 5px 15px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		width: 100%;
+		background: #579FFF;
+		border:0px;
+		color: #fff;
+	}
+	.content_form .right p span{
+		min-width: 35px;
+		display: inline-block;
+		color: #579FFF;
+	}
+	.content_form .right div{
+		width: 100%;
+	}
+	.content_form .right p{
+		text-align: left;
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	@media(max-width: 992px){
+		.calculate_page .content_calculate{
+			width: 100%;
+		}
+		.calculate_page .list_p {
+			margin: 0px;
+		}
+		.calculate_page .list_menu{
+			width: 100%;
+		}
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var cx=1000000;
+		var lx=1000;
+		$(".select_list_ca select").change(function(){
+			var index=$(this).children("option:selected").val();
+			$(".list_p ").each(function(indexs){
+				$(this).removeClass("active");
+				$(this).slideUp();
+				if(indexs==index){
+					$(this).slideDown();
+				}
+			});
+			$(".tpkt .page_v ").each(function(indexs){
+				$(this).removeClass("active");
+				$(this).slideUp();
+				if(indexs==index){
+					$(this).slideDown();
+				}
+			});
+		});
+		$(".calculate_page ul li").each(function(index){
+			$(this).click(function(){
+				$(".calculate_page ul li").each(function(){
+					$(this).removeClass("active");
+				});
+				$(".list_p ").each(function(indexs){
+					$(this).removeClass("active");
+					$(this).slideUp();
+					if(indexs==index){
+						$(this).slideDown();
+					}
+				});
+				$(".tpkt .page_v ").each(function(indexs){
+					$(this).removeClass("active");
+					$(this).slideUp();
+					if(indexs==index){
+						$(this).slideDown();
+					}
+				});
+
+				$(this).addClass("active");
+			});
+		});
+		$(".number_input").each(function(){
+			$(this).keypress(function (e) {
+				var validkeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+				if (validkeys.indexOf(e.key) < 0){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					return false;
+				}else{
+					$(this).siblings("p").text('');
+					$(this).siblings("p").removeClass("error");
+				}
+
+			});
+
+		});
+		$(".form_v1").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh").val();
+				var ri=$("#ri").val();
+				var f=$("#f").val();
+				var ci=(0.156/(rh*f))*cx;
+				var r1=(ri/(6.28*f))*lx;
+				$("#c1").text(ci.toFixed(2));
+				$("#l1").text(r1.toFixed(2));
+				
+			}
+		});
+		$(".form_v2").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh_v2").val();
+				var ri=$("#ri_v2").val();
+				var f=$("#f_v2").val();
+				var radioValue = $("input[name='v2']:checked").val();
+				console.log(radioValue);
+				if(radioValue=="v1"){
+					var ci_v2=(0.0796/(rh*f))*cx;
+					var c2_v2=(0.0796/(ri*f))*cx;
+					var ci_v3=((0.3183*rh)/f)*lx;
+					var r1_v3=((0.3183*ri)/f)*lx;
+					$("#c1_v2").text(ci_v2.toFixed(2));
+					$("#l1_v2").text(ci_v3.toFixed(2));
+					$("#c2_v2").text(c2_v2.toFixed(2));
+					$("#l2_v2").text(r1_v3.toFixed(2));
+				}
+				if(radioValue=="v2"){
+					var ci_v2=(0.1125/(rh*f))*cx;
+					var c2_v2=(0.1125/(ri*f))*cx;
+					var ci_v3=((0.2251*rh)/f)*lx;
+					var r1_v3=((0.2251*ri)/f)*lx;
+					$("#c1_v2").text(ci_v2.toFixed(2));
+					$("#l1_v2").text(ci_v3.toFixed(2));
+					$("#c2_v2").text(c2_v2.toFixed(2));
+					$("#l2_v2").text(r1_v3.toFixed(2));
+				}
+				if(radioValue=="v3"){
+					var ci_v2=(0.0912/(rh*f))*cx;
+					var c2_v2=(0.0912/(ri*f))*cx;
+					var ci_v3=((0.2756*rh)/f)*lx;
+					var r1_v3=((0.2756*ri)/f)*lx;
+					$("#c1_v2").text(ci_v2.toFixed(2));
+					$("#l1_v2").text(ci_v3.toFixed(2));
+					$("#c2_v2").text(c2_v2.toFixed(2));
+					$("#l2_v2").text(r1_v3.toFixed(2));
+				}
+			}
+		});
+		$(".form_v3").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh_v3").val();
+				var rl=$("#rl_v3").val();
+				var f=$("#f_v3").val();
+				var c1=(0.1061/(rh*f))*cx;
+				var c2=(0.3183/(rh*f))*cx;
+				var c3=(0.2122/(rl*f))*cx;
+				var l1=((0.1194*rh)/f)*lx;
+				var l2=((0.2387*rl)/f)*lx;
+				var l3=((0.0796*rl)/f)*lx;
+				$("#c1_v3").text(c1.toFixed(2));
+				$("#c2_v3").text(c2.toFixed(2));
+				$("#c3_v3").text(c3.toFixed(2));
+				$("#l1_v3").text(l1.toFixed(2));
+				$("#l2_v3").text(l2.toFixed(2));
+				$("#l3_v3").text(l3.toFixed(2));
+			}
+		});
+		$(".form_v4").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh_v4").val();
+				var ri=$("#ri_v4").val();
+				var f=$("#f_v4").val();
+				var radioValue = $("input[name='v4']:checked").val();
+				if(radioValue=="v1"){
+					var c1_v4=(0.0844/(rh*f))*cx;
+					var c2_v4=(0.1688/(rh*f))*cx;
+					var c3_v4=(0.2533/(ri*f))*cx;
+					var c4_v4=(0.0563/(ri*f))*cx;
+					var l1_v4=((0.1000*ri)/f)*lx;
+					var l2_v4=((0.4501*ri)/f)*lx;
+					var l3_v4=((0.3000*rh)/f)*lx;
+					var l4_v4=((0.1500*ri)/f)*lx;
+
+				}
+				
+				if(radioValue=="v2"){
+					var c1_v4=(0.1040/(rh*f))*cx;
+					var c2_v4=(0.1470/(rh*f))*cx;
+					var c3_v4=(0.2509/(ri*f))*cx;
+					var c4_v4=(0.0609/(ri*f))*cx;
+					var l1_v4=((0.1009*ri)/f)*lx;
+					var l2_v4=((0.4159*ri)/f)*lx;
+					var l3_v4=((0.2437*rh)/f)*lx;
+					var l4_v4=((0.1723*ri)/f)*lx;
+					
+				}
+				if(radioValue=="v3"){
+					var c1_v4=(0.0702/(rh*f))*cx;
+					var c2_v4=(0.1719/(rh*f))*cx;
+					var c3_v4=(0.2336/(ri*f))*cx;
+					var c4_v4=(0.0504/(ri*f))*cx;
+					var l1_v4=((0.0862*ri)/f)*lx;
+					var l2_v4=((0.4983*ri)/f)*lx;
+					var l3_v4=((0.3583*rh)/f)*lx;
+					var l4_v4=((0.1463*ri)/f)*lx;
+				}
+				$("#c1_v4").text(c1_v4.toFixed(2));
+				$("#c2_v4").text(c2_v4.toFixed(2));
+				$("#l1_v4").text(l1_v4.toFixed(2));
+				$("#l2_v4").text(l2_v4.toFixed(2));
+				$("#c3_v4").text(c3_v4.toFixed(2));
+				$("#c4_v4").text(c4_v4.toFixed(2));
+				$("#l3_v4").text(l3_v4.toFixed(2));
+				$("#l4_v4").text(l4_v4.toFixed(2));
+			}
+		});
+		$(".form_v5").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh_v5").val();
+				var rm=$("#rm_v5").val();
+				
+				var fl=$("#fl_v5").val();
+				var fh=$("#fh_v5").val();
+				var rl=$("#fm_v5").val();
+				var fm=Math.sqrt((fh*fl));
+				var c1=(0.1590/(rh*fh))*cx;
+				var c2=(0.5540/(fm*rm))*cx;
+				var l1=((0.0458*rm)/fm)*lx;
+				var l2=((0.1592*rl)/fl)*lx;
+
+				$("#c1_v5").text(c1.toFixed(2));
+				$("#c2_v5").text(c2.toFixed(2));
+				$("#l1_v5").text(l1.toFixed(2));
+				$("#l2_v5").text(l2.toFixed(2));
+			}
+		});
+		$(".form_v6").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var rh=$("#rh_v6").val();
+				var rm=$("#rm_v6").val();
+				
+				var fl=$("#fl_v6").val();
+				var fh=$("#fh_v6").val();
+				var rl=$("#fm_v6").val();
+				var fm=Math.pow((fh*fl),0.5);
+
+				var c1=(0.0791/(rh*fh))*cx;
+				var c2=(0.3236/(fm*rm))*cx;
+
+				var c3=(0.0227/(fm*rm))*cx;
+				var c4=(0.0791/(rl*fl))*cx;
+				var l1=((0.3202*rh)/fh)*lx;
+				var l2=((1.0291*rm)/fm)*lx;
+				var l3=((0.0837*rm)/fm)*lx;
+				var l4=((0.3202*rl)/fl)*lx;
+				console.log(c2);
+				$("#c1_v6").text(c1.toFixed(2));
+				$("#c2_v6").text(c2.toFixed(2));
+				$("#c3_v6").text(c3.toFixed(2));
+				$("#c4_v6").text(c4.toFixed(2));
+				$("#l1_v6").text(l1.toFixed(2));
+				$("#l2_v6").text(l2.toFixed(2));
+				$("#l3_v6").text(l3.toFixed(2));
+				$("#l4_v6").text(l4.toFixed(2));
+			}
+		});
+		$(".form_v7").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var re=$("#re").val();
+				var le=$("#le").val()*1/1000;
+				var r=1.25*re;
+				var c=(le/(Math.pow(r, 2)))*cx;
+				$("#c1_v7").text(c.toFixed(2));
+				$("#r1_v7").text(r.toFixed(2));
+			}
+		});
+		$(".form_v8").click(function(){
+			var parent=$(this).parent(".form_page");
+			var check=0;
+			parent.find(".number_input").each(function(){
+				if($(this).val()==""){
+					$(this).siblings("p").text("Phải nhập số");
+					$(this).siblings("p").addClass("error");
+					check=1;
+				}
+			});
+			if(check==0){
+				var z=$("#z_v8").val();
+				var a=-$("#a_v8").val();
+				
+				var r2=(Math.pow(10, a/20)*z)/(1-Math.pow(10, a/20));
+				var r1=z-(Math.pow((1/r2)+(1/z),-1));
+				
+				$("#r1_v8").text(r1.toFixed(2));
+				$("#r2_v8").text(r2.toFixed(2));
+			}
+		});
+	});
+</script>
+ </body></html>
